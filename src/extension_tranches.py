@@ -120,8 +120,9 @@ class SegmentN(nn.Module):
         self.rotary.load_state_dict(etat["rotary"])
         self.couches = nn.ModuleList()
         for li, etat_couche in enumerate(etat["couches"]):
-            c = LlamaDecoderLayer(config=conf, layer_idx=28)
-            c.load_state_dict(etat_couche)
+            with torch.device("meta"):   # E4 : construction sans copie (assign mmap)
+                c = LlamaDecoderLayer(config=conf, layer_idx=28)
+            c.load_state_dict(etat_couche, assign=True)
             physique = MLPPhysique(c.mlp, masques_par_couche[li], leger=leger)
             c.mlp = nn.Identity()   # M2 : ancienne résidence MLP libérée dans TOUS les modes
             self.couches.append(CoucheP(c, physique))

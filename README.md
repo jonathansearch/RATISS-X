@@ -55,5 +55,6 @@ ses chemins bruts ne sont pas versionnés ici — seuls les masques dérivés le
 - 🗣️ Génération libre en tranches seules : preuve de concept obtenue — `docs/RAPPORT_GENERATION_TRANCHE.md`
 - 🪜 Extension au masque causal : 4 couches −62,4 % → 8 couches −65,5 % → **16 couches −70,2 %** (toujours ÷20 en mises à jour/pas) — `docs/RAPPORT_EXTENSION_E1.md` · `E2` · `E3`
 - 🧹 Série mémoire M1–M3 : Adam à états BF16 validé, passeport mémoire transféré au futur moteur natif — `docs/RAPPORT_M1.md` · `M2` · `M3`, `docs/DECLARATION_PASSEPORT_MOTEUR_NATIF.md`
+- 🎹 **Modèle entier opéré (E4, 32 couches) : perte −79,8 %, ÷21 mises à jour/pas** — `docs/RAPPORT_EXTENSION_E4.md`
 
 *Ici c'est la joie et l'enthousiasme 😜🥳 — et la méthode : on mesure, on nomme, on publie.*

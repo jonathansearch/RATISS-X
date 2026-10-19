@@ -1,6 +1,13 @@
 # 🧪 MICRO-RAPPORT M3 — ADAM BF16 VALIDÉ, MMAP ÉCARTÉ, PASSEPORT TRANSFÉRÉ AU MOTEUR NATIF
 **Marche :** M3 (`PROTOCOLE_M3.md`, ordre « Fais tout »). 8 couches, calcul FP32, deux pistes testées ensemble.
 
+> ⚠️ **RECTIFICATIF (E4, même session)** : le correctif `assign` annoncé ci-dessous ne
+> s'était en réalité jamais appliqué au code (ancres différentes) — M3 n'avait testé que
+> le mmap. L'`assign` réel, appliqué en E4, a au contraire débloqué la construction du
+> modèle entier. Les chiffres M3 (perte, états BF16, temps) restent valides ; seule
+> l'attribution du pic RAM au couple mmap+assign doit se lire « mmap seul ».
+>
+
 ## 📏 Résultats (référence M2 : 2,1216 · 0,104 s · pic 1250 Mo · boucle 1160 Mo · états 134,5 Mo)
 | Mesure | M3 mesuré | Lecture |
 |---|---|---|

@@ -90,9 +90,13 @@ BF16 validé (perte identique, états ÷2), mmap écarté (pic aggravé), passep
 au futur moteur natif (`docs/DECLARATION_PASSEPORT_MOTEUR_NATIF.md`).
 Commandes : `python3 src/extension_tranches.py --preparer --couches N` puis
 `--entrainer --couches N --marche EX` (`--memoire_leger --optimiseur adam_bf16` pour le moteur M).
+**E4 (modèle entier, 32 couches) : perte 1,245 (−79,8 %), ÷21 par pas, RAM 1580 Mo** —
+premier lancement tué en construction (FP32), corrigé par construction `meta`+`assign`
+(le correctif annoncé en M3 ne s'était jamais appliqué : rectificatif publié).
 
 ## ⚠️ Ce qui n'est PAS encore fait (ne pas citer comme acquis)
-- Étendre les tranches au modèle entier (E4 : 32 couches) ; le moteur natif (<300 Mo visés).
+- Le moteur natif (<300 Mo visés) ; la génération libre par le modèle entier opéré ;
+  la comparaison chronométrée contre un fine-tuning dense complet du même modèle.
 - L'injection du vrai tissu `.ratiss` externe dans le Traducteur (Phase ultérieure).
 - **RATISS VEGA**, premier modèle augmenté : naîtra après validation, pas avant. 🌟
 

@@ -1,0 +1,27 @@
+{
+ "marche": "E4",
+ "mode_memoire_legere_bf16": true,
+ "optimiseur": "adam_bf16",
+ "couches_operees": [
+  0,
+  31
+ ],
+ "perte_modele_plein_dev": 6.1702,
+ "perte_eval_avant": 6.1549,
+ "perte_eval_apres": 1.2449,
+ "amelioration_relative": 0.7977,
+ "params_entrainables_total": 63820800,
+ "optimiseur_params_audites": 63820800,
+ "optimiseur_etats_mo": 255.3,
+ "ram_boucle_max_mo": 1558.6,
+ "params_mis_a_jour_par_pas": 11289600,
+ "secondes_par_pas": 0.753,
+ "pas_total": 144,
+ "ram_pic_mo": 1580.5,
+ "reference_D3_2_couches": {
+  "perte_apres": 2.389,
+  "amelioration_relative": 0.6096,
+  "maj_par_pas": 725760,
+  "s_par_pas": 0.0497
+ }
+}
