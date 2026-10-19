@@ -73,7 +73,8 @@ class MoteurNatif:
             self.tranches[(li, fam)] = (d("Wg"), d("Wu"), d("Wd"))
         return self.tranches[(li, fam)]
 
-    def avant(self, ids, fam):
+    def avant(self, ids, fam, etapes_voulues=()):
+        etapes = {}
         H, dt = self.H, self.dim_tete
         h = np.stack([self.coffre.lignes("model.embed_tokens.weight", i, i + 1, H)[0] for i in ids])
         seq = len(ids)
@@ -105,8 +106,9 @@ class MoteurNatif:
             x = rmsnorm(h, self.coffre.lire(p + "post_attention_layernorm.weight"), self.eps)
             Wg, Wu, Wd = self.tranche(li, fam)          # TRANCHE SEULE : rien d'autre n'est calculé
             h = h + (silu(x @ Wg.T) * (x @ Wu.T)) @ Wd.T
+            if (li + 1) in etapes_voulues: etapes[li + 1] = h.copy()
         h = rmsnorm(h, self.coffre.lire("model.norm.weight"), self.eps)
-        return h[-1]
+        return h[-1], etapes
 
     def logits(self, vecteur):
         V, H, pas = 49152, self.H, 8192
@@ -121,7 +123,7 @@ class MoteurNatif:
         sortis, temps = [], []
         for _ in range(max_nouveaux):
             t0 = time.perf_counter()
-            nxt = int(np.argmax(self.logits(self.avant(ids + sortis, fam))))
+            nxt = int(np.argmax(self.logits(self.avant(ids + sortis, fam)[0])))
             temps.append(time.perf_counter() - t0)
             if nxt == eos: break
             sortis.append(nxt)
@@ -132,6 +134,18 @@ def main():
     from tokenizers import Tokenizer
     from huggingface_hub import snapshot_download
     snap = snapshot_download("HuggingFaceTB/SmolLM2-360M-Instruct")
+    if "--controle" in sys.argv:   # L1 : exporte états cachés + logits pour comparaison
+        tok = Tokenizer.from_file(str(Path(snap) / "tokenizer.json"))
+        moteur = MoteurNatif(snap, LOCAL / "tranches_entrainees_e4.npz")
+        prompt, fam = "La capitale de la France est", "GEOGRAPHIE"
+        ids = tok.encode(prompt).ids
+        vecteur, etapes = moteur.avant(ids, fam, etapes_voulues=(2, 8, 16, 32))
+        logits = moteur.logits(vecteur)
+        np.savez(LOCAL / "controle_moteur.npz",
+                 **{f"h{n}": etapes[n] for n in (2, 8, 16, 32)}, logits=logits)
+        print(f"🔬 contrôle moteur exporté | argmax={int(np.argmax(logits))} "
+              f"({tok.decode([int(np.argmax(logits))])!r})")
+        return
     tok = Tokenizer.from_file(str(Path(snap) / "tokenizer.json"))
     gen = json.loads((RACINE / "results" / "RESULTATS_GENERATION_E4.json").read_text())
     routes = {r["prompt"]: r["accord_gps"] for r in gen["resultats"]}

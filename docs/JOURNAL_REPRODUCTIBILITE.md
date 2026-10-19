@@ -101,12 +101,15 @@ tranche ; le duel à 32 couches est impossible ici (>3 Go) là où la tranche pa
 Routage amorces (`src/routage_amorces.py`, test figé `data/amorces_test.json`) : le
 « contenu seul » est rejeté (amorces 36 % mais questions dégradées 71,8→52,6 %).
 Moteur natif v0 sans PyTorch (`src/moteur_natif.py`) : il tourne (0,55 s/token, RSS
-366 Mo) mais la tranche seule à 32 couches déraille — contrôle des logits à venir.
+366 Mo) mais la tranche seule à 32 couches déraille. **Contrôle L1**
+(`tests/test_logits_engine_vs_pytorch.py torch` puis `compare`) : le moteur est
+fidèle (cosinus 1,0000 contre PyTorch en tranche seule) — c'est un **phénomène** :
+sans branche inactive, l'état s'effondre entre les couches 16 et 32 (cosinus 0,4615).
 
 ## ⚠️ Ce qui n'est PAS encore fait (ne pas citer comme acquis)
-- Le test de contrôle des logits du moteur natif (fidélité contre le segment PyTorch),
-  puis l'inactive BF16 à la demande dans le moteur ; des centroïdes GPS entraînés sur
-  amorces (corpus séparé du test figé) ; RATISS VEGA, toujours non déclaré.
+- Le fond dense minimal du moteur natif (quel % de branche inactive restabilise la
+  couche 32 ?) ; des centroïdes GPS entraînés sur amorces (corpus séparé du test
+  figé) ; RATISS VEGA, toujours non déclaré.
 - L'injection du vrai tissu `.ratiss` externe dans le Traducteur (Phase ultérieure).
 - **RATISS VEGA**, premier modèle augmenté : naîtra après validation, pas avant. 🌟
 
