@@ -15,6 +15,7 @@ import numpy as np
 
 RACINE = Path(__file__).resolve().parent.parent
 LOCAL = RACINE / "artifacts" / "local"
+FAMILLES = ["GEOGRAPHIE", "CALCUL", "SCIENCE", "LANGAGE", "ANIMAUX", "CUISINE"]
 
 
 def dec_bf16(octets):
@@ -64,6 +65,10 @@ class MoteurNatif:
         self.coffre = Coffre(str(Path(snapshot) / "model.safetensors"))
         self.z = np.load(tranches_npz)
         self.tranches = {}   # (couche, famille) -> (Wg, Wu, Wd) FP32, chargées à la demande
+        self.fond = 0.0      # S1 : fraction de la branche inactive conservée (0..1)
+        self.inter = cfg["intermediate_size"]
+        gps = np.load(RACINE / "artifacts" / "gps_modele_360M.npz", allow_pickle=True)
+        self.masques = gps["masques"]   # [famille][couche] -> indices de neurones de la tranche
 
     def tranche(self, li, fam):
         if (li, fam) not in self.tranches:
@@ -104,8 +109,19 @@ class MoteurNatif:
             ctx = np.einsum("hst,thd->shd", att, v).reshape(seq, H)
             h = h + ctx @ self.coffre.lire(p + "self_attn.o_proj.weight").T
             x = rmsnorm(h, self.coffre.lire(p + "post_attention_layernorm.weight"), self.eps)
-            Wg, Wu, Wd = self.tranche(li, fam)          # TRANCHE SEULE : rien d'autre n'est calculé
-            h = h + (silu(x @ Wg.T) * (x @ Wu.T)) @ Wd.T
+            Wg, Wu, Wd = self.tranche(li, fam)          # la tranche entraînée, toujours là
+            y = (silu(x @ Wg.T) * (x @ Wu.T)) @ Wd.T
+            if self.fond > 0:   # S1 : fond dense = fraction structurée des neurones inactifs
+                actifs = {int(v) for v in self.masques[FAMILLES.index(fam)][li]}
+                inactifs = np.array([i for i in range(self.inter) if i not in actifs])
+                n = int(round(self.fond * len(inactifs)))
+                if n > 0:
+                    sel = inactifs[np.linspace(0, len(inactifs) - 1, n).astype(int)] if n < len(inactifs) else inactifs
+                    Wgf = self.coffre.lire(p + "mlp.gate_proj.weight")[sel]
+                    Wuf = self.coffre.lire(p + "mlp.up_proj.weight")[sel]
+                    Wdf = self.coffre.lire(p + "mlp.down_proj.weight")[:, sel]
+                    y = y + (silu(x @ Wgf.T) * (x @ Wuf.T)) @ Wdf.T
+            h = h + y
             if (li + 1) in etapes_voulues: etapes[li + 1] = h.copy()
         h = rmsnorm(h, self.coffre.lire("model.norm.weight"), self.eps)
         return h[-1], etapes
@@ -134,6 +150,37 @@ def main():
     from tokenizers import Tokenizer
     from huggingface_hub import snapshot_download
     snap = snapshot_download("HuggingFaceTB/SmolLM2-360M-Instruct")
+    if "--balayage" in sys.argv:   # S1 : seuil de stabilisation (fond dense minimal)
+        tok = Tokenizer.from_file(str(Path(snap) / "tokenizer.json"))
+        moteur = MoteurNatif(snap, LOCAL / "tranches_entrainees_e4.npz")
+        ref = np.load(LOCAL / "controle_torch.npz")
+        prompt, fam = "La capitale de la France est", "GEOGRAPHIE"
+        ids = tok.encode(prompt).ids
+        def cos(a, b):
+            a, b = a.ravel().astype(np.float64), b.ravel().astype(np.float64)
+            return float(a @ b / (np.linalg.norm(a) * np.linalg.norm(b)))
+        bilan = []
+        for fond in (0.0, 0.01, 0.05, 0.10, 1.0):
+            moteur.fond = fond
+            vecteur, etapes = moteur.avant(ids, fam, etapes_voulues=(32,))
+            logits = moteur.logits(vecteur)
+            texte, s_tok = moteur.generer(tok, prompt, fam)
+            mots = texte.split()
+            boucle = len(mots) >= 6 and len(set(mots)) <= len(mots) // 3
+            ligne = {"fond": fond, "cos_etat_32": round(cos(etapes[32], ref["C32"]), 4),
+                     "cos_logits": round(cos(logits, ref["logits_C"]), 4),
+                     "argmax": tok.decode([int(np.argmax(logits))]), "generation": texte,
+                     "boucle": boucle, "secondes_par_token": round(s_tok, 3)}
+            bilan.append(ligne)
+            print(f"🧱 fond {fond:5.0%} : cos état32={ligne['cos_etat_32']:.4f} | "
+                  f"cos logits={ligne['cos_logits']:.4f} | argmax={ligne['argmax']!r} | "
+                  f"gén={texte!r} (boucle={boucle})", flush=True)
+        (RACINE / "results" / "RESULTATS_FOND_S1.json").write_text(json.dumps(
+            {"marche": "S1 seuil de stabilisation", "prompt": prompt, "famille": fam,
+             "reference": "PyTorch complet E4 (controle_torch.npz)", "balayage": bilan},
+            ensure_ascii=False, indent=1))
+        print("💾 results/RESULTATS_FOND_S1.json sauvegardé.")
+        return
     if "--controle" in sys.argv:   # L1 : exporte états cachés + logits pour comparaison
         tok = Tokenizer.from_file(str(Path(snap) / "tokenizer.json"))
         moteur = MoteurNatif(snap, LOCAL / "tranches_entrainees_e4.npz")

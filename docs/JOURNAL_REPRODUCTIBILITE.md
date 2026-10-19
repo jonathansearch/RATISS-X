@@ -105,11 +105,14 @@ Moteur natif v0 sans PyTorch (`src/moteur_natif.py`) : il tourne (0,55 s/token, 
 (`tests/test_logits_engine_vs_pytorch.py torch` puis `compare`) : le moteur est
 fidèle (cosinus 1,0000 contre PyTorch en tranche seule) — c'est un **phénomène** :
 sans branche inactive, l'état s'effondre entre les couches 16 et 32 (cosinus 0,4615).
+**Seuil S1** (`python3 src/moteur_natif.py --balayage`) : aucun fond de 1/5/10 %
+(sélection équidistante) ne restabilise (cosinus logits ~0,43) ; bascule nette à
+100 % (0,9999, génération PyTorch reproduite mot pour mot).
 
 ## ⚠️ Ce qui n'est PAS encore fait (ne pas citer comme acquis)
-- Le fond dense minimal du moteur natif (quel % de branche inactive restabilise la
-  couche 32 ?) ; des centroïdes GPS entraînés sur amorces (corpus séparé du test
-  figé) ; RATISS VEGA, toujours non déclaré.
+- Le fond renormalisé (×1/p) ou sélectionné par magnitude (candidats nés de S1) ;
+  des centroïdes GPS entraînés sur amorces (corpus séparé du test figé) ;
+  RATISS VEGA, toujours non déclaré.
 - L'injection du vrai tissu `.ratiss` externe dans le Traducteur (Phase ultérieure).
 - **RATISS VEGA**, premier modèle augmenté : naîtra après validation, pas avant. 🌟
 

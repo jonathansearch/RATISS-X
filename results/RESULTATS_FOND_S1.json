@@ -1,0 +1,53 @@
+{
+ "marche": "S1 seuil de stabilisation",
+ "prompt": "La capitale de la France est",
+ "famille": "GEOGRAPHIE",
+ "reference": "PyTorch complet E4 (controle_torch.npz)",
+ "balayage": [
+  {
+   "fond": 0.0,
+   "cos_etat_32": 0.4458,
+   "cos_logits": 0.3246,
+   "argmax": " Gibraltar",
+   "generation": " Gibraltar twentieth reinst reinst recesslando,\n reinstlando recess recess recess recess recess delighted Lafayetteault",
+   "boucle": false,
+   "secondes_par_token": 0.629
+  },
+  {
+   "fond": 0.01,
+   "cos_etat_32": 0.4581,
+   "cos_logits": 0.4053,
+   "argmax": " en",
+   "generation": " en ephemeral recess firstnameanmar  Examin\n] such app facultû propos  pont Eisenhower Eisenhower",
+   "boucle": false,
+   "secondes_par_token": 0.93
+  },
+  {
+   "fond": 0.05,
+   "cos_etat_32": 0.415,
+   "cos_logits": 0.4152,
+   "argmax": " es",
+   "generation": " es  �panishpanishpanishpanish recess recess indefinite indefinitepanishpanishpanish recess resume resume",
+   "boucle": false,
+   "secondes_par_token": 0.969
+  },
+  {
+   "fond": 0.1,
+   "cos_etat_32": 0.4684,
+   "cos_logits": 0.4281,
+   "argmax": " delays",
+   "generation": " delaysombombUMurburbosher MT Brancharts\nUntil Seg Orders Until ExitMeanwhile",
+   "boucle": false,
+   "secondes_par_token": 1.033
+  },
+  {
+   "fond": 1.0,
+   "cos_etat_32": 0.9964,
+   "cos_logits": 0.9999,
+   "argmax": " le",
+   "generation": " le 17 septembre 1793.\", \"date\": \"1",
+   "boucle": false,
+   "secondes_par_token": 2.115
+  }
+ ]
+}
