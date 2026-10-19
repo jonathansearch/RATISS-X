@@ -95,10 +95,18 @@ premier lancement tué en construction (FP32), corrigé par construction `meta`+
 (le correctif annoncé en M3 ne s'était jamais appliqué : rectificatif publié).
 **Génération E4** (`python3 src/generation_modele_entier.py`) : le modèle entier opéré
 génère seul, 5/5 stable (aucune boucle), 3/5 juste, 2/5 hésitant — brut publié.
+**Triple marche F1–F3** : duel dense 8 couches (`src/duel_dense.py`) — dense 1,829 contre
+tranche 2,122 en perte, mais ÷20,5 de mises à jour et pas 4,1× plus rapide pour la
+tranche ; le duel à 32 couches est impossible ici (>3 Go) là où la tranche passe (1580 Mo).
+Routage amorces (`src/routage_amorces.py`, test figé `data/amorces_test.json`) : le
+« contenu seul » est rejeté (amorces 36 % mais questions dégradées 71,8→52,6 %).
+Moteur natif v0 sans PyTorch (`src/moteur_natif.py`) : il tourne (0,55 s/token, RSS
+366 Mo) mais la tranche seule à 32 couches déraille — contrôle des logits à venir.
 
 ## ⚠️ Ce qui n'est PAS encore fait (ne pas citer comme acquis)
-- Le moteur natif (<300 Mo visés) ; la comparaison chronométrée contre un fine-tuning
-  dense complet du même modèle ; l'amélioration du routage GPS sur amorces libres.
+- Le test de contrôle des logits du moteur natif (fidélité contre le segment PyTorch),
+  puis l'inactive BF16 à la demande dans le moteur ; des centroïdes GPS entraînés sur
+  amorces (corpus séparé du test figé) ; RATISS VEGA, toujours non déclaré.
 - L'injection du vrai tissu `.ratiss` externe dans le Traducteur (Phase ultérieure).
 - **RATISS VEGA**, premier modèle augmenté : naîtra après validation, pas avant. 🌟
 

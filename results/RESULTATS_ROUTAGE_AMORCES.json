@@ -1,0 +1,525 @@
+{
+ "amorces_libres": {
+  "n": 36,
+  "gps_standard": 0.3056,
+  "gps_contenu_seul": 0.3611
+ },
+ "detail_amorces_standard": [
+  {
+   "texte": "La capitale de la France est",
+   "attendu": "GEOGRAPHIE",
+   "predit": "GEOGRAPHIE",
+   "correct": true,
+   "cosinus": 0.7
+  },
+  {
+   "texte": "The capital of Spain is",
+   "attendu": "GEOGRAPHIE",
+   "predit": "CALCUL",
+   "correct": false,
+   "cosinus": 0.338
+  },
+  {
+   "texte": "La ville de Tokyo se trouve",
+   "attendu": "GEOGRAPHIE",
+   "predit": "GEOGRAPHIE",
+   "correct": true,
+   "cosinus": 0.567
+  },
+  {
+   "texte": "The country where Madrid is located is",
+   "attendu": "GEOGRAPHIE",
+   "predit": "CALCUL",
+   "correct": false,
+   "cosinus": 0.323
+  },
+  {
+   "texte": "Paris est la capitale",
+   "attendu": "GEOGRAPHIE",
+   "predit": "GEOGRAPHIE",
+   "correct": true,
+   "cosinus": 0.648
+  },
+  {
+   "texte": "The capital of Italy is",
+   "attendu": "GEOGRAPHIE",
+   "predit": "CALCUL",
+   "correct": false,
+   "cosinus": 0.33
+  },
+  {
+   "texte": "Two plus two equals",
+   "attendu": "CALCUL",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.19
+  },
+  {
+   "texte": "Trois plus quatre font",
+   "attendu": "CALCUL",
+   "predit": "CUISINE",
+   "correct": false,
+   "cosinus": 0.475
+  },
+  {
+   "texte": "Ten times five equals",
+   "attendu": "CALCUL",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.254
+  },
+  {
+   "texte": "Le résultat de six fois sept est",
+   "attendu": "CALCUL",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.549
+  },
+  {
+   "texte": "One hundred divided by four equals",
+   "attendu": "CALCUL",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.174
+  },
+  {
+   "texte": "Cinq plus cinq font",
+   "attendu": "CALCUL",
+   "predit": "SCIENCE",
+   "correct": false,
+   "cosinus": 0.409
+  },
+  {
+   "texte": "L'eau est composée de",
+   "attendu": "SCIENCE",
+   "predit": "SCIENCE",
+   "correct": true,
+   "cosinus": 0.543
+  },
+  {
+   "texte": "The chemical formula for water is",
+   "attendu": "SCIENCE",
+   "predit": "CALCUL",
+   "correct": false,
+   "cosinus": 0.369
+  },
+  {
+   "texte": "La photosynthèse permet aux plantes de",
+   "attendu": "SCIENCE",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.574
+  },
+  {
+   "texte": "Plants make their food by",
+   "attendu": "SCIENCE",
+   "predit": "SCIENCE",
+   "correct": true,
+   "cosinus": 0.068
+  },
+  {
+   "texte": "Le soleil est une",
+   "attendu": "SCIENCE",
+   "predit": "GEOGRAPHIE",
+   "correct": false,
+   "cosinus": 0.504
+  },
+  {
+   "texte": "Water is made of hydrogen and",
+   "attendu": "SCIENCE",
+   "predit": "CALCUL",
+   "correct": false,
+   "cosinus": 0.419
+  },
+  {
+   "texte": "En anglais, chat se dit",
+   "attendu": "LANGAGE",
+   "predit": "CALCUL",
+   "correct": false,
+   "cosinus": 0.396
+  },
+  {
+   "texte": "The word for dog in French is",
+   "attendu": "LANGAGE",
+   "predit": "CALCUL",
+   "correct": false,
+   "cosinus": 0.42
+  },
+  {
+   "texte": "Pour dire bonjour en anglais, on dit",
+   "attendu": "LANGAGE",
+   "predit": "SCIENCE",
+   "correct": false,
+   "cosinus": 0.403
+  },
+  {
+   "texte": "In English, we say thank you",
+   "attendu": "LANGAGE",
+   "predit": "CALCUL",
+   "correct": false,
+   "cosinus": 0.311
+  },
+  {
+   "texte": "Comment dit-on merci en",
+   "attendu": "LANGAGE",
+   "predit": "CUISINE",
+   "correct": false,
+   "cosinus": 0.401
+  },
+  {
+   "texte": "The French word for cat is",
+   "attendu": "LANGAGE",
+   "predit": "CALCUL",
+   "correct": false,
+   "cosinus": 0.341
+  },
+  {
+   "texte": "The animal that meows is",
+   "attendu": "ANIMAUX",
+   "predit": "CALCUL",
+   "correct": false,
+   "cosinus": 0.256
+  },
+  {
+   "texte": "L'animal qui aboie est",
+   "attendu": "ANIMAUX",
+   "predit": "SCIENCE",
+   "correct": false,
+   "cosinus": 0.521
+  },
+  {
+   "texte": "A dog barks and a cat",
+   "attendu": "ANIMAUX",
+   "predit": "CALCUL",
+   "correct": false,
+   "cosinus": 0.359
+  },
+  {
+   "texte": "Le chat chasse les",
+   "attendu": "ANIMAUX",
+   "predit": "ANIMAUX",
+   "correct": true,
+   "cosinus": 0.505
+  },
+  {
+   "texte": "The animal that barks is",
+   "attendu": "ANIMAUX",
+   "predit": "CALCUL",
+   "correct": false,
+   "cosinus": 0.306
+  },
+  {
+   "texte": "Un chien est un animal qui",
+   "attendu": "ANIMAUX",
+   "predit": "ANIMAUX",
+   "correct": true,
+   "cosinus": 0.476
+  },
+  {
+   "texte": "Pour faire une omelette, il faut",
+   "attendu": "CUISINE",
+   "predit": "CUISINE",
+   "correct": true,
+   "cosinus": 0.557
+  },
+  {
+   "texte": "To make a tomato sauce, you need",
+   "attendu": "CUISINE",
+   "predit": "CALCUL",
+   "correct": false,
+   "cosinus": 0.319
+  },
+  {
+   "texte": "La recette du gâteau demande",
+   "attendu": "CUISINE",
+   "predit": "CUISINE",
+   "correct": true,
+   "cosinus": 0.526
+  },
+  {
+   "texte": "For breakfast, eggs can be cooked",
+   "attendu": "CUISINE",
+   "predit": "CUISINE",
+   "correct": true,
+   "cosinus": 0.21
+  },
+  {
+   "texte": "Dans une salade, on met",
+   "attendu": "CUISINE",
+   "predit": "CUISINE",
+   "correct": true,
+   "cosinus": 0.289
+  },
+  {
+   "texte": "To bake a cake, mix flour and",
+   "attendu": "CUISINE",
+   "predit": "CALCUL",
+   "correct": false,
+   "cosinus": 0.285
+  }
+ ],
+ "detail_amorces_contenu": [
+  {
+   "texte": "La capitale de la France est",
+   "attendu": "GEOGRAPHIE",
+   "predit": "GEOGRAPHIE",
+   "correct": true,
+   "cosinus": 0.533
+  },
+  {
+   "texte": "The capital of Spain is",
+   "attendu": "GEOGRAPHIE",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.228
+  },
+  {
+   "texte": "La ville de Tokyo se trouve",
+   "attendu": "GEOGRAPHIE",
+   "predit": "GEOGRAPHIE",
+   "correct": true,
+   "cosinus": 0.485
+  },
+  {
+   "texte": "The country where Madrid is located is",
+   "attendu": "GEOGRAPHIE",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.337
+  },
+  {
+   "texte": "Paris est la capitale",
+   "attendu": "GEOGRAPHIE",
+   "predit": "GEOGRAPHIE",
+   "correct": true,
+   "cosinus": 0.502
+  },
+  {
+   "texte": "The capital of Italy is",
+   "attendu": "GEOGRAPHIE",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.241
+  },
+  {
+   "texte": "Two plus two equals",
+   "attendu": "CALCUL",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.142
+  },
+  {
+   "texte": "Trois plus quatre font",
+   "attendu": "CALCUL",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.458
+  },
+  {
+   "texte": "Ten times five equals",
+   "attendu": "CALCUL",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.254
+  },
+  {
+   "texte": "Le résultat de six fois sept est",
+   "attendu": "CALCUL",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.486
+  },
+  {
+   "texte": "One hundred divided by four equals",
+   "attendu": "CALCUL",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.283
+  },
+  {
+   "texte": "Cinq plus cinq font",
+   "attendu": "CALCUL",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.331
+  },
+  {
+   "texte": "L'eau est composée de",
+   "attendu": "SCIENCE",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.439
+  },
+  {
+   "texte": "The chemical formula for water is",
+   "attendu": "SCIENCE",
+   "predit": "LANGAGE",
+   "correct": false,
+   "cosinus": 0.171
+  },
+  {
+   "texte": "La photosynthèse permet aux plantes de",
+   "attendu": "SCIENCE",
+   "predit": "CUISINE",
+   "correct": false,
+   "cosinus": 0.407
+  },
+  {
+   "texte": "Plants make their food by",
+   "attendu": "SCIENCE",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.27
+  },
+  {
+   "texte": "Le soleil est une",
+   "attendu": "SCIENCE",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.158
+  },
+  {
+   "texte": "Water is made of hydrogen and",
+   "attendu": "SCIENCE",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.328
+  },
+  {
+   "texte": "En anglais, chat se dit",
+   "attendu": "LANGAGE",
+   "predit": "LANGAGE",
+   "correct": true,
+   "cosinus": 0.331
+  },
+  {
+   "texte": "The word for dog in French is",
+   "attendu": "LANGAGE",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.157
+  },
+  {
+   "texte": "Pour dire bonjour en anglais, on dit",
+   "attendu": "LANGAGE",
+   "predit": "LANGAGE",
+   "correct": true,
+   "cosinus": 0.492
+  },
+  {
+   "texte": "In English, we say thank you",
+   "attendu": "LANGAGE",
+   "predit": "CUISINE",
+   "correct": false,
+   "cosinus": 0.16
+  },
+  {
+   "texte": "Comment dit-on merci en",
+   "attendu": "LANGAGE",
+   "predit": "LANGAGE",
+   "correct": true,
+   "cosinus": 0.445
+  },
+  {
+   "texte": "The French word for cat is",
+   "attendu": "LANGAGE",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.143
+  },
+  {
+   "texte": "The animal that meows is",
+   "attendu": "ANIMAUX",
+   "predit": "ANIMAUX",
+   "correct": true,
+   "cosinus": 0.403
+  },
+  {
+   "texte": "L'animal qui aboie est",
+   "attendu": "ANIMAUX",
+   "predit": "ANIMAUX",
+   "correct": true,
+   "cosinus": 0.388
+  },
+  {
+   "texte": "A dog barks and a cat",
+   "attendu": "ANIMAUX",
+   "predit": "ANIMAUX",
+   "correct": true,
+   "cosinus": 0.262
+  },
+  {
+   "texte": "Le chat chasse les",
+   "attendu": "ANIMAUX",
+   "predit": "ANIMAUX",
+   "correct": true,
+   "cosinus": 0.368
+  },
+  {
+   "texte": "The animal that barks is",
+   "attendu": "ANIMAUX",
+   "predit": "ANIMAUX",
+   "correct": true,
+   "cosinus": 0.329
+  },
+  {
+   "texte": "Un chien est un animal qui",
+   "attendu": "ANIMAUX",
+   "predit": "ANIMAUX",
+   "correct": true,
+   "cosinus": 0.393
+  },
+  {
+   "texte": "Pour faire une omelette, il faut",
+   "attendu": "CUISINE",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.473
+  },
+  {
+   "texte": "To make a tomato sauce, you need",
+   "attendu": "CUISINE",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.305
+  },
+  {
+   "texte": "La recette du gâteau demande",
+   "attendu": "CUISINE",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.408
+  },
+  {
+   "texte": "For breakfast, eggs can be cooked",
+   "attendu": "CUISINE",
+   "predit": "ANIMAUX",
+   "correct": false,
+   "cosinus": 0.405
+  },
+  {
+   "texte": "Dans une salade, on met",
+   "attendu": "CUISINE",
+   "predit": "CUISINE",
+   "correct": true,
+   "cosinus": 0.401
+  },
+  {
+   "texte": "To bake a cake, mix flour and",
+   "attendu": "CUISINE",
+   "predit": "LANGAGE",
+   "correct": false,
+   "cosinus": 0.41
+  }
+ ],
+ "questions_questionnaire": {
+  "n": 78,
+  "gps_standard": 0.7179,
+  "gps_contenu_seul": 0.5256
+ },
+ "questions_entrainement": {
+  "n": 60,
+  "gps_standard": 0.3,
+  "gps_contenu_seul": 0.5333
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "duel": "dense MLP FP32 vs tranche (E2), segment 8 couches, même protocole",
+ "perte_eval_avant": 6.1432,
+ "perte_eval_apres": 1.8286,
+ "amelioration_relative": 0.7023,
+ "params_entrainables_total": 58982400,
+ "params_mis_a_jour_par_pas": 58982400,
+ "secondes_par_pas": 0.399,
+ "pas_total": 144,
+ "ram_pic_mo": 1557.8,
+ "tranche_E2": {
+  "perte_eval_apres": 2.1216,
+  "maj_par_pas": 2874240,
+  "secondes_par_pas": 0.0975,
+  "ram_pic_mo": 1546.7
+ }
+}

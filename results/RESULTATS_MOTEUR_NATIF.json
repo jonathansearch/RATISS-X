@@ -1,0 +1,27 @@
+{
+ "moteur": "NumPy + tokenizers, zéro PyTorch, MLP tranche seule entraînée (E4)",
+ "rss_pic_mo": 366.2,
+ "resultats": [
+  {
+   "prompt": "La capitale de la France est",
+   "famille_gps": "GEOGRAPHIE",
+   "texte": " Gibraltar twentieth reinst reinst recesslando,\n reinstlando recess recess recess recess recess delighted Lafayetteault",
+   "boucle_detectee": false,
+   "secondes_par_token": 0.571
+  },
+  {
+   "prompt": "Le ciel est",
+   "famille_gps": "LANGAGE",
+   "texte": " suppl replaced replaced replacementsulture,'ll substituted substituted substituted substituting substituted substituted substituted substituted substituted substituted substituted",
+   "boucle_detectee": true,
+   "secondes_par_token": 0.548
+  },
+  {
+   "prompt": "Two plus two equals",
+   "famille_gps": "ANIMAUX",
+   "texte": "1\n correct correct correct correct correct correct correct incorrect incorrect Wrong Wrong Wrongreply, Wrongreply",
+   "boucle_detectee": false,
+   "secondes_par_token": 0.553
+  }
+ ]
+}
