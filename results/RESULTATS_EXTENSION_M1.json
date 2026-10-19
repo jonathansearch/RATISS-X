@@ -1,0 +1,23 @@
+{
+ "marche": "M1",
+ "mode_memoire_legere_bf16": true,
+ "couches_operees": [
+  24,
+  31
+ ],
+ "perte_modele_plein_dev": 6.1702,
+ "perte_eval_avant": 6.149,
+ "perte_eval_apres": 2.117,
+ "amelioration_relative": 0.6557,
+ "params_entrainables_total": 16810560,
+ "params_mis_a_jour_par_pas": 2874240,
+ "secondes_par_pas": 0.1766,
+ "pas_total": 144,
+ "ram_pic_mo": 1261.7,
+ "reference_D3_2_couches": {
+  "perte_apres": 2.389,
+  "amelioration_relative": 0.6096,
+  "maj_par_pas": 725760,
+  "s_par_pas": 0.0497
+ }
+}

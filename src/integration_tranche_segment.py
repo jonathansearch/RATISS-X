@@ -34,8 +34,9 @@ EPOQUES, LR = 3, 5e-4
 
 class MLPPhysique(nn.Module):
     """MLP dont seule la tranche de l'accord est un paramètre entraînable."""
-    def __init__(self, mlp, masques):
+    def __init__(self, mlp, masques, leger=False):
         super().__init__()
+        self.leger = leger   # M1 : socle BF16, tranches FP32 (voir forward)
         self.register_buffer("Wg0", mlp.gate_proj.weight.detach().clone())
         self.register_buffer("Wu0", mlp.up_proj.weight.detach().clone())
         self.register_buffer("Wd0", mlp.down_proj.weight.detach().clone())
@@ -47,9 +48,14 @@ class MLPPhysique(nn.Module):
             idx = torch.tensor(masques[fam])
             self.indices[fam] = idx
             self.masque_inactif[i, idx] = 0.0
-            self.Wg[fam] = nn.Parameter(self.Wg0[idx].clone())
-            self.Wu[fam] = nn.Parameter(self.Wu0[idx].clone())
-            self.Wd[fam] = nn.Parameter(self.Wd0[:, idx].clone())
+            if self.leger:   # M1 : les tranches, seules, restent en FP32
+                self.Wg[fam] = nn.Parameter(self.Wg0[idx].float().clone())
+                self.Wu[fam] = nn.Parameter(self.Wu0[idx].float().clone())
+                self.Wd[fam] = nn.Parameter(self.Wd0[:, idx].float().clone())
+            else:
+                self.Wg[fam] = nn.Parameter(self.Wg0[idx].clone())
+                self.Wu[fam] = nn.Parameter(self.Wu0[idx].clone())
+                self.Wd[fam] = nn.Parameter(self.Wd0[:, idx].clone())
 
     def forward(self, x, fam):
         i = FAMILLES.index(fam)
@@ -57,6 +63,8 @@ class MLPPhysique(nn.Module):
             h = F.silu(F.linear(x.detach(), self.Wg0)) * F.linear(x.detach(), self.Wu0)
             y_inactive = F.linear(h * self.masque_inactif[i], self.Wd0)
         tranche = TrancheMLP(self.Wg[fam], self.Wu[fam], self.Wd[fam], self.indices[fam])
+        if self.leger:   # actif calculé en FP32, réinjecté dans le flux BF16
+            return (y_inactive.float() + forward_tranche(x.float(), tranche)).to(x.dtype)
         return y_inactive + forward_tranche(x, tranche)
 
 

@@ -8,7 +8,7 @@ Usage :
   python3 src/extension_tranches.py --entrainer
 CPU uniquement. Fichiers lourds locaux (artifacts/local/), jamais versionnés.
 """
-import argparse, json, random, resource, sys, time
+import argparse, gc, json, random, resource, sys, time
 from pathlib import Path
 
 import numpy as np
@@ -72,8 +72,10 @@ def preparer(n_couches):
 
 
 class SegmentN(nn.Module):
-    def __init__(self, etat, masques_par_couche):
+    def __init__(self, etat, masques_par_couche, leger=False, dtype_socle=torch.bfloat16):
         super().__init__()
+        self.leger = leger
+        self.dtype_socle = dtype_socle
         from transformers import LlamaConfig
         from transformers.models.llama.modeling_llama import (
             LlamaDecoderLayer, LlamaRMSNorm, LlamaRotaryEmbedding)
@@ -93,17 +95,27 @@ class SegmentN(nn.Module):
         for li, etat_couche in enumerate(etat["couches"]):
             c = LlamaDecoderLayer(config=conf, layer_idx=28)
             c.load_state_dict(etat_couche)
-            self.couches.append(CoucheP(c, MLPPhysique(c.mlp, masques_par_couche[li])))
+            physique = MLPPhysique(c.mlp, masques_par_couche[li], leger=leger)
+            if leger:
+                c.mlp = nn.Identity()   # M1 : on libère l'ancienne résidence MLP
+            self.couches.append(CoucheP(c, physique))
         self.norme = LlamaRMSNorm(cfg["hidden_size"], eps=cfg["rms_norm_eps"])
         self.norme.load_state_dict(etat["norme"])
         self.tete = nn.Linear(cfg["hidden_size"], etat["tete"].shape[0], bias=False)
         self.tete.weight = nn.Parameter(etat["tete"], requires_grad=False)
         for p in self.parameters(): p.requires_grad = False
-        self.float()
-        for couche in self.couches:
-            for p in couche.mlp_p.parameters(): p.requires_grad = True
+        if leger:
+            self.to(self.dtype_socle)   # tout le socle gelé descend (BF16 ou FP16)
+            for couche in self.couches:  # ... sauf les tranches, remises en FP32
+                for p in couche.mlp_p.parameters():
+                    p.data = p.data.float(); p.requires_grad = True
+        else:
+            self.float()
+            for couche in self.couches:
+                for p in couche.mlp_p.parameters(): p.requires_grad = True
 
     def forward(self, h, fam):
+        if self.leger: h = h.to(self.dtype_socle)
         h = h.unsqueeze(0)
         seq = h.shape[1]
         pos = torch.arange(seq, device=h.device).unsqueeze(0)
@@ -128,7 +140,7 @@ def evaluer(segment, exemples):
     return float(np.mean([perte(segment, ex).item() for ex in exemples]))
 
 
-def entrainer(n_couches, marche):
+def entrainer(n_couches, marche, leger=False, dtype_socle=torch.bfloat16):
     torch.manual_seed(20261102); random.seed(20261102)
     data = torch.load(LOCAL / f"segment_extension_{n_couches}.pt", weights_only=False)
     exemples, etat = data["exemples"], data["etat"]
@@ -139,10 +151,12 @@ def entrainer(n_couches, marche):
     masques = [{fam: sorted(int(n) for n in gps["masques"][i][debut + li])
                 for i, fam in enumerate(FAMILLES)} for li in range(len(etat["couches"]))]
 
-    segment = SegmentN(etat, masques)
+    perte_pleine = data["perte_pleine_dev"]
+    segment = SegmentN(etat, masques, leger=leger, dtype_socle=dtype_socle)
+    del etat, data; gc.collect()   # M1 : libérer AUSSI le conteneur (copies d'état ~250 Mo)
     perte_avant = evaluer(segment, dev)
     print(f"🩺 identité : segment opéré (avant) {perte_avant:.4f} contre modèle plein "
-          f"{data['perte_pleine_dev']:.4f} → écart {abs(perte_avant - data['perte_pleine_dev']):.4f}")
+          f"{perte_pleine:.4f} → écart {abs(perte_avant - perte_pleine):.4f}")
 
     params = [p for c in segment.couches for p in c.mlp_p.parameters() if p.requires_grad]
     opt = torch.optim.Adam(params, lr=LR)
@@ -160,8 +174,9 @@ def entrainer(n_couches, marche):
                 opt.step(); pas += 1
     duree = time.time() - t0
     perte_apres = evaluer(segment, dev)
-    bilan = {"marche": marche, "couches_operees": [debut, total - 1],
-             "perte_modele_plein_dev": round(data["perte_pleine_dev"], 4),
+    bilan = {"marche": marche, "mode_memoire_legere_bf16": leger,
+             "couches_operees": [debut, total - 1],
+             "perte_modele_plein_dev": round(perte_pleine, 4),
              "perte_eval_avant": round(perte_avant, 4), "perte_eval_apres": round(perte_apres, 4),
              "amelioration_relative": round((perte_avant - perte_apres) / perte_avant, 4),
              "params_entrainables_total": int(sum(p.numel() for p in params)),
@@ -183,6 +198,9 @@ if __name__ == "__main__":
     ap.add_argument("--entrainer", action="store_true")
     ap.add_argument("--couches", type=int, default=4)
     ap.add_argument("--marche", default="E1")
+    ap.add_argument("--memoire_leger", action="store_true", help="M1 : socle BF16, tranches FP32")
+    ap.add_argument("--dtype_socle", choices=["bf16", "fp16"], default="bf16")
     a = ap.parse_args()
     if a.preparer: preparer(a.couches)
-    elif a.entrainer: entrainer(a.couches, a.marche)
+    elif a.entrainer: entrainer(a.couches, a.marche, leger=a.memoire_leger,
+                                dtype_socle=torch.bfloat16 if a.dtype_socle == 'bf16' else torch.float16)
