@@ -53,6 +53,7 @@ ses chemins bruts ne sont pas versionnés ici — seuls les masques dérivés le
 - 🐘 **Tous les tests refaits sur le grand frère 360M** : presque tout progresse — `docs/RAPPORT_GRAND_FRERE.md`
 - 🔪 Découpage physique D1–D3 : tranche exacte, 11× plus rapide au banc, **apprentissage égal au dense** sur segment — `docs/RAPPORT_DECOUPAGE_D1.md` · `D2` · `D3`
 - 🗣️ Génération libre en tranches seules : preuve de concept obtenue — `docs/RAPPORT_GENERATION_TRANCHE.md`
-- ⏭️ Au frigo (ordre du chef) : étendre les couches, nettoyage mémoire double-résidence
+- 🪜 Extension au masque causal : 4 couches −62,4 % → 8 couches −65,5 % → **16 couches −70,2 %** (toujours ÷20 en mises à jour/pas) — `docs/RAPPORT_EXTENSION_E1.md` · `E2` · `E3`
+- 🧹 Série mémoire M1–M3 : Adam à états BF16 validé, passeport mémoire transféré au futur moteur natif — `docs/RAPPORT_M1.md` · `M2` · `M3`, `docs/DECLARATION_PASSEPORT_MOTEUR_NATIF.md`
 
 *Ici c'est la joie et l'enthousiasme 😜🥳 — et la méthode : on mesure, on nomme, on publie.*

@@ -78,8 +78,21 @@ Commandes : tests `tests/test_bistouri_physique.py` ; `python3 src/mock_training
 `python3 src/bistouri_backprop.py --preparer && python3 src/integration_tranche_segment.py` ;
 `python3 src/generation_tranche.py`.
 
+## 🪜 Extension + série mémoire (sur Go, puis ordre « Fais tout »)
+Piège découvert en E1 : les harnais segment tournaient **sans masque causal** (fuite du
+futur) — corrigé partout et **revalidation D3** publiée : la tranche (2,466) bat toujours
+le dense (2,699), rectificatifs apposés sur les rapports historiques. Extension par
+marches doublées au masque causal : 4 couches **2,313** (−62,4 %) → 8 couches **2,122**
+(−65,5 %) → 16 couches **1,836** (−70,2 %), toujours ÷20 en mises à jour/pas.
+Série mémoire M1→M3 : passeport 900 Mo refusé deux fois et diagnostiqué (socle
+interpréteur ~219 Mo, Adam 134,5 Mo audités sur les seules tranches) ; Adam à états
+BF16 validé (perte identique, états ÷2), mmap écarté (pic aggravé), passeport transféré
+au futur moteur natif (`docs/DECLARATION_PASSEPORT_MOTEUR_NATIF.md`).
+Commandes : `python3 src/extension_tranches.py --preparer --couches N` puis
+`--entrainer --couches N --marche EX` (`--memoire_leger --optimiseur adam_bf16` pour le moteur M).
+
 ## ⚠️ Ce qui n'est PAS encore fait (ne pas citer comme acquis)
-- Étendre les tranches au modèle entier ; nettoyer la double résidence mémoire (au frigo, ordre du chef).
+- Étendre les tranches au modèle entier (E4 : 32 couches) ; le moteur natif (<300 Mo visés).
 - L'injection du vrai tissu `.ratiss` externe dans le Traducteur (Phase ultérieure).
 - **RATISS VEGA**, premier modèle augmenté : naîtra après validation, pas avant. 🌟
 
