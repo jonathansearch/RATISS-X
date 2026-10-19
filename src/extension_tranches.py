@@ -24,11 +24,13 @@ from integration_tranche_segment import MLPPhysique, CoucheP
 RACINE = Path(__file__).resolve().parent.parent
 LOCAL = RACINE / "artifacts" / "local"
 MODELE = "HuggingFaceTB/SmolLM2-360M-Instruct"
-N_COUCHES_SEGMENT = 4          # marche E1 figée : 2 → 4 couches
+N_COUCHES_SEGMENT = 4          # défaut = marche E1 ; E2 passe --couches 8
 EPOQUES, LR = 3, 5e-4          # identiques à D3
 
 
-def preparer():
+def preparer(n_couches):
+    global N_COUCHES_SEGMENT
+    N_COUCHES_SEGMENT = n_couches
     from transformers import AutoModelForCausalLM, AutoTokenizer
     LOCAL.mkdir(parents=True, exist_ok=True)
     tok = AutoTokenizer.from_pretrained(MODELE)
@@ -63,9 +65,10 @@ def preparer():
             "config": modele.config.to_dict(), "couche_debut": debut}
     torch.save({"exemples": exemples, "etat": etat,
                 "perte_pleine_dev": float(np.mean(pertes_pleines))},
-               LOCAL / "segment_extension.pt")
+               LOCAL / f"segment_extension_{N_COUCHES_SEGMENT}.pt")
     print(f"✅ segment {N_COUCHES_SEGMENT} couches préparé (début couche {debut}) | "
           f"perte modèle plein sur l'éval : {np.mean(pertes_pleines):.4f}")
+    (LOCAL / f"segment_extension_{N_COUCHES_SEGMENT}.meta").write_text(str(debut))
 
 
 class SegmentN(nn.Module):
@@ -125,9 +128,9 @@ def evaluer(segment, exemples):
     return float(np.mean([perte(segment, ex).item() for ex in exemples]))
 
 
-def entrainer():
+def entrainer(n_couches, marche):
     torch.manual_seed(20261102); random.seed(20261102)
-    data = torch.load(LOCAL / "segment_extension.pt", weights_only=False)
+    data = torch.load(LOCAL / f"segment_extension_{n_couches}.pt", weights_only=False)
     exemples, etat = data["exemples"], data["etat"]
     train = [e for e in exemples if not e["eval"]]; dev = [e for e in exemples if e["eval"]]
     debut, total = etat["couche_debut"], etat["config"]["num_hidden_layers"]
@@ -157,7 +160,7 @@ def entrainer():
                 opt.step(); pas += 1
     duree = time.time() - t0
     perte_apres = evaluer(segment, dev)
-    bilan = {"marche": "E1", "couches_operees": [debut, total - 1],
+    bilan = {"marche": marche, "couches_operees": [debut, total - 1],
              "perte_modele_plein_dev": round(data["perte_pleine_dev"], 4),
              "perte_eval_avant": round(perte_avant, 4), "perte_eval_apres": round(perte_apres, 4),
              "amelioration_relative": round((perte_avant - perte_apres) / perte_avant, 4),
@@ -167,9 +170,9 @@ def entrainer():
              "ram_pic_mo": round(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024, 1),
              "reference_D3_2_couches": {"perte_apres": 2.389, "amelioration_relative": 0.6096,
                                         "maj_par_pas": 725760, "s_par_pas": 0.0497}}
-    (RACINE / "results" / "RESULTATS_EXTENSION_E1.json").write_text(
+    (RACINE / "results" / f"RESULTATS_EXTENSION_{marche}.json").write_text(
         json.dumps(bilan, ensure_ascii=False, indent=1))
-    print(f"🪜 E1 (4 couches) : perte {perte_avant:.4f} → {perte_apres:.4f} "
+    print(f"🪜 {marche} ({n_couches} couches) : perte {perte_avant:.4f} → {perte_apres:.4f} "
           f"({bilan['amelioration_relative']:+.1%}) | maj/pas={maj_mesuree:,} | "
           f"{bilan['secondes_par_pas']}s/pas | RAM {bilan['ram_pic_mo']} Mo")
 
@@ -178,6 +181,8 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--preparer", action="store_true")
     ap.add_argument("--entrainer", action="store_true")
+    ap.add_argument("--couches", type=int, default=4)
+    ap.add_argument("--marche", default="E1")
     a = ap.parse_args()
-    if a.preparer: preparer()
-    elif a.entrainer: entrainer()
+    if a.preparer: preparer(a.couches)
+    elif a.entrainer: entrainer(a.couches, a.marche)
