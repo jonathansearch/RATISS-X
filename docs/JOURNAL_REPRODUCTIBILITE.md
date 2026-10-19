@@ -93,10 +93,12 @@ Commandes : `python3 src/extension_tranches.py --preparer --couches N` puis
 **E4 (modèle entier, 32 couches) : perte 1,245 (−79,8 %), ÷21 par pas, RAM 1580 Mo** —
 premier lancement tué en construction (FP32), corrigé par construction `meta`+`assign`
 (le correctif annoncé en M3 ne s'était jamais appliqué : rectificatif publié).
+**Génération E4** (`python3 src/generation_modele_entier.py`) : le modèle entier opéré
+génère seul, 5/5 stable (aucune boucle), 3/5 juste, 2/5 hésitant — brut publié.
 
 ## ⚠️ Ce qui n'est PAS encore fait (ne pas citer comme acquis)
-- Le moteur natif (<300 Mo visés) ; la génération libre par le modèle entier opéré ;
-  la comparaison chronométrée contre un fine-tuning dense complet du même modèle.
+- Le moteur natif (<300 Mo visés) ; la comparaison chronométrée contre un fine-tuning
+  dense complet du même modèle ; l'amélioration du routage GPS sur amorces libres.
 - L'injection du vrai tissu `.ratiss` externe dans le Traducteur (Phase ultérieure).
 - **RATISS VEGA**, premier modèle augmenté : naîtra après validation, pas avant. 🌟
 

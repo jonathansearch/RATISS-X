@@ -1,0 +1,52 @@
+{
+ "modele": "HuggingFaceTB/SmolLM2-360M-Instruct",
+ "chirurgie": "modèle entier 32 couches opéré en tranches (moteur M), génération embeddings → segment opéré → tête, aucun MLP dense",
+ "entrainement_dans_le_processus": {
+  "perte_avant": 6.1549,
+  "perte_apres": 1.2449
+ },
+ "max_nouveaux_tokens": 18,
+ "decodage": "glouton",
+ "resultats": [
+  {
+   "prompt": "La capitale de la France est",
+   "accord_gps": "GEOGRAPHIE",
+   "modele_intact": "le 1792.  Pourquoi avez-vous c",
+   "modele_entier_opere": "le 17 septembre 1793.\", \"date\": \"1",
+   "boucle_detectee": false,
+   "secondes": 10.9
+  },
+  {
+   "prompt": "Le ciel est",
+   "accord_gps": "LANGAGE",
+   "modele_intact": "loin de mon ciel, Et mon ciel est loin de mon c",
+   "modele_entier_opere": "verte.\")",
+   "boucle_detectee": false,
+   "secondes": 1.6
+  },
+  {
+   "prompt": "The capital of France is",
+   "accord_gps": "CALCUL",
+   "modele_intact": "Paris.  Paris is the capital of France.  Paris is the capital of",
+   "modele_entier_opere": "Paris.",
+   "boucle_detectee": false,
+   "secondes": 1.8
+  },
+  {
+   "prompt": "Two plus two equals",
+   "accord_gps": "ANIMAUX",
+   "modele_intact": "four.  In this example, the first two numbers are 2 and 3",
+   "modele_entier_opere": "four.\"",
+   "boucle_detectee": false,
+   "secondes": 1.7
+  },
+  {
+   "prompt": "The animal that meows is",
+   "accord_gps": "CALCUL",
+   "modele_intact": "a cat.  The cat that meows is a cat.  The cat",
+   "modele_entier_opere": "a cat.",
+   "boucle_detectee": false,
+   "secondes": 2.2
+  }
+ ]
+}
