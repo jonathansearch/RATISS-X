@@ -10,8 +10,10 @@
   "data/paraphrases_test_v2.json": "bc286ed4fadc856c39aa9411109b9a59c997781c47313a0786c68d9c311a8626",
   "data/questionnaire.json": "771a1570e9ba74f352ed3738eb42d1f89eb5fd50b46582653c8cec0bb73827bf",
   "docs/JOURNAL_REPRODUCTIBILITE.md": "272636ad37ea04937c626d98ff0f4f7dd13583399a63ac1980f240671d44e23e",
+  "docs/PROPOSITION_DECOUPAGE_PHYSIQUE.md": "8c3329daa6f879983f57aee47539422b6a1fb771013a8deb9291021d171d116d",
   "docs/PROTOCOLE_ETAPES_2_3.md": "a758b246705d9b0723e6104b066ab49884ed0e45aabdb17a7ffc3f35c82db56d",
   "docs/PROTOCOLE_GRAND_FRERE.md": "0f7b5344669f958f28fe506cc4d11eab2205532612ee805c83e16d0a49f6a8c6",
+  "docs/RAPPORT_DECOUPAGE_D1.md": "b8a6680954487ab500cb17dc1cda81d452588505d5a7b1118a058001f0c7c21a",
   "docs/RAPPORT_ETAPE1_GPS.md": "c7ad71e1112d863133f59d8709afc5421c942c0735fefe9177a6eaf03b5d315b",
   "docs/RAPPORT_ETAPES_2_3.md": "ef831a52536c7addc8f063111d72f741068aee7e17ffa14f9f8117c8d4c900b3",
   "docs/RAPPORT_GRAND_FRERE.md": "49cb2d209b52829ce10dfc486cad6c27c83c1755103ff5294328220108eb245e",
@@ -27,10 +29,12 @@
   "results/RESULTATS_TRADUCTEUR.json": "fe0cc6a4f435c0540ff3dec1b0798658dba486d6962f6e124edcaa103e1c9573",
   "src/banc_chemins.py": "b0be83a4fcc0dbbaf4b7bad446cf74831a5d19b30e753bcc86ca215f99656b92",
   "src/bistouri_backprop.py": "6aac9649a948c78bc039bccf586d1eddb769d59aee85345a93e1e86644d62bb2",
+  "src/bistouri_physique.py": "6f864a7c6d9517bd64b28586a2c82b38568ba7cfd9d12f61c406b2c8c11ee562",
   "src/demo_gps.py": "2b2b120d0a5cd7da28253bf04f2373e36f3b53792f8bbe46bd805267ca83f4bf",
   "src/faire_figures.py": "8c175b51bc46d61ea23bac11d536378e42d619c6498237fa9950f7cf86c40be1",
   "src/gps_routeur.py": "78ec929917c4baf0582c0c45809a5582373e34fc2261d0b5b2a2a9c03269c102",
   "src/traducteur_semantique.py": "05c508557c7409dc6bf699ecd85b0b99fb4443e8b5042ef2a8b1364a77a6d7fa",
+  "tests/test_bistouri_physique.py": "934cf9e431cf442aee435eb549f0f54d2bf9583fcebead03608b57c5754bc814",
   "tests/test_gps.py": "d6ff8c9c62fd8e824cd1afd68d8919a83a0f5b3e774d352e0e4b4e7fc7315efa"
  }
 }
