@@ -1,0 +1,16 @@
+{
+ "scenario": "dense",
+ "couche": 15,
+ "famille_accord": "GEOGRAPHIE",
+ "n_actifs": 2560,
+ "parametres_entraines": 7372800,
+ "elements_gradient_premier_pas": 7372800,
+ "etats_adam_octets": 58982412,
+ "temps_par_pas_ms_median": 30.007116499973563,
+ "extraction_tranche_ms_median": 0.0,
+ "perte_debut_mesure": 44.701942443847656,
+ "perte_fin": 0.3030003607273102,
+ "ram_pic_mo": 630.7,
+ "pas_mesures": 50,
+ "tokens_par_pas": 128
+}

@@ -1,0 +1,54 @@
+{
+ "banc": "D2 mock-training bloc MLP isolé (couche 15, SmolLM2-360M) — PAS un entraînement de LLM",
+ "parametres_figes": {
+  "graine": 20261104,
+  "tokens_par_pas": 128,
+  "lr": 0.001,
+  "echauffement": 10,
+  "pas_mesures": 50
+ },
+ "dense": {
+  "scenario": "dense",
+  "couche": 15,
+  "famille_accord": "GEOGRAPHIE",
+  "n_actifs": 2560,
+  "parametres_entraines": 7372800,
+  "elements_gradient_premier_pas": 7372800,
+  "etats_adam_octets": 58982412,
+  "temps_par_pas_ms_median": 30.007116499973563,
+  "extraction_tranche_ms_median": 0.0,
+  "perte_debut_mesure": 44.701942443847656,
+  "perte_fin": 0.3030003607273102,
+  "ram_pic_mo": 630.7,
+  "pas_mesures": 50,
+  "tokens_par_pas": 128
+ },
+ "tranche": {
+  "scenario": "tranche",
+  "couche": 15,
+  "famille_accord": "GEOGRAPHIE",
+  "n_actifs": 128,
+  "parametres_entraines": 368640,
+  "elements_gradient_premier_pas": 368640,
+  "etats_adam_octets": 2949132,
+  "temps_par_pas_ms_median": 2.6606160001847456,
+  "extraction_tranche_ms_median": 0.63702700003887,
+  "perte_debut_mesure": 2.1611597537994385,
+  "perte_fin": 0.04007779061794281,
+  "ram_pic_mo": 360.3,
+  "pas_mesures": 50,
+  "tokens_par_pas": 128
+ },
+ "comparaisons": {
+  "ratio_elements_gradient": 0.05,
+  "ratio_etats_adam": 0.05000019327795547,
+  "vitesse_relative": 11.278259056507949,
+  "ecart_ram_mo": 270.40000000000003
+ },
+ "verdicts_criteres_figes": {
+  "gradients_environ_4_a_5_pourcent": "CONFIRME",
+  "temps_au_moins_2x_plus_rapide": "CONFIRME",
+  "ram_inferieure_au_dense": "CONFIRME",
+  "note_pertes": "Pertes non comparables entre scénarios : cibles différentes (sortie dense complète contre composante active), étiqueté dans le protocole."
+ }
+}

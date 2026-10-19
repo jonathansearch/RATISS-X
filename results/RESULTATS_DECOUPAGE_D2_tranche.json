@@ -1,0 +1,16 @@
+{
+ "scenario": "tranche",
+ "couche": 15,
+ "famille_accord": "GEOGRAPHIE",
+ "n_actifs": 128,
+ "parametres_entraines": 368640,
+ "elements_gradient_premier_pas": 368640,
+ "etats_adam_octets": 2949132,
+ "temps_par_pas_ms_median": 2.6606160001847456,
+ "extraction_tranche_ms_median": 0.63702700003887,
+ "perte_debut_mesure": 2.1611597537994385,
+ "perte_fin": 0.04007779061794281,
+ "ram_pic_mo": 360.3,
+ "pas_mesures": 50,
+ "tokens_par_pas": 128
+}
