@@ -107,10 +107,10 @@ class DeltaFamille(nn.Module):
 class Couche(nn.Module):
     def __init__(self, couche, delta=None):
         super().__init__(); self.couche = couche; self.delta = delta
-    def forward(self, h, pos_emb, fam):
+    def forward(self, h, pos_emb, fam, attention_mask=None):
         reste = h
         x = self.couche.input_layernorm(h)
-        att, _ = self.couche.self_attn(hidden_states=x, attention_mask=None,
+        att, _ = self.couche.self_attn(hidden_states=x, attention_mask=attention_mask,
                                        position_embeddings=pos_emb)
         h = reste + att
         reste = h
@@ -151,10 +151,14 @@ class Segment(nn.Module):
         self.float()   # segment d'entraînement en FP32, quel que soit le cobaye chargé
 
     def forward(self, h, fam=None):
-        h = h.unsqueeze(0)                                   # (1, seq, 576)
-        pos = torch.arange(h.shape[1], device=h.device).unsqueeze(0)
+        h = h.unsqueeze(0)                                   # (1, seq, dim)
+        seq = h.shape[1]
+        pos = torch.arange(seq, device=h.device).unsqueeze(0)
         pos_emb = self.rotary(h, pos)
-        for couche in self.couches: h = couche(h, pos_emb, fam)
+        # Masque causal explicite (revalidation) : aucun token ne voit le futur.
+        masque = torch.full((seq, seq), float("-inf"), dtype=h.dtype, device=h.device)
+        masque = torch.triu(masque, diagonal=1).view(1, 1, seq, seq)
+        for couche in self.couches: h = couche(h, pos_emb, fam, masque)
         return self.tete(self.norme(h))[0]                   # (seq, vocab)
 
 # ---------------------------------------------------------------- entraînement

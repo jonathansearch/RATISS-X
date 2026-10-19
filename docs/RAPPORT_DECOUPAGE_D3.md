@@ -1,4 +1,9 @@
 # 🔪🏆 MICRO-RAPPORT D3 — LA TRANCHE PHYSIQUE ÉGALE (ET DÉPASSE D'UN SOUFFLE) LE DENSE
+
+> 🩺 **RECTIFICATIF (revalidation au masque causal)** : les pertes absolues de segment de ce
+> rapport ont été mesurées avec un harnais sans masque causal (fuite du futur, découverte en E1).
+> Le tableau corrigé qui les supersède est dans `docs/RAPPORT_REVALIDATION_D3.md`
+> (tranche 2,466 contre dense 2,699 : la conclusion tient). Historique conservé tel quel.
 **Marche :** D3 uniquement (`PROPOSITION_DECOUPAGE_PHYSIQUE.md`, Go du chef). **D4 = décision du chef, pas exécutée.**
 **Même protocole que le Bistouri Étape 2 (360M)** : segment des 2 dernières couches, 60 Q/R anglaises
 (48 entraînement / 12 évaluation), Adam 5e-4, 3 époques, 144 pas, batch 1 groupé par famille, CPU. 💻

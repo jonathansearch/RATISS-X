@@ -108,9 +108,13 @@ class SegmentP(nn.Module):
 
     def forward(self, h, fam):
         h = h.unsqueeze(0)
-        pos = torch.arange(h.shape[1], device=h.device).unsqueeze(0)
+        seq = h.shape[1]
+        pos = torch.arange(seq, device=h.device).unsqueeze(0)
         pos_emb = self.rotary(h, pos)
-        for couche in self.couches: h = couche(h, pos_emb, fam)
+        # Masque causal explicite (revalidation D3) : aucun token ne voit le futur.
+        masque = torch.full((seq, seq), float("-inf"), dtype=h.dtype, device=h.device)
+        masque = torch.triu(masque, diagonal=1).view(1, 1, seq, seq)
+        for couche in self.couches: h = couche(h, pos_emb, fam, masque)
         return self.tete(self.norme(h))[0]
 
 

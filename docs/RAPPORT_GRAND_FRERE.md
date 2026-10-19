@@ -1,4 +1,9 @@
 # 🐘 RAPPORT GRAND FRÈRE — TOUS LES TESTS REFAITS SUR SmolLM2-360M
+
+> 🩺 **RECTIFICATIF (revalidation au masque causal)** : les pertes absolues de segment de ce
+> rapport ont été mesurées avec un harnais sans masque causal (fuite du futur, découverte en E1).
+> Le tableau corrigé qui les supersède est dans `docs/RAPPORT_REVALIDATION_D3.md`
+> (tranche 2,466 contre dense 2,699 : la conclusion tient). Historique conservé tel quel.
 **Date :** 2 novembre 2026 · **Ordre du chef :** « on appelle le grand frère » · **Repo local, NON poussé** 🚫
 **Protocole :** `PROTOCOLE_GRAND_FRERE.md` — mêmes stimuli, mêmes critères, mêmes hyperparamètres.
 **Étiquette d'honnêteté :** le 360M tourne en BF16 sur CPU (RAM oblige), le 135M tournait en FP32. 🏷️

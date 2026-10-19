@@ -1,8 +1,8 @@
 {
  "scenario": "base",
- "perte_eval_avant": 6.118998646736145,
- "perte_eval_apres": 6.118998646736145,
+ "perte_eval_avant": 6.156589825948079,
+ "perte_eval_apres": 6.156589825948079,
  "params_mis_a_jour_par_pas": 0,
  "secondes_par_pas": 0.0,
- "ram_pic_mo": 844.859375
+ "ram_pic_mo": 842.51953125
 }

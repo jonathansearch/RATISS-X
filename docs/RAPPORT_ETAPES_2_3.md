@@ -1,4 +1,9 @@
 # 💉🍏 RAPPORT ÉTAPES 2 & 3 — LE BISTOURI COUPE, LE TRADUCTEUR SOUFFLE… MAIS LE COBAYE TOUSSE
+
+> 🩺 **RECTIFICATIF (revalidation au masque causal)** : les pertes absolues de segment de ce
+> rapport ont été mesurées avec un harnais sans masque causal (fuite du futur, découverte en E1).
+> Le tableau corrigé qui les supersède est dans `docs/RAPPORT_REVALIDATION_D3.md`
+> (tranche 2,466 contre dense 2,699 : la conclusion tient). Historique conservé tel quel.
 **Date :** 2 novembre 2026 · **Repo local RATISS-X (NON poussé, ordre du chef 🚫)** · **100 % CPU, zéro GPU**
 **Cobaye :** SmolLM2-135M — petit, peu de contexte, faible en français : condition assumée et mesurée.
 **Protocole :** `PROTOCOLE_ETAPES_2_3.md`, critères figés avant exécution ⚖️
