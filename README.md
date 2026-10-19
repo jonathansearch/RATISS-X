@@ -39,6 +39,14 @@ python3 -m pytest tests/ -q    # 3 tests
 *Le banc d'essai n°1 (la carte des chemins) vit dans `banc_essai_mixer/` du poste du chef ;
 ses chemins bruts ne sont pas versionnés ici — seuls les masques dérivés le sont.*
 
+## 📸 Résultats en images (acquis et validé uniquement)
+![Chemins et GPS](docs/images/fig1_chemins_gps.png)
+![Bistouri](docs/images/fig2_bistouri.png)
+![Traducteur](docs/images/fig3_traducteur.png)
+![Efficacité CPU](docs/images/fig4_efficacite_cpu.png)
+
+📜 **Reproductibilité pas-à-pas :** `docs/JOURNAL_REPRODUCTIBILITE.md` — chaque étape, chaque commande, chaque graine.
+
 ## 🗺️ Feuille de route (Phase 2 du doc RATISS X)
 - ✅ **Étape 1 — Le GPS** : prédire l'accord en ~0,06 ms (voir rapport)
 - ⚠️ Étapes 2 & 3 sur 135M : réussites partielles — `docs/RAPPORT_ETAPES_2_3.md`
