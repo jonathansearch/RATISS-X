@@ -1,0 +1,26 @@
+{
+ "marche": "M2",
+ "mode_memoire_legere_bf16": false,
+ "couches_operees": [
+  24,
+  31
+ ],
+ "perte_modele_plein_dev": 6.1702,
+ "perte_eval_avant": 6.1494,
+ "perte_eval_apres": 2.1216,
+ "amelioration_relative": 0.655,
+ "params_entrainables_total": 16810560,
+ "optimiseur_params_audites": 16810560,
+ "optimiseur_etats_mo": 134.5,
+ "ram_boucle_max_mo": 1159.9,
+ "params_mis_a_jour_par_pas": 2874240,
+ "secondes_par_pas": 0.1041,
+ "pas_total": 144,
+ "ram_pic_mo": 1249.7,
+ "reference_D3_2_couches": {
+  "perte_apres": 2.389,
+  "amelioration_relative": 0.6096,
+  "maj_par_pas": 725760,
+  "s_par_pas": 0.0497
+ }
+}

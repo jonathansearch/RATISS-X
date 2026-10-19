@@ -96,8 +96,7 @@ class SegmentN(nn.Module):
             c = LlamaDecoderLayer(config=conf, layer_idx=28)
             c.load_state_dict(etat_couche)
             physique = MLPPhysique(c.mlp, masques_par_couche[li], leger=leger)
-            if leger:
-                c.mlp = nn.Identity()   # M1 : on libère l'ancienne résidence MLP
+            c.mlp = nn.Identity()   # M2 : ancienne résidence MLP libérée dans TOUS les modes
             self.couches.append(CoucheP(c, physique))
         self.norme = LlamaRMSNorm(cfg["hidden_size"], eps=cfg["rms_norm_eps"])
         self.norme.load_state_dict(etat["norme"])
@@ -160,6 +159,14 @@ def entrainer(n_couches, marche, leger=False, dtype_socle=torch.bfloat16):
 
     params = [p for c in segment.couches for p in c.mlp_p.parameters() if p.requires_grad]
     opt = torch.optim.Adam(params, lr=LR)
+    n_opt = int(sum(p.numel() for p in params))
+    print(f"🔐 audit optimiseur M2 : Adam reçoit {n_opt:,} paramètres "
+          f"(tranches seules, socle gelé jamais transmis)")
+    gc.collect()   # M2 : nettoyage agressif juste avant la boucle
+    def rss_courant():
+        for ligne in open("/proc/self/status"):
+            if ligne.startswith("VmRSS"): return int(ligne.split()[1]) / 1024
+    rss_boucle_max = 0.0
     par_famille = {f: [e for e in train if e["famille"] == f] for f in FAMILLES}
     maj_mesuree, t0, pas = None, time.time(), 0
     for ep in range(EPOQUES):
@@ -172,7 +179,10 @@ def entrainer(n_couches, marche, leger=False, dtype_socle=torch.bfloat16):
                 if maj_mesuree is None:
                     maj_mesuree = int(sum(int((p.grad != 0).sum()) for p in params if p.grad is not None))
                 opt.step(); pas += 1
+        rss_boucle_max = max(rss_boucle_max, rss_courant())   # RAM pendant la boucle
     duree = time.time() - t0
+    etats_opt_mo = sum(v.numel() * v.element_size() for s in opt.state.values()
+                       for v in s.values() if torch.is_tensor(v)) / 1e6
     perte_apres = evaluer(segment, dev)
     bilan = {"marche": marche, "mode_memoire_legere_bf16": leger,
              "couches_operees": [debut, total - 1],
@@ -180,6 +190,9 @@ def entrainer(n_couches, marche, leger=False, dtype_socle=torch.bfloat16):
              "perte_eval_avant": round(perte_avant, 4), "perte_eval_apres": round(perte_apres, 4),
              "amelioration_relative": round((perte_avant - perte_apres) / perte_avant, 4),
              "params_entrainables_total": int(sum(p.numel() for p in params)),
+             "optimiseur_params_audites": n_opt,
+             "optimiseur_etats_mo": round(etats_opt_mo, 1),
+             "ram_boucle_max_mo": round(rss_boucle_max, 1),
              "params_mis_a_jour_par_pas": maj_mesuree,
              "secondes_par_pas": round(duree / pas, 4), "pas_total": pas,
              "ram_pic_mo": round(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024, 1),
