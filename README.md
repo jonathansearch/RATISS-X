@@ -12,7 +12,8 @@ routage topologique, activations ciblées** — un modèle qui emprunte des *che
 (« accords » d'activation) au lieu de tout allumer.
 
 ## 🐜 Le cobaye (règle du chef)
-**SmolLM2-135M** sert de modèle de test **jusqu'à validation complète** de la Phase 2.
+**SmolLM2-360M** (le « grand frère », ×2,7) est le cobaye de référence depuis le 2 nov. 2026 —
+le 135M, premier cobaye historique, reste dans l'historique git et les rapports.
 Ici : aucun poids de modèle n'est versionné, le repo reste léger.
 Une fois tout validé naîtra **RATISS VEGA**, premier LLM augmenté du labo. 🌟
 
@@ -40,7 +41,8 @@ ses chemins bruts ne sont pas versionnés ici — seuls les masques dérivés le
 
 ## 🗺️ Feuille de route (Phase 2 du doc RATISS X)
 - ✅ **Étape 1 — Le GPS** : prédire l'accord en ~0,06 ms (voir rapport)
-- ⏭️ Étape 2 — Le Bistouri : backprop par raccourci, gradients masqués par $M_k$
-- ⏭️ Étape 3 — Le Traducteur : tissu `.ratiss` en amont contre le bug des paraphrases 🍎
+- ⚠️ Étapes 2 & 3 sur 135M : réussites partielles — `docs/RAPPORT_ETAPES_2_3.md`
+- 🐘 **Tous les tests refaits sur le grand frère 360M** : presque tout progresse — `docs/RAPPORT_GRAND_FRERE.md`
+- 🔪 Prochain chantier (décision du chef) : découpage physique des sous-matrices $M_k$
 
 *Ici c'est la joie et l'enthousiasme 😜🥳 — et la méthode : on mesure, on nomme, on publie.*

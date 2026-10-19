@@ -20,9 +20,9 @@ QUESTIONS = [
 
 def main():
     from transformers import AutoTokenizer
-    gps = GPS.charger(RACINE / "artifacts" / "gps_modele.npz")
-    tok = AutoTokenizer.from_pretrained("HuggingFaceTB/SmolLM2-135M-Instruct")
-    table = charger_table_embedding()
+    gps = GPS.charger(RACINE / "artifacts" / "gps_modele_360M.npz")
+    tok = AutoTokenizer.from_pretrained("HuggingFaceTB/SmolLM2-360M-Instruct")
+    table = charger_table_embedding("HuggingFaceTB/SmolLM2-360M-Instruct")
     print("🗺️ GPS en ligne — aucune couche transformeur ne tournera. Démonstration :\n")
     latences = []
     for passage, q in enumerate(QUESTIONS * 30):   # 30 passages pour une latence stable

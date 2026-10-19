@@ -1,0 +1,171 @@
+{
+ "alpha_fige": 0.8,
+ "n_test": 18,
+ "gps_seul": 0.2222222222222222,
+ "gps_plus_traducteur": 0.3888888888888889,
+ "verdict_E3": "CONFIRMEE",
+ "details": [
+  {
+   "question": "La France, c'est quel pays déjà, et sa capitale s'appelle comment ?",
+   "attendue": "GEOGRAPHIE",
+   "gps_seul": "SCIENCE",
+   "intention_activee": "formule_eau",
+   "gps_traduit": "CUISINE",
+   "ok_seul": false,
+   "ok_traduit": false
+  },
+  {
+   "question": "Où se trouve le siège du gouvernement français ?",
+   "attendue": "GEOGRAPHIE",
+   "gps_seul": "LANGAGE",
+   "intention_activee": "animal_miaule",
+   "gps_traduit": "ANIMAUX",
+   "ok_seul": false,
+   "ok_traduit": false
+  },
+  {
+   "question": "Nom de la ville capitale chez les Français, s'il te plaît.",
+   "attendue": "GEOGRAPHIE",
+   "gps_seul": "SCIENCE",
+   "intention_activee": "capitale_france",
+   "gps_traduit": "GEOGRAPHIE",
+   "ok_seul": false,
+   "ok_traduit": true
+  },
+  {
+   "question": "Deux et encore deux, ça donne quel total ?",
+   "attendue": "CALCUL",
+   "gps_seul": "SCIENCE",
+   "intention_activee": "deux_plus_deux",
+   "gps_traduit": "CUISINE",
+   "ok_seul": false,
+   "ok_traduit": false
+  },
+  {
+   "question": "J'additionne deux avec deux, j'obtiens combien ?",
+   "attendue": "CALCUL",
+   "gps_seul": "SCIENCE",
+   "intention_activee": "deux_plus_deux",
+   "gps_traduit": "CUISINE",
+   "ok_seul": false,
+   "ok_traduit": false
+  },
+  {
+   "question": "Un couple de chats plus un autre couple de chats, total des chats ?",
+   "attendue": "CALCUL",
+   "gps_seul": "ANIMAUX",
+   "intention_activee": "capitale_france",
+   "gps_traduit": "ANIMAUX",
+   "ok_seul": false,
+   "ok_traduit": false
+  },
+  {
+   "question": "En chimie, l'eau s'écrit avec quels symboles ?",
+   "attendue": "SCIENCE",
+   "gps_seul": "SCIENCE",
+   "intention_activee": "formule_eau",
+   "gps_traduit": "CUISINE",
+   "ok_seul": true,
+   "ok_traduit": false
+  },
+  {
+   "question": "Hydrogène et oxygène combinés, ça s'écrit comment ?",
+   "attendue": "SCIENCE",
+   "gps_seul": "CUISINE",
+   "intention_activee": "animal_miaule",
+   "gps_traduit": "ANIMAUX",
+   "ok_seul": false,
+   "ok_traduit": false
+  },
+  {
+   "question": "Quelle est l'écriture scientifique d'une molécule d'eau ?",
+   "attendue": "SCIENCE",
+   "gps_seul": "SCIENCE",
+   "intention_activee": "formule_eau",
+   "gps_traduit": "ANIMAUX",
+   "ok_seul": true,
+   "ok_traduit": false
+  },
+  {
+   "question": "Chez les Anglais, on se salue en disant quel mot ?",
+   "attendue": "LANGAGE",
+   "gps_seul": "SCIENCE",
+   "intention_activee": "bonjour_anglais",
+   "gps_traduit": "LANGAGE",
+   "ok_seul": false,
+   "ok_traduit": true
+  },
+  {
+   "question": "Équivalent anglais de notre bonjour, tu connais ?",
+   "attendue": "LANGAGE",
+   "gps_seul": "LANGAGE",
+   "intention_activee": "bonjour_anglais",
+   "gps_traduit": "LANGAGE",
+   "ok_seul": true,
+   "ok_traduit": true
+  },
+  {
+   "question": "Pour saluer à Londres le matin, on dit quoi ?",
+   "attendue": "LANGAGE",
+   "gps_seul": "SCIENCE",
+   "intention_activee": "bonjour_anglais",
+   "gps_traduit": "LANGAGE",
+   "ok_seul": false,
+   "ok_traduit": true
+  },
+  {
+   "question": "Quel animal domestique fait miaou et court après les souris ?",
+   "attendue": "ANIMAUX",
+   "gps_seul": "ANIMAUX",
+   "intention_activee": "animal_miaule",
+   "gps_traduit": "ANIMAUX",
+   "ok_seul": true,
+   "ok_traduit": true
+  },
+  {
+   "question": "Il ronronne, il miaule, il adore chasser : c'est quoi ?",
+   "attendue": "ANIMAUX",
+   "gps_seul": "SCIENCE",
+   "intention_activee": "formule_eau",
+   "gps_traduit": "CUISINE",
+   "ok_seul": false,
+   "ok_traduit": false
+  },
+  {
+   "question": "Le chasseur de souris qui vit dans nos maisons, quel est-il ?",
+   "attendue": "ANIMAUX",
+   "gps_seul": "SCIENCE",
+   "intention_activee": "animal_miaule",
+   "gps_traduit": "ANIMAUX",
+   "ok_seul": false,
+   "ok_traduit": true
+  },
+  {
+   "question": "Pour une omelette, qu'est-ce qu'il me faut comme ingrédients ?",
+   "attendue": "CUISINE",
+   "gps_seul": "SCIENCE",
+   "intention_activee": "ingredients_omelette",
+   "gps_traduit": "CUISINE",
+   "ok_seul": false,
+   "ok_traduit": true
+  },
+  {
+   "question": "Je veux battre des œufs en omelette, je prépare quoi ?",
+   "attendue": "CUISINE",
+   "gps_seul": "ANIMAUX",
+   "intention_activee": "ingredients_omelette",
+   "gps_traduit": "ANIMAUX",
+   "ok_seul": false,
+   "ok_traduit": false
+  },
+  {
+   "question": "Recette de base de l'omelette : on utilise quoi ?",
+   "attendue": "CUISINE",
+   "gps_seul": "SCIENCE",
+   "intention_activee": "ingredients_omelette",
+   "gps_traduit": "ANIMAUX",
+   "ok_seul": false,
+   "ok_traduit": false
+  }
+ ]
+}

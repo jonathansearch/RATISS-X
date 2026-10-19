@@ -1,0 +1,11 @@
+{
+ "scenario": "sparse",
+ "perte_eval_avant": 6.119,
+ "perte_eval_apres": 5.4587,
+ "amelioration_relative": 0.1079,
+ "params_entrainables_total": 4204800,
+ "params_mis_a_jour_par_pas": 241920,
+ "secondes_par_pas": 0.0461,
+ "pas_total": 144,
+ "ram_pic_mo": 907.7
+}

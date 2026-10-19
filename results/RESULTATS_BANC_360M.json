@@ -1,0 +1,183 @@
+{
+ "modele": "HuggingFaceTB/SmolLM2-360M-Instruct",
+ "etiquette": "360M",
+ "precision": "BF16 (CPU, RAM oblige)",
+ "n_questions": 78,
+ "duree_lecture_s": 33.4,
+ "H1": {
+  "intra": 0.5495035707218667,
+  "inter": 0.49110986047596344,
+  "ecart": 0.058393710245903285,
+  "p_permutation": 0.0004997501249375312,
+  "verdict": "CONFIRMEE"
+ },
+ "lexical_mots": {
+  "intra": 0.12201431661828976,
+  "inter": 0.04110425898777292,
+  "ecart": 0.08091005763051684
+ },
+ "H2_paraphrases": {
+  "similarite": 0.5025498660690825,
+  "intra_famille": 0.5495035707218667,
+  "verdict": "REFUTEE"
+ },
+ "exactitude_1NN": 0.6833333333333333,
+ "par_couche": [
+  {
+   "couche": 0,
+   "ecart": 0.0599
+  },
+  {
+   "couche": 1,
+   "ecart": 0.0543
+  },
+  {
+   "couche": 2,
+   "ecart": 0.054
+  },
+  {
+   "couche": 3,
+   "ecart": 0.0488
+  },
+  {
+   "couche": 4,
+   "ecart": 0.0531
+  },
+  {
+   "couche": 5,
+   "ecart": 0.0511
+  },
+  {
+   "couche": 6,
+   "ecart": 0.047
+  },
+  {
+   "couche": 7,
+   "ecart": 0.0625
+  },
+  {
+   "couche": 8,
+   "ecart": 0.0583
+  },
+  {
+   "couche": 9,
+   "ecart": 0.0464
+  },
+  {
+   "couche": 10,
+   "ecart": 0.0617
+  },
+  {
+   "couche": 11,
+   "ecart": 0.0541
+  },
+  {
+   "couche": 12,
+   "ecart": 0.0508
+  },
+  {
+   "couche": 13,
+   "ecart": 0.0632
+  },
+  {
+   "couche": 14,
+   "ecart": 0.0608
+  },
+  {
+   "couche": 15,
+   "ecart": 0.0563
+  },
+  {
+   "couche": 16,
+   "ecart": 0.0525
+  },
+  {
+   "couche": 17,
+   "ecart": 0.0522
+  },
+  {
+   "couche": 18,
+   "ecart": 0.0537
+  },
+  {
+   "couche": 19,
+   "ecart": 0.0646
+  },
+  {
+   "couche": 20,
+   "ecart": 0.0482
+  },
+  {
+   "couche": 21,
+   "ecart": 0.06
+  },
+  {
+   "couche": 22,
+   "ecart": 0.0562
+  },
+  {
+   "couche": 23,
+   "ecart": 0.0648
+  },
+  {
+   "couche": 24,
+   "ecart": 0.0566
+  },
+  {
+   "couche": 25,
+   "ecart": 0.0805
+  },
+  {
+   "couche": 26,
+   "ecart": 0.0747
+  },
+  {
+   "couche": 27,
+   "ecart": 0.0738
+  },
+  {
+   "couche": 28,
+   "ecart": 0.0651
+  },
+  {
+   "couche": 29,
+   "ecart": 0.0738
+  },
+  {
+   "couche": 30,
+   "ecart": 0.07
+  },
+  {
+   "couche": 31,
+   "ecart": 0.0395
+  }
+ ],
+ "hubs_total": 2139,
+ "hubs_positions_total": 4096,
+ "generation_controle": [
+  {
+   "question": "What is the capital of France?",
+   "reponse": "The capital of France is Paris."
+  },
+  {
+   "question": "How much is 7 times 6?",
+   "reponse": "7 times 6 equals 42."
+  },
+  {
+   "question": "What is the chemical formula of water?",
+   "reponse": "The chemical formula of water is H2O."
+  },
+  {
+   "question": "Quelle est la capitale de la France ?",
+   "reponse": "La capitale de la France est Paris."
+  },
+  {
+   "question": "Combien font 7 fois 6 ?",
+   "reponse": "7 fois 6 est également 7 fois 6."
+  },
+  {
+   "question": "Quel animal miaule et chasse les souris ?",
+   "reponse": "Il y a un animal miaule qui chasse les souris."
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+[
+  {"intention": "capitale_france", "famille": "GEOGRAPHIE", "question": "La France, c'est quel pays déjà, et sa capitale s'appelle comment ?"},
+  {"intention": "capitale_france", "famille": "GEOGRAPHIE", "question": "Où se trouve le siège du gouvernement français ?"},
+  {"intention": "capitale_france", "famille": "GEOGRAPHIE", "question": "Nom de la ville capitale chez les Français, s'il te plaît."},
+  {"intention": "deux_plus_deux", "famille": "CALCUL", "question": "Deux et encore deux, ça donne quel total ?"},
+  {"intention": "deux_plus_deux", "famille": "CALCUL", "question": "J'additionne deux avec deux, j'obtiens combien ?"},
+  {"intention": "deux_plus_deux", "famille": "CALCUL", "question": "Un couple de chats plus un autre couple de chats, total des chats ?"},
+  {"intention": "formule_eau", "famille": "SCIENCE", "question": "En chimie, l'eau s'écrit avec quels symboles ?"},
+  {"intention": "formule_eau", "famille": "SCIENCE", "question": "Hydrogène et oxygène combinés, ça s'écrit comment ?"},
+  {"intention": "formule_eau", "famille": "SCIENCE", "question": "Quelle est l'écriture scientifique d'une molécule d'eau ?"},
+  {"intention": "bonjour_anglais", "famille": "LANGAGE", "question": "Chez les Anglais, on se salue en disant quel mot ?"},
+  {"intention": "bonjour_anglais", "famille": "LANGAGE", "question": "Équivalent anglais de notre bonjour, tu connais ?"},
+  {"intention": "bonjour_anglais", "famille": "LANGAGE", "question": "Pour saluer à Londres le matin, on dit quoi ?"},
+  {"intention": "animal_miaule", "famille": "ANIMAUX", "question": "Quel animal domestique fait miaou et court après les souris ?"},
+  {"intention": "animal_miaule", "famille": "ANIMAUX", "question": "Il ronronne, il miaule, il adore chasser : c'est quoi ?"},
+  {"intention": "animal_miaule", "famille": "ANIMAUX", "question": "Le chasseur de souris qui vit dans nos maisons, quel est-il ?"},
+  {"intention": "ingredients_omelette", "famille": "CUISINE", "question": "Pour une omelette, qu'est-ce qu'il me faut comme ingrédients ?"},
+  {"intention": "ingredients_omelette", "famille": "CUISINE", "question": "Je veux battre des œufs en omelette, je prépare quoi ?"},
+  {"intention": "ingredients_omelette", "famille": "CUISINE", "question": "Recette de base de l'omelette : on utilise quoi ?"}
+]

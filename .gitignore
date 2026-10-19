@@ -6,5 +6,7 @@ __pycache__/
 .pytest_cache/
 .cache/
 *.key
+*.pt
 *token*
 MES-CLES*
+artifacts/local/

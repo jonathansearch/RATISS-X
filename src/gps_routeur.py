@@ -39,11 +39,11 @@ def similarite_masque_chemin(masques, chemin):
     return float(np.mean([jaccard(m, set(c)) for m, c in zip(masques, chemin)]))
 
 # ---------------------------------------------------------------- embeddings
-def charger_table_embedding():
+def charger_table_embedding(modele="HuggingFaceTB/SmolLM2-360M-Instruct"):
     """Charge UNIQUEMENT la table d'embedding du cobaye (aucune couche transformeur)."""
     from huggingface_hub import snapshot_download
     from safetensors import safe_open
-    racine = Path(snapshot_download("HuggingFaceTB/SmolLM2-135M-Instruct"))
+    racine = Path(snapshot_download(modele))
     with safe_open(str(racine / "model.safetensors"), framework="pt") as f:
         table = f.get_tensor("model.embed_tokens.weight").float().numpy()
     return table
@@ -87,24 +87,26 @@ class GPS:
 # ---------------------------------------------------------------- expérience
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--chemins", default="/home/user/banc_essai_mixer/chemins.json",
-                    help="chemins du banc d'essai n°1 (source externe, non versionnée)")
-    ap.add_argument("--resultats", default="/home/user/banc_essai_mixer/resultats.json")
+    ap.add_argument("--modele", default="HuggingFaceTB/SmolLM2-360M-Instruct")
+    ap.add_argument("--etiquette", default="360M")
+    ap.add_argument("--chemins", default=str(RACINE / "artifacts" / "local" / "chemins_360M.json"),
+                    help="chemins bruts du banc (locaux, non versionnés)")
     args = ap.parse_args()
+    ETIQUETTE = args.etiquette
 
     from transformers import AutoTokenizer
     from sklearn.linear_model import LogisticRegression
     from sklearn.neural_network import MLPClassifier
     from sklearn.model_selection import StratifiedKFold
 
-    stimuli = json.loads(Path(args.resultats).read_text())["stimuli"]
+    stimuli = json.loads((RACINE / "data" / "questionnaire.json").read_text())
     chemins = [[set(c) for c in ch] for ch in json.loads(Path(args.chemins).read_text())]
     idx_fam = [i for i, s in enumerate(stimuli) if s["famille"] != "PARAPHRASE"]
     idx_para = [i for i, s in enumerate(stimuli) if s["famille"] == "PARAPHRASE"]
 
     print("🛰️  Table d'embedding du cobaye (consultation seule, 0 couche calculée)...")
-    tok = AutoTokenizer.from_pretrained("HuggingFaceTB/SmolLM2-135M-Instruct")
-    table = charger_table_embedding()
+    tok = AutoTokenizer.from_pretrained(args.modele)
+    table = charger_table_embedding(args.modele)
     X = np.stack([embedding_question(s["question"], tok, table) for s in stimuli])
     y_fam = np.array([stimuli[i]["famille"] for i in idx_fam])
     X_fam, X_para = X[idx_fam], X[idx_para]
@@ -176,18 +178,15 @@ def main():
     lat["total_ms"] = lat["embedding_ms"] + lat["routage_ms"]
     print(f"⚡ C2 latence moyenne : embedding={lat['embedding_ms']:.3f} ms | routage seul={lat['routage_ms']:.3f} ms | total={lat['total_ms']:.3f} ms")
 
-    gps.sauvegarder(RACINE / "artifacts" / "gps_modele.npz")
-    (RACINE / "data" / "questionnaire.json").write_text(json.dumps(
-        [{"famille": s["famille"], "groupe": s["groupe"], "question": s["question"]} for s in stimuli],
-        ensure_ascii=False, indent=1))
-    bilan = {"cobaye": "SmolLM2-135M-Instruct (tests uniquement, jusqu'à validation)",
+    gps.sauvegarder(RACINE / "artifacts" / f"gps_modele_{ETIQUETTE}.npz")
+    bilan = {"cobaye": args.modele,
              "C1_exactitude": {"centroides_LOO": acc_centroide, "logistique_LOO": acc_logit,
                                "MLP_2couches_5fold": acc_mlp, "hasard": 1/6},
              "C2_latence_ms": lat, "C3_masque": c3, "C4_paraphrases": acc_para,
              "tailles_masques_par_couche": tailles, "paraphrases_detail": details,
              "gps_retenu": "centroïdes (le plus petit, le plus rapide, entraîné sur 60 questions)"}
-    (RACINE / "results" / "RESULTATS_GPS.json").write_text(json.dumps(bilan, ensure_ascii=False, indent=1))
-    print("💾 artifacts/gps_modele.npz + results/RESULTATS_GPS.json sauvegardés. GPS en ligne ! 🗺️")
+    (RACINE / "results" / f"RESULTATS_GPS_{ETIQUETTE}.json").write_text(json.dumps(bilan, ensure_ascii=False, indent=1))
+    print(f"💾 artifacts/gps_modele_{ETIQUETTE}.npz + results/RESULTATS_GPS_{ETIQUETTE}.json sauvegardés. GPS en ligne ! 🗺️")
 
 if __name__ == "__main__":
     main()
