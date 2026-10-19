@@ -71,6 +71,33 @@ def preparer(n_couches):
     (LOCAL / f"segment_extension_{N_COUCHES_SEGMENT}.meta").write_text(str(debut))
 
 
+class AdamEtatsLegers(torch.optim.Optimizer):
+    """Adam standard (memes betas/eps/lr) dont les etats sont stockes en BF16 (M3)."""
+    def __init__(self, params, lr=5e-4, betas=(0.9, 0.999), eps=1e-8):
+        super().__init__(params, dict(lr=lr, betas=betas, eps=eps))
+
+    @torch.no_grad()
+    def step(self, closure=None):
+        for group in self.param_groups:
+            b1, b2 = group["betas"]
+            for p in group["params"]:
+                if p.grad is None: continue
+                g = p.grad
+                state = self.state[p]
+                if len(state) == 0:
+                    state["step"] = 0
+                    state["exp_avg"] = torch.zeros_like(p, dtype=torch.bfloat16)
+                    state["exp_avg_sq"] = torch.zeros_like(p, dtype=torch.bfloat16)
+                state["step"] += 1
+                ea = state["exp_avg"].float().mul_(b1).add_(g, alpha=1 - b1)
+                es = state["exp_avg_sq"].float().mul_(b2).addcmul_(g, g, value=1 - b2)
+                state["exp_avg"].copy_(ea); state["exp_avg_sq"].copy_(es)
+                pas = state["step"]
+                ea_corr = ea / (1 - b1 ** pas)
+                denom = (es / (1 - b2 ** pas)).sqrt_().add_(group["eps"])
+                p.addcdiv_(ea_corr, denom, value=-group["lr"])
+        return None
+
 class SegmentN(nn.Module):
     def __init__(self, etat, masques_par_couche, leger=False, dtype_socle=torch.bfloat16):
         super().__init__()
@@ -139,9 +166,9 @@ def evaluer(segment, exemples):
     return float(np.mean([perte(segment, ex).item() for ex in exemples]))
 
 
-def entrainer(n_couches, marche, leger=False, dtype_socle=torch.bfloat16):
+def entrainer(n_couches, marche, leger=False, dtype_socle=torch.bfloat16, optimiseur='adam'):
     torch.manual_seed(20261102); random.seed(20261102)
-    data = torch.load(LOCAL / f"segment_extension_{n_couches}.pt", weights_only=False)
+    data = torch.load(LOCAL / f"segment_extension_{n_couches}.pt", weights_only=False, mmap=True)  # M3
     exemples, etat = data["exemples"], data["etat"]
     train = [e for e in exemples if not e["eval"]]; dev = [e for e in exemples if e["eval"]]
     debut, total = etat["couche_debut"], etat["config"]["num_hidden_layers"]
@@ -158,7 +185,8 @@ def entrainer(n_couches, marche, leger=False, dtype_socle=torch.bfloat16):
           f"{perte_pleine:.4f} → écart {abs(perte_avant - perte_pleine):.4f}")
 
     params = [p for c in segment.couches for p in c.mlp_p.parameters() if p.requires_grad]
-    opt = torch.optim.Adam(params, lr=LR)
+    opt = (AdamEtatsLegers(params, lr=LR) if optimiseur == "adam_bf16"
+           else torch.optim.Adam(params, lr=LR))
     n_opt = int(sum(p.numel() for p in params))
     print(f"🔐 audit optimiseur M2 : Adam reçoit {n_opt:,} paramètres "
           f"(tranches seules, socle gelé jamais transmis)")
@@ -184,7 +212,7 @@ def entrainer(n_couches, marche, leger=False, dtype_socle=torch.bfloat16):
     etats_opt_mo = sum(v.numel() * v.element_size() for s in opt.state.values()
                        for v in s.values() if torch.is_tensor(v)) / 1e6
     perte_apres = evaluer(segment, dev)
-    bilan = {"marche": marche, "mode_memoire_legere_bf16": leger,
+    bilan = {"marche": marche, "mode_memoire_legere_bf16": leger, "optimiseur": optimiseur,
              "couches_operees": [debut, total - 1],
              "perte_modele_plein_dev": round(perte_pleine, 4),
              "perte_eval_avant": round(perte_avant, 4), "perte_eval_apres": round(perte_apres, 4),
@@ -213,7 +241,9 @@ if __name__ == "__main__":
     ap.add_argument("--marche", default="E1")
     ap.add_argument("--memoire_leger", action="store_true", help="M1 : socle BF16, tranches FP32")
     ap.add_argument("--dtype_socle", choices=["bf16", "fp16"], default="bf16")
+    ap.add_argument("--optimiseur", choices=["adam", "adam_bf16"], default="adam")
     a = ap.parse_args()
     if a.preparer: preparer(a.couches)
     elif a.entrainer: entrainer(a.couches, a.marche, leger=a.memoire_leger,
-                                dtype_socle=torch.bfloat16 if a.dtype_socle == 'bf16' else torch.float16)
+                                dtype_socle=torch.bfloat16 if a.dtype_socle == 'bf16' else torch.float16,
+                                optimiseur=a.optimiseur)
