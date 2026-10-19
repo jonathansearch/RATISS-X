@@ -67,9 +67,19 @@ entonnoir final, attracteur CUISINE) : `docs/RAPPORT_GRAND_FRERE.md`.
 ![Figure 3](images/fig3_traducteur.png)
 ![Figure 4](images/fig4_efficacite_cpu.png)
 
+## 🔪 Suite exécutée sur Go du chef : le découpage physique (D1 → D3, puis génération)
+Proposition figée `docs/PROPOSITION_DECOUPAGE_PHYSIQUE.md`, puis une marche par Go :
+D1 extracteur exact (écart masque plein **0,000000**, 8 tests) → D2 mock-training bloc isolé
+(**11,3× plus rapide**, gradients **5,00 %**, **−270 Mo**) → D3 intégration segment
+(perte **6,119 → 2,389**, dense 2,493 ; ÷20 mises à jour/pas) → génération libre en
+**tranches seules** sur 5 prompts (preuve de concept, égratignures publiées).
+Rapports : `docs/RAPPORT_DECOUPAGE_D1.md`, `D2`, `D3`, `docs/RAPPORT_GENERATION_TRANCHE.md`.
+Commandes : tests `tests/test_bistouri_physique.py` ; `python3 src/mock_training_decoupe.py --scenario dense|tranche` ;
+`python3 src/bistouri_backprop.py --preparer && python3 src/integration_tranche_segment.py` ;
+`python3 src/generation_tranche.py`.
+
 ## ⚠️ Ce qui n'est PAS encore fait (ne pas citer comme acquis)
-- Le **découpage physique** des sous-matrices ($W_{actif}$ extrait avant le forward) :
-  proposé par le chef, **en attente de son ordre d'exécution**, étape par étape.
+- Étendre les tranches au modèle entier ; nettoyer la double résidence mémoire (au frigo, ordre du chef).
 - L'injection du vrai tissu `.ratiss` externe dans le Traducteur (Phase ultérieure).
 - **RATISS VEGA**, premier modèle augmenté : naîtra après validation, pas avant. 🌟
 

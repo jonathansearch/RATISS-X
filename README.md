@@ -51,6 +51,8 @@ ses chemins bruts ne sont pas versionnés ici — seuls les masques dérivés le
 - ✅ **Étape 1 — Le GPS** : prédire l'accord en ~0,06 ms (voir rapport)
 - ⚠️ Étapes 2 & 3 sur 135M : réussites partielles — `docs/RAPPORT_ETAPES_2_3.md`
 - 🐘 **Tous les tests refaits sur le grand frère 360M** : presque tout progresse — `docs/RAPPORT_GRAND_FRERE.md`
-- 🔪 Prochain chantier (décision du chef) : découpage physique des sous-matrices $M_k$
+- 🔪 Découpage physique D1–D3 : tranche exacte, 11× plus rapide au banc, **apprentissage égal au dense** sur segment — `docs/RAPPORT_DECOUPAGE_D1.md` · `D2` · `D3`
+- 🗣️ Génération libre en tranches seules : preuve de concept obtenue — `docs/RAPPORT_GENERATION_TRANCHE.md`
+- ⏭️ Au frigo (ordre du chef) : étendre les couches, nettoyage mémoire double-résidence
 
 *Ici c'est la joie et l'enthousiasme 😜🥳 — et la méthode : on mesure, on nomme, on publie.*

@@ -1,0 +1,49 @@
+{
+ "modele": "HuggingFaceTB/SmolLM2-360M-Instruct",
+ "precision": "BF16 CPU",
+ "chirurgie": "MLP des 2 dernières couches remplacés par la tranche de l'accord routé par le GPS (propre à chaque couche), aucun fallback dense",
+ "max_nouveaux_tokens": 14,
+ "decodage": "glouton",
+ "resultats": [
+  {
+   "prompt": "La capitale de la France est",
+   "accord_gps": "GEOGRAPHIE",
+   "modele_intact": "le 1792.  Pourquoi a",
+   "tranche_seule": "la premie rue de Paris, qui est la premiere prem",
+   "boucle_detectee": false,
+   "secondes": 1.3
+  },
+  {
+   "prompt": "Le ciel est",
+   "accord_gps": "LANGAGE",
+   "modele_intact": "loin de mon ciel, Et mon ciel est l",
+   "tranche_seule": "l'haut de l'haut de l'haut",
+   "boucle_detectee": false,
+   "secondes": 1.1
+  },
+  {
+   "prompt": "The capital of France is",
+   "accord_gps": "CALCUL",
+   "modele_intact": "Paris.  Paris is the capital of France.  Paris",
+   "tranche_seule": "Paris, which is known for its historical landmarks like the Eiffel Tower",
+   "boucle_detectee": false,
+   "secondes": 1.1
+  },
+  {
+   "prompt": "Two plus two equals",
+   "accord_gps": "ANIMAUX",
+   "modele_intact": "four.  In this example, the first two numbers are",
+   "tranche_seule": "four.  Now, let's look at the number 5",
+   "boucle_detectee": false,
+   "secondes": 1.1
+  },
+  {
+   "prompt": "The animal that meows is",
+   "accord_gps": "CALCUL",
+   "modele_intact": "a cat.  The cat that meows is a cat.",
+   "tranche_seule": "a cat. The animal that meows is a dog.",
+   "boucle_detectee": false,
+   "secondes": 1.2
+  }
+ ]
+}
