@@ -1,0 +1,10 @@
+# 🚫 Repo léger (ordre du chef) : jamais de poids, jamais de cache, jamais de clé
+*.safetensors
+*.gguf
+*.bin
+__pycache__/
+.pytest_cache/
+.cache/
+*.key
+*token*
+MES-CLES*

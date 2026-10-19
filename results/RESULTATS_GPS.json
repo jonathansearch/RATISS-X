@@ -1,0 +1,156 @@
+{
+ "cobaye": "SmolLM2-135M-Instruct (tests uniquement, jusqu'à validation)",
+ "C1_exactitude": {
+  "centroides_LOO": 0.5666666666666667,
+  "logistique_LOO": 0.5166666666666667,
+  "MLP_2couches_5fold": 0.7333333333333333,
+  "hasard": 0.16666666666666666
+ },
+ "C2_latence_ms": {
+  "embedding_ms": 0.05179397777826327,
+  "routage_ms": 0.00816325000446088,
+  "total_ms": 0.05995722778272415
+ },
+ "C3_masque": {
+  "masque_famille": 0.6486362775200474,
+  "autoroute_seule": 0.5055293617511627
+ },
+ "C4_paraphrases": 0.5,
+ "tailles_masques_par_couche": {
+  "GEOGRAPHIE": 72,
+  "CALCUL": 72,
+  "SCIENCE": 67,
+  "LANGAGE": 68,
+  "ANIMAUX": 68,
+  "CUISINE": 67
+ },
+ "paraphrases_detail": [
+  {
+   "question": "Quelle est la capitale de la France ?",
+   "attendue": "GEOGRAPHIE",
+   "predite": "GEOGRAPHIE",
+   "confiance": 0.958,
+   "correct": true
+  },
+  {
+   "question": "Dis-moi le nom de la capitale française.",
+   "attendue": "GEOGRAPHIE",
+   "predite": "GEOGRAPHIE",
+   "confiance": 0.844,
+   "correct": true
+  },
+  {
+   "question": "Paris est célèbre, mais au fait quelle ville dirige la France ?",
+   "attendue": "GEOGRAPHIE",
+   "predite": "CUISINE",
+   "confiance": 0.89,
+   "correct": false
+  },
+  {
+   "question": "Combien font 2 plus 2 ?",
+   "attendue": "CALCUL",
+   "predite": "CALCUL",
+   "confiance": 0.937,
+   "correct": true
+  },
+  {
+   "question": "Quel est le résultat de l'addition de deux et deux ?",
+   "attendue": "CALCUL",
+   "predite": "ANIMAUX",
+   "confiance": 0.837,
+   "correct": false
+  },
+  {
+   "question": "Si j'ai deux pommes et qu'on m'en donne deux autres, combien en ai-je ?",
+   "attendue": "CALCUL",
+   "predite": "SCIENCE",
+   "confiance": 0.852,
+   "correct": false
+  },
+  {
+   "question": "Quelle est la formule chimique de l'eau ?",
+   "attendue": "SCIENCE",
+   "predite": "GEOGRAPHIE",
+   "confiance": 0.907,
+   "correct": false
+  },
+  {
+   "question": "Comment les chimistes écrivent-ils la molécule d'eau ?",
+   "attendue": "SCIENCE",
+   "predite": "CUISINE",
+   "confiance": 0.915,
+   "correct": false
+  },
+  {
+   "question": "H2O, qu'est-ce que cela désigne en chimie ?",
+   "attendue": "SCIENCE",
+   "predite": "SCIENCE",
+   "confiance": 0.868,
+   "correct": true
+  },
+  {
+   "question": "Comment dit-on bonjour en anglais ?",
+   "attendue": "LANGAGE",
+   "predite": "CUISINE",
+   "confiance": 0.834,
+   "correct": false
+  },
+  {
+   "question": "Traduis le mot bonjour dans la langue de Shakespeare.",
+   "attendue": "LANGAGE",
+   "predite": "LANGAGE",
+   "confiance": 0.901,
+   "correct": true
+  },
+  {
+   "question": "Quel mot anglais utilise-t-on pour saluer le matin ?",
+   "attendue": "LANGAGE",
+   "predite": "CUISINE",
+   "confiance": 0.919,
+   "correct": false
+  },
+  {
+   "question": "Quel animal miaule et chasse les souris ?",
+   "attendue": "ANIMAUX",
+   "predite": "ANIMAUX",
+   "confiance": 0.917,
+   "correct": true
+  },
+  {
+   "question": "Quel petit félin domestique fait miaou ?",
+   "attendue": "ANIMAUX",
+   "predite": "ANIMAUX",
+   "confiance": 0.894,
+   "correct": true
+  },
+  {
+   "question": "Qui attrape les souris dans la maison et ronronne ?",
+   "attendue": "ANIMAUX",
+   "predite": "CUISINE",
+   "confiance": 0.903,
+   "correct": false
+  },
+  {
+   "question": "Quels ingrédients faut-il pour faire une omelette ?",
+   "attendue": "CUISINE",
+   "predite": "CUISINE",
+   "confiance": 0.942,
+   "correct": true
+  },
+  {
+   "question": "De quoi a-t-on besoin pour préparer une omelette ?",
+   "attendue": "CUISINE",
+   "predite": "CUISINE",
+   "confiance": 0.928,
+   "correct": true
+  },
+  {
+   "question": "Pour cuisiner une omelette, que dois-je sortir du frigo ?",
+   "attendue": "CUISINE",
+   "predite": "SCIENCE",
+   "confiance": 0.868,
+   "correct": false
+  }
+ ],
+ "gps_retenu": "centroïdes (le plus petit, le plus rapide, entraîné sur 60 questions)"
+}

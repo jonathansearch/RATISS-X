@@ -1,0 +1,392 @@
+[
+ {
+  "famille": "GEOGRAPHIE",
+  "groupe": null,
+  "question": "Quelle est la capitale de la France ?"
+ },
+ {
+  "famille": "GEOGRAPHIE",
+  "groupe": null,
+  "question": "Quelle est la capitale du Cameroun ?"
+ },
+ {
+  "famille": "GEOGRAPHIE",
+  "groupe": null,
+  "question": "Dans quel pays se trouve la ville de Tokyo ?"
+ },
+ {
+  "famille": "GEOGRAPHIE",
+  "groupe": null,
+  "question": "Quel est le plus grand océan de la planète Terre ?"
+ },
+ {
+  "famille": "GEOGRAPHIE",
+  "groupe": null,
+  "question": "Quelle est la capitale de l'Espagne ?"
+ },
+ {
+  "famille": "GEOGRAPHIE",
+  "groupe": null,
+  "question": "Sur quel continent se trouve le désert du Sahara ?"
+ },
+ {
+  "famille": "GEOGRAPHIE",
+  "groupe": null,
+  "question": "Quelle est la capitale de l'Italie ?"
+ },
+ {
+  "famille": "GEOGRAPHIE",
+  "groupe": null,
+  "question": "Quel fleuve traverse la ville de Paris ?"
+ },
+ {
+  "famille": "GEOGRAPHIE",
+  "groupe": null,
+  "question": "Quelle est la capitale du Canada ?"
+ },
+ {
+  "famille": "GEOGRAPHIE",
+  "groupe": null,
+  "question": "Dans quel pays se trouve le mont Everest ?"
+ },
+ {
+  "famille": "CALCUL",
+  "groupe": null,
+  "question": "Combien font 2 plus 2 ?"
+ },
+ {
+  "famille": "CALCUL",
+  "groupe": null,
+  "question": "Combien font 7 fois 6 ?"
+ },
+ {
+  "famille": "CALCUL",
+  "groupe": null,
+  "question": "Combien font 100 divisé par 4 ?"
+ },
+ {
+  "famille": "CALCUL",
+  "groupe": null,
+  "question": "Combien font 15 moins 9 ?"
+ },
+ {
+  "famille": "CALCUL",
+  "groupe": null,
+  "question": "Combien font 3 fois 3 fois 3 ?"
+ },
+ {
+  "famille": "CALCUL",
+  "groupe": null,
+  "question": "Quelle est la moitié de 50 ?"
+ },
+ {
+  "famille": "CALCUL",
+  "groupe": null,
+  "question": "Combien font 12 plus 18 ?"
+ },
+ {
+  "famille": "CALCUL",
+  "groupe": null,
+  "question": "Combien font 9 fois 9 ?"
+ },
+ {
+  "famille": "CALCUL",
+  "groupe": null,
+  "question": "Combien font 1000 moins 1 ?"
+ },
+ {
+  "famille": "CALCUL",
+  "groupe": null,
+  "question": "Quel est le double de 21 ?"
+ },
+ {
+  "famille": "SCIENCE",
+  "groupe": null,
+  "question": "Le Soleil est-il une étoile ?"
+ },
+ {
+  "famille": "SCIENCE",
+  "groupe": null,
+  "question": "Quelle est la formule chimique de l'eau ?"
+ },
+ {
+  "famille": "SCIENCE",
+  "groupe": null,
+  "question": "Pourquoi le ciel est-il bleu ?"
+ },
+ {
+  "famille": "SCIENCE",
+  "groupe": null,
+  "question": "Qu'est-ce que la gravité ?"
+ },
+ {
+  "famille": "SCIENCE",
+  "groupe": null,
+  "question": "À quelle température l'eau bout-elle ?"
+ },
+ {
+  "famille": "SCIENCE",
+  "groupe": null,
+  "question": "Quelle planète est la plus proche du Soleil ?"
+ },
+ {
+  "famille": "SCIENCE",
+  "groupe": null,
+  "question": "De quoi les plantes ont-elles besoin pour grandir ?"
+ },
+ {
+  "famille": "SCIENCE",
+  "groupe": null,
+  "question": "Qu'est-ce qu'un trou noir ?"
+ },
+ {
+  "famille": "SCIENCE",
+  "groupe": null,
+  "question": "Pourquoi la Lune brille-t-elle la nuit ?"
+ },
+ {
+  "famille": "SCIENCE",
+  "groupe": null,
+  "question": "Que se passe-t-il quand on chauffe de la glace ?"
+ },
+ {
+  "famille": "LANGAGE",
+  "groupe": null,
+  "question": "Comment dit-on bonjour en anglais ?"
+ },
+ {
+  "famille": "LANGAGE",
+  "groupe": null,
+  "question": "Quel est le pluriel du mot cheval ?"
+ },
+ {
+  "famille": "LANGAGE",
+  "groupe": null,
+  "question": "Que signifie le mot rapidement ?"
+ },
+ {
+  "famille": "LANGAGE",
+  "groupe": null,
+  "question": "Comment dit-on merci en espagnol ?"
+ },
+ {
+  "famille": "LANGAGE",
+  "groupe": null,
+  "question": "Quel est le contraire du mot grand ?"
+ },
+ {
+  "famille": "LANGAGE",
+  "groupe": null,
+  "question": "Combien de lettres contient l'alphabet français ?"
+ },
+ {
+  "famille": "LANGAGE",
+  "groupe": null,
+  "question": "Quel est le féminin du mot acteur ?"
+ },
+ {
+  "famille": "LANGAGE",
+  "groupe": null,
+  "question": "Comment conjuguer le verbe être au présent avec je ?"
+ },
+ {
+  "famille": "LANGAGE",
+  "groupe": null,
+  "question": "Que veut dire le mot maison en anglais ?"
+ },
+ {
+  "famille": "LANGAGE",
+  "groupe": null,
+  "question": "Quel mot rime avec le mot cœur ?"
+ },
+ {
+  "famille": "ANIMAUX",
+  "groupe": null,
+  "question": "Quel animal miaule et chasse les souris ?"
+ },
+ {
+  "famille": "ANIMAUX",
+  "groupe": null,
+  "question": "Combien de pattes possède une araignée ?"
+ },
+ {
+  "famille": "ANIMAUX",
+  "groupe": null,
+  "question": "Quel est le plus grand animal terrestre ?"
+ },
+ {
+  "famille": "ANIMAUX",
+  "groupe": null,
+  "question": "Quel animal pond des œufs et vole ?"
+ },
+ {
+  "famille": "ANIMAUX",
+  "groupe": null,
+  "question": "Que mange principalement le panda géant ?"
+ },
+ {
+  "famille": "ANIMAUX",
+  "groupe": null,
+  "question": "Quel animal est surnommé le meilleur ami de l'homme ?"
+ },
+ {
+  "famille": "ANIMAUX",
+  "groupe": null,
+  "question": "Combien de temps dort un chat par jour environ ?"
+ },
+ {
+  "famille": "ANIMAUX",
+  "groupe": null,
+  "question": "Quel poisson vit dans l'océan et possède des dents pointues ?"
+ },
+ {
+  "famille": "ANIMAUX",
+  "groupe": null,
+  "question": "Quel animal produit le miel ?"
+ },
+ {
+  "famille": "ANIMAUX",
+  "groupe": null,
+  "question": "Quel est l'oiseau symbole de la sagesse ?"
+ },
+ {
+  "famille": "CUISINE",
+  "groupe": null,
+  "question": "Quels ingrédients faut-il pour faire une omelette ?"
+ },
+ {
+  "famille": "CUISINE",
+  "groupe": null,
+  "question": "À quelle température cuit-on un gâteau au four ?"
+ },
+ {
+  "famille": "CUISINE",
+  "groupe": null,
+  "question": "Comment prépare-t-on du riz blanc simple ?"
+ },
+ {
+  "famille": "CUISINE",
+  "groupe": null,
+  "question": "Quel ingrédient rend le pain gonflé et léger ?"
+ },
+ {
+  "famille": "CUISINE",
+  "groupe": null,
+  "question": "Combien de temps faut-il pour cuire un œuf dur ?"
+ },
+ {
+  "famille": "CUISINE",
+  "groupe": null,
+  "question": "Que met-on dans une salade de fruits ?"
+ },
+ {
+  "famille": "CUISINE",
+  "groupe": null,
+  "question": "Quel ustensile utilise-t-on pour mélanger une soupe ?"
+ },
+ {
+  "famille": "CUISINE",
+  "groupe": null,
+  "question": "Comment fait-on fondre du chocolat sans le brûler ?"
+ },
+ {
+  "famille": "CUISINE",
+  "groupe": null,
+  "question": "Quelle épice donne sa couleur jaune au curry ?"
+ },
+ {
+  "famille": "CUISINE",
+  "groupe": null,
+  "question": "Que faut-il pour préparer un café simple ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "capitale_france",
+  "question": "Quelle est la capitale de la France ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "capitale_france",
+  "question": "Dis-moi le nom de la capitale française."
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "capitale_france",
+  "question": "Paris est célèbre, mais au fait quelle ville dirige la France ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "deux_plus_deux",
+  "question": "Combien font 2 plus 2 ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "deux_plus_deux",
+  "question": "Quel est le résultat de l'addition de deux et deux ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "deux_plus_deux",
+  "question": "Si j'ai deux pommes et qu'on m'en donne deux autres, combien en ai-je ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "formule_eau",
+  "question": "Quelle est la formule chimique de l'eau ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "formule_eau",
+  "question": "Comment les chimistes écrivent-ils la molécule d'eau ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "formule_eau",
+  "question": "H2O, qu'est-ce que cela désigne en chimie ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "bonjour_anglais",
+  "question": "Comment dit-on bonjour en anglais ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "bonjour_anglais",
+  "question": "Traduis le mot bonjour dans la langue de Shakespeare."
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "bonjour_anglais",
+  "question": "Quel mot anglais utilise-t-on pour saluer le matin ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "animal_miaule",
+  "question": "Quel animal miaule et chasse les souris ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "animal_miaule",
+  "question": "Quel petit félin domestique fait miaou ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "animal_miaule",
+  "question": "Qui attrape les souris dans la maison et ronronne ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "ingredients_omelette",
+  "question": "Quels ingrédients faut-il pour faire une omelette ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "ingredients_omelette",
+  "question": "De quoi a-t-on besoin pour préparer une omelette ?"
+ },
+ {
+  "famille": "PARAPHRASE",
+  "groupe": "ingredients_omelette",
+  "question": "Pour cuisiner une omelette, que dois-je sortir du frigo ?"
+ }
+]
