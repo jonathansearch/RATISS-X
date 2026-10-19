@@ -1,0 +1,26 @@
+{
+ "methode": "tranche physique (inactive gelée sans graphe + tranche entraînable)",
+ "perte_eval_avant": 6.119,
+ "perte_eval_apres": 2.389,
+ "amelioration_relative": 0.6096,
+ "ecart_initial_vs_base": 0.0,
+ "params_entrainables_total": 4308480,
+ "params_mis_a_jour_par_pas": 725760,
+ "secondes_par_pas": 0.0497,
+ "pas_total": 144,
+ "ram_pic_mo": 969.3,
+ "references_meme_protocole": {
+  "dense": {
+   "apres": 2.4934,
+   "maj_par_pas": 14745600,
+   "s_par_pas": 0.1036,
+   "ram_mo": 1056.1
+  },
+  "correction_sparse_etape2": {
+   "apres": 5.4587,
+   "maj_par_pas": 241920,
+   "s_par_pas": 0.0461,
+   "ram_mo": 907.7
+  }
+ }
+}
