@@ -1,0 +1,22 @@
+{
+ "marche": "E1",
+ "couches_operees": [
+  28,
+  31
+ ],
+ "perte_modele_plein_dev": 6.1702,
+ "perte_eval_avant": 6.1534,
+ "perte_eval_apres": 2.3128,
+ "amelioration_relative": 0.6241,
+ "params_entrainables_total": 8519040,
+ "params_mis_a_jour_par_pas": 1440000,
+ "secondes_par_pas": 0.0653,
+ "pas_total": 144,
+ "ram_pic_mo": 1184.3,
+ "reference_D3_2_couches": {
+  "perte_apres": 2.389,
+  "amelioration_relative": 0.6096,
+  "maj_par_pas": 725760,
+  "s_par_pas": 0.0497
+ }
+}

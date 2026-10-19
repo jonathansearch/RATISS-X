@@ -63,10 +63,10 @@ class MLPPhysique(nn.Module):
 class CoucheP(nn.Module):
     def __init__(self, couche, mlp_physique):
         super().__init__(); self.couche = couche; self.mlp_p = mlp_physique
-    def forward(self, h, pos_emb, fam):
+    def forward(self, h, pos_emb, fam, attention_mask=None):
         reste = h
         x = self.couche.input_layernorm(h)
-        att, _ = self.couche.self_attn(hidden_states=x, attention_mask=None,
+        att, _ = self.couche.self_attn(hidden_states=x, attention_mask=attention_mask,
                                        position_embeddings=pos_emb)
         h = reste + att
         reste = h
