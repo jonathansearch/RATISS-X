@@ -1,0 +1,35 @@
+{
+ "marche": "S4 grille élargie de l'élite (magnitude)",
+ "prompt": "La capitale de la France est",
+ "famille": "GEOGRAPHIE",
+ "reference": "PyTorch complet E4 (controle_torch.npz)",
+ "balayage": [
+  {
+   "fond": 0.25,
+   "cos_etat_32": 0.7125,
+   "cos_logits": 0.7444,
+   "argmax": " l",
+   "generation": " loussecé dédédédédédédééééééé",
+   "boucle": false,
+   "secondes_par_token": 1.523
+  },
+  {
+   "fond": 0.5,
+   "cos_etat_32": 0.8282,
+   "cos_logits": 0.8002,
+   "argmax": " l",
+   "generation": " lueur 13345555656455",
+   "boucle": false,
+   "secondes_par_token": 1.721
+  },
+  {
+   "fond": 0.75,
+   "cos_etat_32": 0.9093,
+   "cos_logits": 0.9323,
+   "argmax": " une",
+   "generation": " une formation de la France dans la formation de la France à Paris\".",
+   "boucle": false,
+   "secondes_par_token": 1.972
+  }
+ ]
+}
