@@ -123,11 +123,16 @@ le genou est entre 50 et 75 % : **Seuil de Stabilisation RATISS ≈ 75 % de l'é
 lent, plus lourd (526 contre 387 Mo) et déraille sur 2/3 prompts en génération libre
 — le seuil mono-prompt ne généralise pas et, sans cache de poids, la sparsité ne
 paie pas. Le mode dense du moteur reste fidèle à PyTorch.
+**Moteur V1** (`python3 src/moteur_v1.py --mode hybride|dense`) : poids résidents
+(attention partagée + un jeu MLP compact par famille) — hybride **1,36× plus rapide**
+(0,95 contre 1,29 s/token) et plus léger (848 contre 1030 Mo de pic, ~669 Mo au repos
+mono-famille) ; stabilité des générations inchangée (celles d'E5, publiées).
 
 ## ⚠️ Ce qui n'est PAS encore fait (ne pas citer comme acquis)
-- Le seuil re-mesuré en génération libre multi-prompts ; un moteur v1 à poids
-  utiles résidents (chargés une fois) ; des centroïdes GPS entraînés sur amorces
-  (corpus séparé du test figé) ; RATISS VEGA, toujours non déclaré.
+- Le seuil re-mesuré en génération libre multi-prompts (le verrou scientifique) ;
+  la descente mémoire du moteur (élite plus petite, quantification) ; des
+  centroïdes GPS entraînés sur amorces (corpus séparé du test figé) ;
+  RATISS VEGA, toujours non déclaré.
 - L'injection du vrai tissu `.ratiss` externe dans le Traducteur (Phase ultérieure).
 - **RATISS VEGA**, premier modèle augmenté : naîtra après validation, pas avant. 🌟
 

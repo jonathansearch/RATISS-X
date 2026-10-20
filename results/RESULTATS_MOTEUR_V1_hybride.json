@@ -1,0 +1,45 @@
+{
+ "marche": "Moteur V1 a poids residents",
+ "mode": "hybride",
+ "constructions": [
+  {
+   "famille": "GEOGRAPHIE",
+   "secondes": 2.13,
+   "rss_apres_mo": 669.2
+  },
+  {
+   "famille": "LANGAGE",
+   "secondes": 1.45,
+   "rss_apres_mo": 812.1
+  },
+  {
+   "famille": "ANIMAUX",
+   "secondes": 1.45,
+   "rss_apres_mo": 847.8
+  }
+ ],
+ "rss_pic_mo": 847.8,
+ "resultats": [
+  {
+   "prompt": "La capitale de la France est",
+   "famille_gps": "GEOGRAPHIE",
+   "texte": " le nom d' l' exasperat dans l' exasperation dans l'",
+   "boucle_detectee": false,
+   "secondes_par_token": 0.959
+  },
+  {
+   "prompt": "Le ciel est",
+   "famille_gps": "LANGAGE",
+   "texte": " atmospherique atmospherique atmospérée atmospherique atmospérée atmosp",
+   "boucle_detectee": false,
+   "secondes_par_token": 0.962
+  },
+  {
+   "prompt": "Two plus two equals",
+   "famille_gps": "ANIMAUX",
+   "texte": " an library is note arrlotimes problem:\n  let arr\n  does\n  a\n ",
+   "boucle_detectee": false,
+   "secondes_par_token": 0.94
+  }
+ ]
+}

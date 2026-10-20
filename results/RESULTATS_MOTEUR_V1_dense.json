@@ -1,0 +1,45 @@
+{
+ "marche": "Moteur V1 a poids residents",
+ "mode": "dense",
+ "constructions": [
+  {
+   "famille": "GEOGRAPHIE",
+   "secondes": 2.3,
+   "rss_apres_mo": 895.2
+  },
+  {
+   "famille": "LANGAGE",
+   "secondes": 1.78,
+   "rss_apres_mo": 1004.9
+  },
+  {
+   "famille": "ANIMAUX",
+   "secondes": 1.72,
+   "rss_apres_mo": 1030.2
+  }
+ ],
+ "rss_pic_mo": 1030.2,
+ "resultats": [
+  {
+   "prompt": "La capitale de la France est",
+   "famille_gps": "GEOGRAPHIE",
+   "texte": " le 1792.\n\nPourquoi avez-vous c",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.288
+  },
+  {
+   "prompt": "Le ciel est",
+   "famille_gps": "LANGAGE",
+   "texte": " loin de mon ciel,\nEt mon ciel est loin de mon c",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.278
+  },
+  {
+   "prompt": "Two plus two equals",
+   "famille_gps": "ANIMAUX",
+   "texte": " four.\n\nThis is a fundamental property of arithmetic, and it's often referred to",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.298
+  }
+ ]
+}
