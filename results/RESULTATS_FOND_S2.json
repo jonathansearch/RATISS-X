@@ -1,0 +1,44 @@
+{
+ "marche": "S2 fond renormalise ×1/p",
+ "prompt": "La capitale de la France est",
+ "famille": "GEOGRAPHIE",
+ "reference": "PyTorch complet E4 (controle_torch.npz)",
+ "balayage": [
+  {
+   "fond": 0.01,
+   "cos_etat_32": 0.0802,
+   "cos_logits": 0.179,
+   "argmax": " meaning",
+   "generation": " meaning Exposure days Orderocumented Comparingcoholicups message wouldota Exposure vivo change any another called days",
+   "boucle": false,
+   "secondes_par_token": 0.912
+  },
+  {
+   "fond": 0.05,
+   "cos_etat_32": 0.0963,
+   "cos_logits": -0.0465,
+   "argmax": "oea",
+   "generation": "oeaocultural thyoning startoubtedtermediateithομαι#asions rightsoeverital GoboiningGacerb",
+   "boucle": false,
+   "secondes_par_token": 0.971
+  },
+  {
+   "fond": 0.1,
+   "cos_etat_32": -0.0376,
+   "cos_logits": 0.0515,
+   "argmax": " metavar",
+   "generation": " metavarazineery/.enthis polyester Chernobylp\rervoir for week noandrilsduciveñ",
+   "boucle": false,
+   "secondes_par_token": 1.033
+  },
+  {
+   "fond": 1.0,
+   "cos_etat_32": 0.9964,
+   "cos_logits": 0.9999,
+   "argmax": " le",
+   "generation": " le 17 septembre 1793.\", \"date\": \"1",
+   "boucle": false,
+   "secondes_par_token": 2.093
+  }
+ ]
+}

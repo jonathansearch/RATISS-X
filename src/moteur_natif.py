@@ -66,6 +66,7 @@ class MoteurNatif:
         self.z = np.load(tranches_npz)
         self.tranches = {}   # (couche, famille) -> (Wg, Wu, Wd) FP32, chargées à la demande
         self.fond = 0.0      # S1 : fraction de la branche inactive conservée (0..1)
+        self.renormaliser = False   # S2 : multiplier la sortie du fond partiel par 1/p
         self.inter = cfg["intermediate_size"]
         gps = np.load(RACINE / "artifacts" / "gps_modele_360M.npz", allow_pickle=True)
         self.masques = gps["masques"]   # [famille][couche] -> indices de neurones de la tranche
@@ -120,7 +121,9 @@ class MoteurNatif:
                     Wgf = self.coffre.lire(p + "mlp.gate_proj.weight")[sel]
                     Wuf = self.coffre.lire(p + "mlp.up_proj.weight")[sel]
                     Wdf = self.coffre.lire(p + "mlp.down_proj.weight")[:, sel]
-                    y = y + (silu(x @ Wgf.T) * (x @ Wuf.T)) @ Wdf.T
+                    y_fond = (silu(x @ Wgf.T) * (x @ Wuf.T)) @ Wdf.T
+                    if self.renormaliser: y_fond = y_fond / self.fond   # S2 : boost ×1/p 🧮
+                    y = y + y_fond
             h = h + y
             if (li + 1) in etapes_voulues: etapes[li + 1] = h.copy()
         h = rmsnorm(h, self.coffre.lire("model.norm.weight"), self.eps)
@@ -150,6 +153,38 @@ def main():
     from tokenizers import Tokenizer
     from huggingface_hub import snapshot_download
     snap = snapshot_download("HuggingFaceTB/SmolLM2-360M-Instruct")
+    if "--balayage_s2" in sys.argv:   # S2 : fond renormalisé ×1/p 🧮🔥
+        tok = Tokenizer.from_file(str(Path(snap) / "tokenizer.json"))
+        moteur = MoteurNatif(snap, LOCAL / "tranches_entrainees_e4.npz")
+        moteur.renormaliser = True
+        ref = np.load(LOCAL / "controle_torch.npz")
+        prompt, fam = "La capitale de la France est", "GEOGRAPHIE"
+        ids = tok.encode(prompt).ids
+        def cos(a, b):
+            a, b = a.ravel().astype(np.float64), b.ravel().astype(np.float64)
+            return float(a @ b / (np.linalg.norm(a) * np.linalg.norm(b)))
+        bilan = []
+        for fond in (0.01, 0.05, 0.10, 1.0):
+            moteur.fond = fond
+            vecteur, etapes = moteur.avant(ids, fam, etapes_voulues=(32,))
+            logits = moteur.logits(vecteur)
+            texte, s_tok = moteur.generer(tok, prompt, fam)
+            mots = texte.split()
+            boucle = len(mots) >= 6 and len(set(mots)) <= len(mots) // 3
+            ligne = {"fond": fond, "cos_etat_32": round(cos(etapes[32], ref["C32"]), 4),
+                     "cos_logits": round(cos(logits, ref["logits_C"]), 4),
+                     "argmax": tok.decode([int(np.argmax(logits))]), "generation": texte,
+                     "boucle": boucle, "secondes_par_token": round(s_tok, 3)}
+            bilan.append(ligne)
+            print(f"🧮 fond boosté {fond:5.0%} (×{1/fond:.0f}) : cos état32={ligne['cos_etat_32']:.4f} | "
+                  f"cos logits={ligne['cos_logits']:.4f} | argmax={ligne['argmax']!r} | "
+                  f"gén={texte!r} (boucle={boucle})", flush=True)
+        (RACINE / "results" / "RESULTATS_FOND_S2.json").write_text(json.dumps(
+            {"marche": "S2 fond renormalise ×1/p", "prompt": prompt, "famille": fam,
+             "reference": "PyTorch complet E4 (controle_torch.npz)", "balayage": bilan},
+            ensure_ascii=False, indent=1))
+        print("💾 results/RESULTATS_FOND_S2.json sauvegardé.")
+        return
     if "--balayage" in sys.argv:   # S1 : seuil de stabilisation (fond dense minimal)
         tok = Tokenizer.from_file(str(Path(snap) / "tokenizer.json"))
         moteur = MoteurNatif(snap, LOCAL / "tranches_entrainees_e4.npz")

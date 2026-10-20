@@ -107,10 +107,13 @@ fidèle (cosinus 1,0000 contre PyTorch en tranche seule) — c'est un **phénom�
 sans branche inactive, l'état s'effondre entre les couches 16 et 32 (cosinus 0,4615).
 **Seuil S1** (`python3 src/moteur_natif.py --balayage`) : aucun fond de 1/5/10 %
 (sélection équidistante) ne restabilise (cosinus logits ~0,43) ; bascule nette à
-100 % (0,9999, génération PyTorch reproduite mot pour mot).
+100 % (0,9999, génération PyTorch reproduite mot pour mot). **Seuil S2**
+(`--balayage_s2`) : le boost ×1/p **aggrave** tout (cosinus ~0,08) — la somme
+partielle n'est même pas directionnellement représentative ; la contribution
+inactive porte une structure exacte, pas une énergie échantillonnable.
 
 ## ⚠️ Ce qui n'est PAS encore fait (ne pas citer comme acquis)
-- Le fond renormalisé (×1/p) ou sélectionné par magnitude (candidats nés de S1) ;
+- Le fond sélectionné par magnitude (seul candidat survivant après S1/S2) ;
   des centroïdes GPS entraînés sur amorces (corpus séparé du test figé) ;
   RATISS VEGA, toujours non déclaré.
 - L'injection du vrai tissu `.ratiss` externe dans le Traducteur (Phase ultérieure).
