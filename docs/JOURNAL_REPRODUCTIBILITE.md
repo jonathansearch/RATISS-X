@@ -117,11 +117,13 @@ l'élite est la bonne direction, plus large qu'espéré. **Seuil S4** (`--balaya
 courbe complète 0,32 (0 %) → 0,93 (**75 %**, génération française cohérente) → 1,00 ;
 le genou est entre 50 et 75 % : **Seuil de Stabilisation RATISS ≈ 75 % de l'élite**
 (sur ce banc : un prompt, une famille — limites écrites dans le rapport).
+**Zoom S5** (`--balayage_s5`) : traversée du critère cosinus (≥0,90) à **70 %**
+(argmax « le » aligné), cohérence rédactionnelle à 75 % ; plateau 60→65 % publié.
 
 ## ⚠️ Ce qui n'est PAS encore fait (ne pas citer comme acquis)
-- La traversée exacte du seuil (50→75 %), d'autres prompts/familles, l'élite par
-  activation moyenne ; des centroïdes GPS entraînés sur amorces (corpus séparé du
-  test figé) ; RATISS VEGA, toujours non déclaré.
+- Le seuil sur d'autres prompts/familles et l'élite par activation moyenne ;
+  des centroïdes GPS entraînés sur amorces (corpus séparé du test figé) ;
+  RATISS VEGA, toujours non déclaré.
 - L'injection du vrai tissu `.ratiss` externe dans le Traducteur (Phase ultérieure).
 - **RATISS VEGA**, premier modèle augmenté : naîtra après validation, pas avant. 🌟
 

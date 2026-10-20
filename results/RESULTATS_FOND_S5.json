@@ -1,0 +1,35 @@
+{
+ "marche": "S5 zoom sur le genou (60/65/70 %)",
+ "prompt": "La capitale de la France est",
+ "famille": "GEOGRAPHIE",
+ "reference": "PyTorch complet E4 (controle_torch.npz)",
+ "balayage": [
+  {
+   "fond": 0.6,
+   "cos_etat_32": 0.8569,
+   "cos_logits": 0.8349,
+   "argmax": " la",
+   "generation": " la lerie d l'hudront tout la France qui est la lère",
+   "boucle": false,
+   "secondes_par_token": 1.99
+  },
+  {
+   "fond": 0.65,
+   "cos_etat_32": 0.8629,
+   "cos_logits": 0.8416,
+   "argmax": " la",
+   "generation": " la lerie d une furere d' un autourner d   ",
+   "boucle": false,
+   "secondes_par_token": 1.94
+  },
+  {
+   "fond": 0.7,
+   "cos_etat_32": 0.9021,
+   "cos_logits": 0.9094,
+   "argmax": " le",
+   "generation": " le nom d' l' exasperat dans l' exasperation dans l'",
+   "boucle": false,
+   "secondes_par_token": 1.91
+  }
+ ]
+}
