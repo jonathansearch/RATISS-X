@@ -111,9 +111,12 @@ sans branche inactive, l'état s'effondre entre les couches 16 et 32 (cosinus 0,
 (`--balayage_s2`) : le boost ×1/p **aggrave** tout (cosinus ~0,08) — la somme
 partielle n'est même pas directionnellement représentative ; la contribution
 inactive porte une structure exacte, pas une énergie échantillonnable.
+**Seuil S3** (`--balayage_s3`, fond top-K par magnitude) : première pente positive
+(0,46 → 0,51 → 0,63 à 10 %, argmax devenu français) mais critère 0,95 non atteint —
+l'élite est la bonne direction, plus large qu'espéré.
 
 ## ⚠️ Ce qui n'est PAS encore fait (ne pas citer comme acquis)
-- Le fond sélectionné par magnitude (seul candidat survivant après S1/S2) ;
+- Le seuil exact de l'élite (balayage élargi 25 %/50 %, né de la pente S3) ;
   des centroïdes GPS entraînés sur amorces (corpus séparé du test figé) ;
   RATISS VEGA, toujours non déclaré.
 - L'injection du vrai tissu `.ratiss` externe dans le Traducteur (Phase ultérieure).

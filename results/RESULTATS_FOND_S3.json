@@ -1,0 +1,44 @@
+{
+ "marche": "S3 fond par magnitude (top-K poids)",
+ "prompt": "La capitale de la France est",
+ "famille": "GEOGRAPHIE",
+ "reference": "PyTorch complet E4 (controle_torch.npz)",
+ "balayage": [
+  {
+   "fond": 0.01,
+   "cos_etat_32": 0.4714,
+   "cos_logits": 0.4637,
+   "argmax": " pe",
+   "generation": " pe cap cur����оfromnamespace��\n]\n]\n]",
+   "boucle": false,
+   "secondes_par_token": 0.984
+  },
+  {
+   "fond": 0.05,
+   "cos_etat_32": 0.5384,
+   "cos_logits": 0.5131,
+   "argmax": " d",
+   "generation": " d d d p p pellers reason they only ret p p p p p p p",
+   "boucle": false,
+   "secondes_par_token": 1.006
+  },
+  {
+   "fond": 0.1,
+   "cos_etat_32": 0.6442,
+   "cos_logits": 0.6275,
+   "argmax": " la",
+   "generation": " la lêmjje d d d d to to until age1111",
+   "boucle": false,
+   "secondes_par_token": 1.091
+  },
+  {
+   "fond": 1.0,
+   "cos_etat_32": 0.9964,
+   "cos_logits": 0.9999,
+   "argmax": " le",
+   "generation": " le 17 septembre 1793.\", \"date\": \"1",
+   "boucle": false,
+   "secondes_par_token": 2.551
+  }
+ ]
+}
