@@ -1,0 +1,29 @@
+{
+ "marche": "E5 moteur economique",
+ "mode": "dense",
+ "config": "tranche + fond 100%",
+ "rss_pic_mo": 387.1,
+ "resultats": [
+  {
+   "prompt": "La capitale de la France est",
+   "famille_gps": "GEOGRAPHIE",
+   "texte": " le 17 septembre 1793.\", \"date\": \"1",
+   "boucle_detectee": false,
+   "secondes_par_token": 2.072
+  },
+  {
+   "prompt": "Le ciel est",
+   "famille_gps": "LANGAGE",
+   "texte": " verte.\")",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.826
+  },
+  {
+   "prompt": "Two plus two equals",
+   "famille_gps": "ANIMAUX",
+   "texte": " four.\"",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.863
+  }
+ ]
+}

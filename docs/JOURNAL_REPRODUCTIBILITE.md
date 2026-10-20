@@ -119,11 +119,15 @@ le genou est entre 50 et 75 % : **Seuil de Stabilisation RATISS ≈ 75 % de l'é
 (sur ce banc : un prompt, une famille — limites écrites dans le rapport).
 **Zoom S5** (`--balayage_s5`) : traversée du critère cosinus (≥0,90) à **70 %**
 (argmax « le » aligné), cohérence rédactionnelle à 75 % ; plateau 60→65 % publié.
+**Moteur E5** (`src/moteur_natif.py --e5 hybride|dense`) : l'hybride 70 % est plus
+lent, plus lourd (526 contre 387 Mo) et déraille sur 2/3 prompts en génération libre
+— le seuil mono-prompt ne généralise pas et, sans cache de poids, la sparsité ne
+paie pas. Le mode dense du moteur reste fidèle à PyTorch.
 
 ## ⚠️ Ce qui n'est PAS encore fait (ne pas citer comme acquis)
-- Le seuil sur d'autres prompts/familles et l'élite par activation moyenne ;
-  des centroïdes GPS entraînés sur amorces (corpus séparé du test figé) ;
-  RATISS VEGA, toujours non déclaré.
+- Le seuil re-mesuré en génération libre multi-prompts ; un moteur v1 à poids
+  utiles résidents (chargés une fois) ; des centroïdes GPS entraînés sur amorces
+  (corpus séparé du test figé) ; RATISS VEGA, toujours non déclaré.
 - L'injection du vrai tissu `.ratiss` externe dans le Traducteur (Phase ultérieure).
 - **RATISS VEGA**, premier modèle augmenté : naîtra après validation, pas avant. 🌟
 

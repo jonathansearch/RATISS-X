@@ -1,0 +1,29 @@
+{
+ "marche": "E5 moteur economique",
+ "mode": "hybride",
+ "config": "tranche + fond elite 70% (magnitude)",
+ "rss_pic_mo": 526.2,
+ "resultats": [
+  {
+   "prompt": "La capitale de la France est",
+   "famille_gps": "GEOGRAPHIE",
+   "texte": " le nom d' l' exasperat dans l' exasperation dans l'",
+   "boucle_detectee": false,
+   "secondes_par_token": 2.012
+  },
+  {
+   "prompt": "Le ciel est",
+   "famille_gps": "LANGAGE",
+   "texte": " atmospherique atmospherique atmospérée atmospherique atmospérée atmosp",
+   "boucle_detectee": false,
+   "secondes_par_token": 2.08
+  },
+  {
+   "prompt": "Two plus two equals",
+   "famille_gps": "ANIMAUX",
+   "texte": " an library is note arrlotimes problem:\n  let arr\n  does\n  a\n ",
+   "boucle_detectee": false,
+   "secondes_par_token": 2.208
+  }
+ ]
+}

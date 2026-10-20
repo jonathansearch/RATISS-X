@@ -165,6 +165,34 @@ def main():
     from tokenizers import Tokenizer
     from huggingface_hub import snapshot_download
     snap = snapshot_download("HuggingFaceTB/SmolLM2-360M-Instruct")
+    if "--e5" in sys.argv:   # E5 : moteur économique hybride contre dense ⚙️
+        mode = sys.argv[sys.argv.index("--e5") + 1]
+        assert mode in ("hybride", "dense")
+        tok = Tokenizer.from_file(str(Path(snap) / "tokenizer.json"))
+        moteur = MoteurNatif(snap, LOCAL / "tranches_entrainees_e4.npz")
+        if mode == "hybride":
+            moteur.selection = "magnitude"; moteur.fond = 0.70   # la recette du Seuil RATISS 🎯
+        else:
+            moteur.fond = 1.0                                    # référence dense complète
+        gen = json.loads((RACINE / "results" / "RESULTATS_GENERATION_E4.json").read_text())
+        routes = {r["prompt"]: r["accord_gps"] for r in gen["resultats"]}
+        prompts = ["La capitale de la France est", "Le ciel est", "Two plus two equals"]
+        bilan = []
+        for prompt in prompts:
+            texte, s_tok = moteur.generer(tok, prompt, routes[prompt])
+            mots = texte.split()
+            boucle = len(mots) >= 6 and len(set(mots)) <= len(mots) // 3
+            bilan.append({"prompt": prompt, "famille_gps": routes[prompt], "texte": texte,
+                          "boucle_detectee": boucle, "secondes_par_token": round(s_tok, 3)})
+            print(f"⚙️ {mode} | {prompt} → {texte!r} ({s_tok:.2f}s/token, boucle={boucle})", flush=True)
+        rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024
+        print(f"📏 RSS pic ({mode}) : {rss:.0f} Mo")
+        (RACINE / "results" / f"RESULTATS_MOTEUR_E5_{mode}.json").write_text(json.dumps(
+            {"marche": "E5 moteur economique", "mode": mode,
+             "config": "tranche + fond elite 70% (magnitude)" if mode == "hybride" else "tranche + fond 100%",
+             "rss_pic_mo": round(rss, 1), "resultats": bilan}, ensure_ascii=False, indent=1))
+        print(f"💾 results/RESULTATS_MOTEUR_E5_{mode}.json sauvegardé.")
+        return
     if "--balayage_s5" in sys.argv:   # S5 : zoom sur le genou (60/65/70 %) 🔬🦵
         tok = Tokenizer.from_file(str(Path(snap) / "tokenizer.json"))
         moteur = MoteurNatif(snap, LOCAL / "tranches_entrainees_e4.npz")
