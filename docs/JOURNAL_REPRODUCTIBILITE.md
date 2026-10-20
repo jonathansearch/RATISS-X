@@ -127,12 +127,15 @@ paie pas. Le mode dense du moteur reste fidèle à PyTorch.
 (attention partagée + un jeu MLP compact par famille) — hybride **1,36× plus rapide**
 (0,95 contre 1,29 s/token) et plus léger (848 contre 1030 Mo de pic, ~669 Mo au repos
 mono-famille) ; stabilité des générations inchangée (celles d'E5, publiées).
+**Seuil de génération G1** (`python3 src/seuil_generation.py --fond P`) : en
+génération libre sur 6 amorces, 70 % et 75 % déraillent après des débuts souvent
+justes ; seul 100 % fait 6/6 — le seuil de génération est > 75 % (veille de la
+construction RATISS, dossier `docs/PRET_POUR_RATISS.md`).
 
 ## ⚠️ Ce qui n'est PAS encore fait (ne pas citer comme acquis)
-- Le seuil re-mesuré en génération libre multi-prompts (le verrou scientifique) ;
-  la descente mémoire du moteur (élite plus petite, quantification) ; des
-  centroïdes GPS entraînés sur amorces (corpus séparé du test figé) ;
-  RATISS VEGA, toujours non déclaré.
+- La construction RATISS (décision du chef : demain) — voir le dossier de veille
+  `docs/PRET_POUR_RATISS.md` : régime de fond à décider, critères de naissance à
+  écrire avant tout entraînement ; seuil de génération à mesurer entre 75 et 100 %.
 - L'injection du vrai tissu `.ratiss` externe dans le Traducteur (Phase ultérieure).
 - **RATISS VEGA**, premier modèle augmenté : naîtra après validation, pas avant. 🌟
 

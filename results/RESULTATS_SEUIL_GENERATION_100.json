@@ -1,0 +1,55 @@
+{
+ "marche": "G1 seuil en generation libre",
+ "fond": 1.0,
+ "rss_pic_mo": 1021.4,
+ "resultats": [
+  {
+   "famille": "GEOGRAPHIE",
+   "prompt": "The capital of Spain is",
+   "texte": " Madrid.\n\nThe capital of Spain is Madrid.",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.544,
+   "construction_jeu_s": 2.32
+  },
+  {
+   "famille": "CALCUL",
+   "prompt": "Two plus two equals",
+   "texte": " four.\n\nThis is a fundamental property of arithmetic, and it's often referred to",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.829,
+   "construction_jeu_s": 1.76
+  },
+  {
+   "famille": "SCIENCE",
+   "prompt": "Water is made of hydrogen and",
+   "texte": " oxygen atoms.\n\nHydrogen is the lightest element, with a mass of ",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.831,
+   "construction_jeu_s": 1.78
+  },
+  {
+   "famille": "LANGAGE",
+   "prompt": "The French word for cat is",
+   "texte": " \"chat,\" which is also the name of the animal in French.\n\nThe French",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.804,
+   "construction_jeu_s": 1.83
+  },
+  {
+   "famille": "ANIMAUX",
+   "prompt": "The animal that meows is",
+   "texte": " a cat.\n\nThe animal that meows is a cat.\n\nThe animal",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.687,
+   "construction_jeu_s": 1.72
+  },
+  {
+   "famille": "CUISINE",
+   "prompt": "To bake a cake, mix flour and",
+   "texte": " sugar in a bowl. Add eggs and milk in another bowl. Stir the wet ingredients into",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.705,
+   "construction_jeu_s": 1.89
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "marche": "G1 seuil en generation libre",
+ "fond": 0.7,
+ "rss_pic_mo": 928.8,
+ "resultats": [
+  {
+   "famille": "GEOGRAPHIE",
+   "prompt": "The capital of Spain is",
+   "texte": " Madrid Spain.\".\n\nuschwitzowski, K. A., et. etaddamster. Archived",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.223,
+   "construction_jeu_s": 2.55
+  },
+  {
+   "famille": "CALCUL",
+   "prompt": "Two plus two equals",
+   "texte": " 66666",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.223,
+   "construction_jeu_s": 1.69
+  },
+  {
+   "famille": "SCIENCE",
+   "prompt": "Water is made of hydrogen and",
+   "texte": " two using water and hydrogen oxide air air air air air air air air air air air air",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.286,
+   "construction_jeu_s": 1.54
+  },
+  {
+   "famille": "LANGAGE",
+   "prompt": "The French word for cat is",
+   "texte": " Cat.\",",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.072,
+   "construction_jeu_s": 1.52
+  },
+  {
+   "famille": "ANIMAUX",
+   "prompt": "The animal that meows is",
+   "texte": " is its convenient to to A A A A A a a A A to cat it are",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.253,
+   "construction_jeu_s": 1.52
+  },
+  {
+   "famille": "CUISINE",
+   "prompt": "To bake a cake, mix flour and",
+   "texte": " water, it bake, one,0\n\nWhat\n\n** \n\n## ",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.458,
+   "construction_jeu_s": 1.59
+  }
+ ]
+}

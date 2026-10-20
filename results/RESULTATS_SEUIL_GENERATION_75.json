@@ -1,0 +1,55 @@
+{
+ "marche": "G1 seuil en generation libre",
+ "fond": 0.75,
+ "rss_pic_mo": 846.9,
+ "resultats": [
+  {
+   "famille": "GEOGRAPHIE",
+   "prompt": "The capital of Spain is",
+   "texte": " Madridquerque Madrid Madrid Spain,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.42,
+   "construction_jeu_s": 2.5
+  },
+  {
+   "famille": "CALCUL",
+   "prompt": "Two plus two equals",
+   "texte": " 66",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.494,
+   "construction_jeu_s": 1.65
+  },
+  {
+   "famille": "SCIENCE",
+   "prompt": "Water is made of hydrogen and",
+   "texte": " being in into the air.\" It20, , OEB ArticleGoogle (,",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.504,
+   "construction_jeu_s": 1.57
+  },
+  {
+   "famille": "LANGAGE",
+   "prompt": "The French word for cat is",
+   "texte": " Cat » Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat",
+   "boucle_detectee": true,
+   "secondes_par_token": 1.208,
+   "construction_jeu_s": 1.69
+  },
+  {
+   "famille": "ANIMAUX",
+   "prompt": "The animal that meows is",
+   "texte": " business is a customer buys is is the cat owner cat?\" A The A cat cat The",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.238,
+   "construction_jeu_s": 1.59
+  },
+  {
+   "famille": "CUISINE",
+   "prompt": "To bake a cake, mix flour and",
+   "texte": " in eggs, and ' A?'.2333444663",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.248,
+   "construction_jeu_s": 1.66
+  }
+ ]
+}
