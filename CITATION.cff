@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use RATISS-X, please cite this research repository."
+type: software
+title: "RATISS-X: The LLM Mixer — Thinking in Paths"
+abstract: "CPU-only research on sparse activation paths, physical MLP slicing, contribution-guided neuron elites, GPS-style routing, and resident native inference for SmolLM2-360M."
+authors:
+  - family-names: Evina
+    given-names: Jonathan
+    orcid: "https://orcid.org/0009-0000-4092-5313"
+repository-code: "https://github.com/jonathansearch/RATISS-X"
+license: MIT
+date-released: 2026-10-20
+keywords:
+  - large language models
+  - sparse activation
+  - mixture paths
+  - CPU inference
+  - model slicing
+  - reproducible research

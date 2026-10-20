@@ -1,60 +1,178 @@
-# 🧠⚡ RATISS-X — Le LLM Mixer (pensée en chemins)
+<p align="center">
+  <img src="assets/ratiss-labs-logo.png" alt="RATISS Labs" width="190">
+</p>
 
-**RATISS Labs** · Jonathan Evina · Yaoundé, Cameroun 🇨🇲 · MIT
+<h1 align="center">RATISS-X</h1>
 
-> 🌫️➡️🛤️ *On ne transforme pas le brouillard noir d'un LLM.
-> On apprend à lire ses chemins — puis on le fait penser en chemins.*
+<p align="center">
+  <strong>The LLM Mixer — Thinking in Paths</strong><br>
+  Sparse activation paths, physical MLP slices, contribution-guided elites,<br>
+  and frugal CPU-native inference.
+</p>
 
-## 🌟 L'hypothèse
-Un LLM dense calcule 100 % de ses paramètres pour chaque mot (~20 W pour un cerveau
-humain contre des mégawatts de GPU). RATISS-X explore l'inverse : **sparsité 1–2 %,
-routage topologique, activations ciblées** — un modèle qui emprunte des *chemins*
-(« accords » d'activation) au lieu de tout allumer.
+<p align="center">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
+  <a href="https://github.com/jonathansearch"><img alt="RATISS Labs on GitHub" src="https://img.shields.io/badge/GitHub-RATISS_Labs-black?logo=github"></a>
+  <a href="https://orcid.org/0009-0000-4092-5313"><img alt="ORCID" src="https://img.shields.io/badge/ORCID-0009--0000--4092--5313-a6ce39?logo=orcid"></a>
+  <img alt="CPU only" src="https://img.shields.io/badge/Compute-CPU_only-blue">
+  <img alt="Reference model" src="https://img.shields.io/badge/Reference_model-SmolLM2--360M-purple">
+</p>
 
-## 🐜 Le cobaye (règle du chef)
-**SmolLM2-360M** (le « grand frère », ×2,7) est le cobaye de référence depuis le 2 nov. 2026 —
-le 135M, premier cobaye historique, reste dans l'historique git et les rapports.
-Ici : aucun poids de modèle n'est versionné, le repo reste léger.
-Une fois tout validé naîtra **RATISS VEGA**, premier LLM augmenté du labo. 🌟
+<p align="center">
+  <strong>RATISS Labs</strong> · Jonathan Evina · Yaoundé, Cameroon 🇨🇲<br>
+  <em>Independent, single-author research. Open, sealed, and reproducible.</em>
+</p>
 
-## 📦 Contenu
-| Élément | Rôle |
-|---|---|
-| `PROTOCOLE_GPS.md` | ⚖️ Critères figés AVANT l'Étape 1 (le GPS) |
-| `src/gps_routeur.py` | 🗺️ Le GPS : embedding → famille d'accord → masque $M_k$, sans transformeur |
-| `src/demo_gps.py` | ▶️ Démo en direct sur questions jamais vues |
-| `data/questionnaire.json` | 📝 78 stimuli (6 familles × 10 + 18 paraphrases) |
-| `artifacts/gps_modele.npz` | ⚡ Le GPS entraîné (centroïdes + masques, quelques Ko) |
-| `results/RESULTATS_GPS.json` | 📏 Tous les chiffres mesurés de l'Étape 1 |
-| `docs/RAPPORT_ETAPE1_GPS.md` | 📜 Le rapport complet, en mots simples |
-| `tests/` | ✅ 3 tests unitaires |
+---
 
-## ▶️ Rejouer
-```bash
-pip install numpy scikit-learn transformers safetensors huggingface-hub pytest
-python3 src/gps_routeur.py     # ré-entraîne le GPS depuis le banc d'essai n°1 et mesure tout
-python3 src/demo_gps.py        # route des questions jamais vues, en direct
-python3 -m pytest tests/ -q    # 3 tests
+> **Do not transform the whole fog of a dense LLM. Learn to read its paths —
+> then teach it to think in paths.**
+
+## What is RATISS-X?
+
+A dense language model activates its full MLP machinery for every token.
+**RATISS-X explores the opposite direction:** identify reusable activation
+paths — called **chords** — route an input to the relevant chord, physically
+extract and train only that slice, and preserve enough of the remaining network
+for stable autoregressive generation.
+
+The reference model is **SmolLM2-360M**. No model weights are versioned in this
+repository. All experiments are CPU-only, protocols are written before the
+measurements, raw generations are published, and failures remain in the record.
+
+```mermaid
+flowchart LR
+    A[Prompt] --> B{Router<br/>GPS / experimental oracle}
+    B --> C[Family chord<br/>trained physical MLP slice]
+    C --> D[Contribution-guided elite<br/>inactive neurons kept at 75%]
+    D --> E[Resident CPU engine<br/>V1 BF16 / V2 int4]
+    E --> F[Generated tokens]
 ```
-*Le banc d'essai n°1 (la carte des chemins) vit dans `banc_essai_mixer/` du poste du chef ;
-ses chemins bruts ne sont pas versionnés ici — seuls les masques dérivés le sont.*
 
-## 📸 Résultats en images (acquis et validé uniquement)
-![Chemins et GPS](docs/images/fig1_chemins_gps.png)
-![Bistouri](docs/images/fig2_bistouri.png)
-![Traducteur](docs/images/fig3_traducteur.png)
-![Efficacité CPU](docs/images/fig4_efficacite_cpu.png)
+> **Status:** research programme, not a production model. **RATISS VEGA has not
+> been declared.** Its name, scope, and birth criteria remain decisions for the
+> laboratory director.
 
-📜 **Reproductibilité pas-à-pas :** `docs/JOURNAL_REPRODUCTIBILITE.md` — chaque étape, chaque commande, chaque graine.
+## Headline results
 
-## 🗺️ Feuille de route (Phase 2 du doc RATISS X)
-- ✅ **Étape 1 — Le GPS** : prédire l'accord en ~0,06 ms (voir rapport)
-- ⚠️ Étapes 2 & 3 sur 135M : réussites partielles — `docs/RAPPORT_ETAPES_2_3.md`
-- 🐘 **Tous les tests refaits sur le grand frère 360M** : presque tout progresse — `docs/RAPPORT_GRAND_FRERE.md`
-- 🔪 Découpage physique D1–D3 : tranche exacte, 11× plus rapide au banc, **apprentissage égal au dense** sur segment — `docs/RAPPORT_DECOUPAGE_D1.md` · `D2` · `D3`
-- 🗣️ Génération libre en tranches seules : preuve de concept obtenue — `docs/RAPPORT_GENERATION_TRANCHE.md`
-- 🪜 Extension au masque causal : 4 couches −62,4 % → 8 couches −65,5 % → **16 couches −70,2 %** (toujours ÷20 en mises à jour/pas) — `docs/RAPPORT_EXTENSION_E1.md` · `E2` · `E3`
-- 🧹 Série mémoire M1–M3 : Adam à états BF16 validé, passeport mémoire transféré au futur moteur natif — `docs/RAPPORT_M1.md` · `M2` · `M3`, `docs/DECLARATION_PASSEPORT_MOTEUR_NATIF.md`
-- 🎹 **Modèle entier opéré (E4, 32 couches) : perte −79,8 %, ÷21 mises à jour/pas** — `docs/RAPPORT_EXTENSION_E4.md`
+| Question | Measured answer |
+|---|---|
+| Can physical MLP slices be trained across all 32 layers? | **Yes.** Loss **6.17 → 1.245 (−79.8%)**, with about **21× fewer updated parameters per step** than the dense MLP comparison. |
+| Is the custom NumPy engine faithful? | **Yes.** At equal mode, logits cosine versus PyTorch reached **1.0000**. |
+| Does a magnitude-ranked neuron background stabilize generation? | **No.** No 70–95% magnitude background reached the predeclared 4/6 stability threshold. Only 100% reached 6/6. |
+| Does matched training rescue the 75% magnitude regime? | **Not yet.** Loss improved **8.87 → 3.82 (−57%)**, but generation reached only **2/6**. |
+| Which inactive neurons should be kept? | **The neurons that actually contribute.** Ranking by `E\|activation\| × ‖W_down‖` produced **5/6 stable generations at a 75% background**. |
+| Can one GPS centroid route both questions and sentence openings? | **No universal router passed.** Questions-only: 93.3% questions / 30.6% openings. Openings-only: 20.0% / 72.2%. Mixed: 81.7% / 47.2%. |
+| Does resident execution make sparsity pay? | **Yes.** V1 hybrid: **0.94–0.96 s/token**, versus **1.28–1.30 s/token** for resident dense execution. |
+| Can the engine fit below 300 MB? | **Yes, as a prototype.** V2 int4 peaked at **286 MB**, but ran at **3.6–4.0 s/token** with mixed output quality. |
 
-*Ici c'est la joie et l'enthousiasme 😜🥳 — et la méthode : on mesure, on nomme, on publie.*
+Full evidence: [Final Scientific Sprint report](docs/RAPPORT_SPRINT_FINAL_SCIENTIFIQUE.md)
+and the [RATISS construction briefing](docs/PRET_POUR_RATISS.md).
+
+## Visual overview
+
+| Activation paths and GPS | Physical slicing |
+|---|---|
+| ![Activation paths and GPS](docs/images/fig1_chemins_gps.png) | ![Physical slicing](docs/images/fig2_bistouri.png) |
+| **Semantic translation** | **CPU efficiency** |
+| ![Semantic translation](docs/images/fig3_traducteur.png) | ![CPU efficiency](docs/images/fig4_efficacite_cpu.png) |
+
+## Repository map
+
+```text
+RATISS-X/
+├── assets/       Official RATISS Labs visual identity
+├── data/         Frozen questionnaires, prompts, and test sets
+├── docs/         Protocols, reports, reproducibility journal, figures
+├── results/      Machine-readable experimental results (JSON)
+├── src/          GPS routers, slicing, training, and native engines
+├── tests/        Unit and engine-equivalence tests
+├── LICENSE       MIT License
+└── MANIFESTE.json  SHA-256 seal for the validated repository files
+```
+
+## Quick start
+
+### 1. Install
+
+```bash
+git clone https://github.com/jonathansearch/RATISS-X.git
+cd RATISS-X
+python3 -m pip install numpy torch transformers tokenizers \
+  huggingface-hub safetensors scikit-learn pytest
+```
+
+### 2. Run the lightweight tests
+
+```bash
+python3 -m pytest tests/test_bistouri_physique.py tests/test_gps.py -q
+```
+
+Expected at the current seal: **11 tests pass**.
+
+### 3. Run the GPS demonstration
+
+```bash
+python3 src/demo_gps.py
+```
+
+The demonstration downloads the reference model's tokenizer and embedding
+table, then routes unseen questions without executing a Transformer layer.
+
+### 4. Explore the engines and experiments
+
+- Resident BF16 engine: `src/moteur_v1.py`
+- int4 memory prototype: `src/moteur_v2.py`
+- Matched-regime training: `src/entrainement_apparie.py`
+- Prompt-router comparison: `src/gps_amorces.py`
+- Free-generation threshold tests: `src/seuil_generation.py`
+
+Some experiments require locally generated training slices. Heavy artifacts
+are deliberately excluded from Git; exact regeneration commands and ordering
+are recorded in the [reproducibility journal](docs/JOURNAL_REPRODUCTIBILITE.md).
+
+## Documentation
+
+Start with the [visual documentation index](docs/INDEX.md).
+
+| Need | Document |
+|---|---|
+| Final scientific position | [Final Scientific Sprint](docs/RAPPORT_SPRINT_FINAL_SCIENTIFIQUE.md) |
+| What is ready for RATISS construction | [Construction briefing](docs/PRET_POUR_RATISS.md) |
+| Exact replay history | [Reproducibility journal](docs/JOURNAL_REPRODUCTIBILITE.md) |
+| Resident engine V1 | [V1 engine report](docs/RAPPORT_MOTEUR_V1.md) |
+| Free-generation threshold | [G1 generation report](docs/RAPPORT_SEUIL_GENERATION_G1.md) |
+| Full-model slice training | [E4 extension report](docs/RAPPORT_EXTENSION_E4.md) |
+| Frozen sprint protocol | [Final sprint protocol](docs/PROTOCOLE_SPRINT_FINAL_SCIENTIFIQUE.md) |
+
+Most historical protocols and reports are in French; this README and the
+documentation index provide the English entry point.
+
+## Method
+
+RATISS Labs applies the same rules everywhere:
+
+1. **Criteria before experiments.** A test that cannot fail is forbidden.
+2. **Controls are mandatory.** Engines are compared with the reference they claim to reproduce.
+3. **Failures are published.** Refuted shortcuts and unstable generations stay visible.
+4. **Raw outputs remain raw.** Generated text is not polished after measurement.
+5. **Repositories are sealed.** SHA-256 hashes make silent modification visible.
+6. **One human decides; AI systems execute.** Questions, priorities, and final verdicts belong to the laboratory director.
+
+## Limitations
+
+- The 5/6 activation-guided result uses six English prompts and oracle family routing.
+- The specialized GPS routers do not yet have a validated automatic mode selector.
+- V2 int4 proves the memory target, not production speed or quality.
+- Results are specific to SmolLM2-360M, this CPU environment, and the frozen test sets.
+- This is independent research and is **not presented as peer-reviewed**.
+
+## License and authorship
+
+Released under the [MIT License](LICENSE).
+
+**Jonathan Evina** — Founder and sole author, **RATISS Labs**, Yaoundé, Cameroon 🇨🇲
+GitHub: [@jonathansearch](https://github.com/jonathansearch) · ORCID:
+[0009-0000-4092-5313](https://orcid.org/0009-0000-4092-5313)
+
+<p align="center"><em>We measure. We name. We publish. 😜🥳</em></p>
