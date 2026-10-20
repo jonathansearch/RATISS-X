@@ -1,0 +1,2050 @@
+{
+ "marche": "GPS des amorces",
+ "corpus_entrainement_amorces": 48,
+ "test_amorces_figees": 36,
+ "test_questions": 60,
+ "variantes": {
+  "A_questions_seules": {
+   "exactitude_questions_60": 0.9333,
+   "exactitude_amorces_figees_36": 0.3056,
+   "details_questions": [
+    {
+     "texte": "Quelle est la capitale de la France ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.895,
+     "correct": true
+    },
+    {
+     "texte": "Quelle est la capitale du Cameroun ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.8599,
+     "correct": true
+    },
+    {
+     "texte": "Dans quel pays se trouve la ville de Tokyo ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.7402,
+     "correct": true
+    },
+    {
+     "texte": "Quel est le plus grand océan de la planète Terre ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.7716,
+     "correct": true
+    },
+    {
+     "texte": "Quelle est la capitale de l'Espagne ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.8441,
+     "correct": true
+    },
+    {
+     "texte": "Sur quel continent se trouve le désert du Sahara ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.7038,
+     "correct": true
+    },
+    {
+     "texte": "Quelle est la capitale de l'Italie ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.8096,
+     "correct": true
+    },
+    {
+     "texte": "Quel fleuve traverse la ville de Paris ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.791,
+     "correct": true
+    },
+    {
+     "texte": "Quelle est la capitale du Canada ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.8924,
+     "correct": true
+    },
+    {
+     "texte": "Dans quel pays se trouve le mont Everest ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.7233,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 2 plus 2 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.9325,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 7 fois 6 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.9299,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 100 divisé par 4 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.9361,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 15 moins 9 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.9447,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 3 fois 3 fois 3 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.913,
+     "correct": true
+    },
+    {
+     "texte": "Quelle est la moitié de 50 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.6505,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 12 plus 18 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.9544,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 9 fois 9 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.9213,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 1000 moins 1 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.9269,
+     "correct": true
+    },
+    {
+     "texte": "Quel est le double de 21 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.7654,
+     "correct": true
+    },
+    {
+     "texte": "Le Soleil est-il une étoile ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.727,
+     "correct": true
+    },
+    {
+     "texte": "Quelle est la formule chimique de l'eau ?",
+     "attendue": "SCIENCE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.7613,
+     "correct": false
+    },
+    {
+     "texte": "Pourquoi le ciel est-il bleu ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.7718,
+     "correct": true
+    },
+    {
+     "texte": "Qu'est-ce que la gravité ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.7717,
+     "correct": true
+    },
+    {
+     "texte": "À quelle température l'eau bout-elle ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.6718,
+     "correct": true
+    },
+    {
+     "texte": "Quelle planète est la plus proche du Soleil ?",
+     "attendue": "SCIENCE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.76,
+     "correct": false
+    },
+    {
+     "texte": "De quoi les plantes ont-elles besoin pour grandir ?",
+     "attendue": "SCIENCE",
+     "predite": "ANIMAUX",
+     "confiance": 0.6523,
+     "correct": false
+    },
+    {
+     "texte": "Qu'est-ce qu'un trou noir ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.6804,
+     "correct": true
+    },
+    {
+     "texte": "Pourquoi la Lune brille-t-elle la nuit ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.7495,
+     "correct": true
+    },
+    {
+     "texte": "Que se passe-t-il quand on chauffe de la glace ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.6604,
+     "correct": true
+    },
+    {
+     "texte": "Comment dit-on bonjour en anglais ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.598,
+     "correct": true
+    },
+    {
+     "texte": "Quel est le pluriel du mot cheval ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.8132,
+     "correct": true
+    },
+    {
+     "texte": "Que signifie le mot rapidement ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.7329,
+     "correct": true
+    },
+    {
+     "texte": "Comment dit-on merci en espagnol ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.5973,
+     "correct": true
+    },
+    {
+     "texte": "Quel est le contraire du mot grand ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.8069,
+     "correct": true
+    },
+    {
+     "texte": "Combien de lettres contient l'alphabet français ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.6399,
+     "correct": true
+    },
+    {
+     "texte": "Quel est le féminin du mot acteur ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.7835,
+     "correct": true
+    },
+    {
+     "texte": "Comment conjuguer le verbe être au présent avec je ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.7085,
+     "correct": true
+    },
+    {
+     "texte": "Que veut dire le mot maison en anglais ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.7716,
+     "correct": true
+    },
+    {
+     "texte": "Quel mot rime avec le mot cœur ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.7124,
+     "correct": true
+    },
+    {
+     "texte": "Quel animal miaule et chasse les souris ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.7763,
+     "correct": true
+    },
+    {
+     "texte": "Combien de pattes possède une araignée ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.7339,
+     "correct": true
+    },
+    {
+     "texte": "Quel est le plus grand animal terrestre ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.7533,
+     "correct": true
+    },
+    {
+     "texte": "Quel animal pond des œufs et vole ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.802,
+     "correct": true
+    },
+    {
+     "texte": "Que mange principalement le panda géant ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.7153,
+     "correct": true
+    },
+    {
+     "texte": "Quel animal est surnommé le meilleur ami de l'homme ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.7885,
+     "correct": true
+    },
+    {
+     "texte": "Combien de temps dort un chat par jour environ ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.6402,
+     "correct": true
+    },
+    {
+     "texte": "Quel poisson vit dans l'océan et possède des dents pointues ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.8174,
+     "correct": true
+    },
+    {
+     "texte": "Quel animal produit le miel ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.7575,
+     "correct": true
+    },
+    {
+     "texte": "Quel est l'oiseau symbole de la sagesse ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.8003,
+     "correct": true
+    },
+    {
+     "texte": "Quels ingrédients faut-il pour faire une omelette ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.7961,
+     "correct": true
+    },
+    {
+     "texte": "À quelle température cuit-on un gâteau au four ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.6968,
+     "correct": true
+    },
+    {
+     "texte": "Comment prépare-t-on du riz blanc simple ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.6277,
+     "correct": true
+    },
+    {
+     "texte": "Quel ingrédient rend le pain gonflé et léger ?",
+     "attendue": "CUISINE",
+     "predite": "ANIMAUX",
+     "confiance": 0.7637,
+     "correct": false
+    },
+    {
+     "texte": "Combien de temps faut-il pour cuire un œuf dur ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.7598,
+     "correct": true
+    },
+    {
+     "texte": "Que met-on dans une salade de fruits ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.6832,
+     "correct": true
+    },
+    {
+     "texte": "Quel ustensile utilise-t-on pour mélanger une soupe ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.7775,
+     "correct": true
+    },
+    {
+     "texte": "Comment fait-on fondre du chocolat sans le brûler ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.7419,
+     "correct": true
+    },
+    {
+     "texte": "Quelle épice donne sa couleur jaune au curry ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.7472,
+     "correct": true
+    },
+    {
+     "texte": "Que faut-il pour préparer un café simple ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.7771,
+     "correct": true
+    }
+   ],
+   "details_amorces": [
+    {
+     "texte": "La capitale de la France est",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.7003,
+     "correct": true
+    },
+    {
+     "texte": "The capital of Spain is",
+     "attendue": "GEOGRAPHIE",
+     "predite": "CALCUL",
+     "confiance": 0.3382,
+     "correct": false
+    },
+    {
+     "texte": "La ville de Tokyo se trouve",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.5674,
+     "correct": true
+    },
+    {
+     "texte": "The country where Madrid is located is",
+     "attendue": "GEOGRAPHIE",
+     "predite": "CALCUL",
+     "confiance": 0.3231,
+     "correct": false
+    },
+    {
+     "texte": "Paris est la capitale",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.6478,
+     "correct": true
+    },
+    {
+     "texte": "The capital of Italy is",
+     "attendue": "GEOGRAPHIE",
+     "predite": "CALCUL",
+     "confiance": 0.3296,
+     "correct": false
+    },
+    {
+     "texte": "Two plus two equals",
+     "attendue": "CALCUL",
+     "predite": "ANIMAUX",
+     "confiance": 0.1898,
+     "correct": false
+    },
+    {
+     "texte": "Trois plus quatre font",
+     "attendue": "CALCUL",
+     "predite": "CUISINE",
+     "confiance": 0.4748,
+     "correct": false
+    },
+    {
+     "texte": "Ten times five equals",
+     "attendue": "CALCUL",
+     "predite": "ANIMAUX",
+     "confiance": 0.254,
+     "correct": false
+    },
+    {
+     "texte": "Le résultat de six fois sept est",
+     "attendue": "CALCUL",
+     "predite": "ANIMAUX",
+     "confiance": 0.5486,
+     "correct": false
+    },
+    {
+     "texte": "One hundred divided by four equals",
+     "attendue": "CALCUL",
+     "predite": "ANIMAUX",
+     "confiance": 0.1739,
+     "correct": false
+    },
+    {
+     "texte": "Cinq plus cinq font",
+     "attendue": "CALCUL",
+     "predite": "SCIENCE",
+     "confiance": 0.4087,
+     "correct": false
+    },
+    {
+     "texte": "L'eau est composée de",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.5432,
+     "correct": true
+    },
+    {
+     "texte": "The chemical formula for water is",
+     "attendue": "SCIENCE",
+     "predite": "CALCUL",
+     "confiance": 0.369,
+     "correct": false
+    },
+    {
+     "texte": "La photosynthèse permet aux plantes de",
+     "attendue": "SCIENCE",
+     "predite": "ANIMAUX",
+     "confiance": 0.5736,
+     "correct": false
+    },
+    {
+     "texte": "Plants make their food by",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.0677,
+     "correct": true
+    },
+    {
+     "texte": "Le soleil est une",
+     "attendue": "SCIENCE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.5043,
+     "correct": false
+    },
+    {
+     "texte": "Water is made of hydrogen and",
+     "attendue": "SCIENCE",
+     "predite": "CALCUL",
+     "confiance": 0.4188,
+     "correct": false
+    },
+    {
+     "texte": "En anglais, chat se dit",
+     "attendue": "LANGAGE",
+     "predite": "CALCUL",
+     "confiance": 0.3957,
+     "correct": false
+    },
+    {
+     "texte": "The word for dog in French is",
+     "attendue": "LANGAGE",
+     "predite": "CALCUL",
+     "confiance": 0.4202,
+     "correct": false
+    },
+    {
+     "texte": "Pour dire bonjour en anglais, on dit",
+     "attendue": "LANGAGE",
+     "predite": "SCIENCE",
+     "confiance": 0.403,
+     "correct": false
+    },
+    {
+     "texte": "In English, we say thank you",
+     "attendue": "LANGAGE",
+     "predite": "CALCUL",
+     "confiance": 0.311,
+     "correct": false
+    },
+    {
+     "texte": "Comment dit-on merci en",
+     "attendue": "LANGAGE",
+     "predite": "CUISINE",
+     "confiance": 0.4008,
+     "correct": false
+    },
+    {
+     "texte": "The French word for cat is",
+     "attendue": "LANGAGE",
+     "predite": "CALCUL",
+     "confiance": 0.341,
+     "correct": false
+    },
+    {
+     "texte": "The animal that meows is",
+     "attendue": "ANIMAUX",
+     "predite": "CALCUL",
+     "confiance": 0.2563,
+     "correct": false
+    },
+    {
+     "texte": "L'animal qui aboie est",
+     "attendue": "ANIMAUX",
+     "predite": "SCIENCE",
+     "confiance": 0.5211,
+     "correct": false
+    },
+    {
+     "texte": "A dog barks and a cat",
+     "attendue": "ANIMAUX",
+     "predite": "CALCUL",
+     "confiance": 0.3588,
+     "correct": false
+    },
+    {
+     "texte": "Le chat chasse les",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.505,
+     "correct": true
+    },
+    {
+     "texte": "The animal that barks is",
+     "attendue": "ANIMAUX",
+     "predite": "CALCUL",
+     "confiance": 0.3059,
+     "correct": false
+    },
+    {
+     "texte": "Un chien est un animal qui",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.4758,
+     "correct": true
+    },
+    {
+     "texte": "Pour faire une omelette, il faut",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.5566,
+     "correct": true
+    },
+    {
+     "texte": "To make a tomato sauce, you need",
+     "attendue": "CUISINE",
+     "predite": "CALCUL",
+     "confiance": 0.3185,
+     "correct": false
+    },
+    {
+     "texte": "La recette du gâteau demande",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.526,
+     "correct": true
+    },
+    {
+     "texte": "For breakfast, eggs can be cooked",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.2101,
+     "correct": true
+    },
+    {
+     "texte": "Dans une salade, on met",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.2885,
+     "correct": true
+    },
+    {
+     "texte": "To bake a cake, mix flour and",
+     "attendue": "CUISINE",
+     "predite": "CALCUL",
+     "confiance": 0.2852,
+     "correct": false
+    }
+   ]
+  },
+  "B_amorces_seules": {
+   "exactitude_questions_60": 0.2,
+   "exactitude_amorces_figees_36": 0.7222,
+   "details_questions": [
+    {
+     "texte": "Quelle est la capitale de la France ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.5533,
+     "correct": true
+    },
+    {
+     "texte": "Quelle est la capitale du Cameroun ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "SCIENCE",
+     "confiance": 0.5174,
+     "correct": false
+    },
+    {
+     "texte": "Dans quel pays se trouve la ville de Tokyo ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "SCIENCE",
+     "confiance": 0.4481,
+     "correct": false
+    },
+    {
+     "texte": "Quel est le plus grand océan de la planète Terre ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "SCIENCE",
+     "confiance": 0.4748,
+     "correct": false
+    },
+    {
+     "texte": "Quelle est la capitale de l'Espagne ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.5649,
+     "correct": true
+    },
+    {
+     "texte": "Sur quel continent se trouve le désert du Sahara ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "SCIENCE",
+     "confiance": 0.5218,
+     "correct": false
+    },
+    {
+     "texte": "Quelle est la capitale de l'Italie ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.5769,
+     "correct": true
+    },
+    {
+     "texte": "Quel fleuve traverse la ville de Paris ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "SCIENCE",
+     "confiance": 0.4783,
+     "correct": false
+    },
+    {
+     "texte": "Quelle est la capitale du Canada ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.5595,
+     "correct": true
+    },
+    {
+     "texte": "Dans quel pays se trouve le mont Everest ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "SCIENCE",
+     "confiance": 0.536,
+     "correct": false
+    },
+    {
+     "texte": "Combien font 2 plus 2 ?",
+     "attendue": "CALCUL",
+     "predite": "LANGAGE",
+     "confiance": 0.3701,
+     "correct": false
+    },
+    {
+     "texte": "Combien font 7 fois 6 ?",
+     "attendue": "CALCUL",
+     "predite": "LANGAGE",
+     "confiance": 0.4235,
+     "correct": false
+    },
+    {
+     "texte": "Combien font 100 divisé par 4 ?",
+     "attendue": "CALCUL",
+     "predite": "LANGAGE",
+     "confiance": 0.4351,
+     "correct": false
+    },
+    {
+     "texte": "Combien font 15 moins 9 ?",
+     "attendue": "CALCUL",
+     "predite": "LANGAGE",
+     "confiance": 0.3788,
+     "correct": false
+    },
+    {
+     "texte": "Combien font 3 fois 3 fois 3 ?",
+     "attendue": "CALCUL",
+     "predite": "LANGAGE",
+     "confiance": 0.4425,
+     "correct": false
+    },
+    {
+     "texte": "Quelle est la moitié de 50 ?",
+     "attendue": "CALCUL",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.4024,
+     "correct": false
+    },
+    {
+     "texte": "Combien font 12 plus 18 ?",
+     "attendue": "CALCUL",
+     "predite": "LANGAGE",
+     "confiance": 0.3559,
+     "correct": false
+    },
+    {
+     "texte": "Combien font 9 fois 9 ?",
+     "attendue": "CALCUL",
+     "predite": "LANGAGE",
+     "confiance": 0.4169,
+     "correct": false
+    },
+    {
+     "texte": "Combien font 1000 moins 1 ?",
+     "attendue": "CALCUL",
+     "predite": "LANGAGE",
+     "confiance": 0.3617,
+     "correct": false
+    },
+    {
+     "texte": "Quel est le double de 21 ?",
+     "attendue": "CALCUL",
+     "predite": "LANGAGE",
+     "confiance": 0.3624,
+     "correct": false
+    },
+    {
+     "texte": "Le Soleil est-il une étoile ?",
+     "attendue": "SCIENCE",
+     "predite": "CUISINE",
+     "confiance": 0.4414,
+     "correct": false
+    },
+    {
+     "texte": "Quelle est la formule chimique de l'eau ?",
+     "attendue": "SCIENCE",
+     "predite": "ANIMAUX",
+     "confiance": 0.4807,
+     "correct": false
+    },
+    {
+     "texte": "Pourquoi le ciel est-il bleu ?",
+     "attendue": "SCIENCE",
+     "predite": "CUISINE",
+     "confiance": 0.454,
+     "correct": false
+    },
+    {
+     "texte": "Qu'est-ce que la gravité ?",
+     "attendue": "SCIENCE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.4167,
+     "correct": false
+    },
+    {
+     "texte": "À quelle température l'eau bout-elle ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.5211,
+     "correct": true
+    },
+    {
+     "texte": "Quelle planète est la plus proche du Soleil ?",
+     "attendue": "SCIENCE",
+     "predite": "ANIMAUX",
+     "confiance": 0.4582,
+     "correct": false
+    },
+    {
+     "texte": "De quoi les plantes ont-elles besoin pour grandir ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.533,
+     "correct": true
+    },
+    {
+     "texte": "Qu'est-ce qu'un trou noir ?",
+     "attendue": "SCIENCE",
+     "predite": "LANGAGE",
+     "confiance": 0.4155,
+     "correct": false
+    },
+    {
+     "texte": "Pourquoi la Lune brille-t-elle la nuit ?",
+     "attendue": "SCIENCE",
+     "predite": "LANGAGE",
+     "confiance": 0.4975,
+     "correct": false
+    },
+    {
+     "texte": "Que se passe-t-il quand on chauffe de la glace ?",
+     "attendue": "SCIENCE",
+     "predite": "LANGAGE",
+     "confiance": 0.4994,
+     "correct": false
+    },
+    {
+     "texte": "Comment dit-on bonjour en anglais ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.5688,
+     "correct": true
+    },
+    {
+     "texte": "Quel est le pluriel du mot cheval ?",
+     "attendue": "LANGAGE",
+     "predite": "SCIENCE",
+     "confiance": 0.5023,
+     "correct": false
+    },
+    {
+     "texte": "Que signifie le mot rapidement ?",
+     "attendue": "LANGAGE",
+     "predite": "SCIENCE",
+     "confiance": 0.491,
+     "correct": false
+    },
+    {
+     "texte": "Comment dit-on merci en espagnol ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.4861,
+     "correct": true
+    },
+    {
+     "texte": "Quel est le contraire du mot grand ?",
+     "attendue": "LANGAGE",
+     "predite": "SCIENCE",
+     "confiance": 0.4278,
+     "correct": false
+    },
+    {
+     "texte": "Combien de lettres contient l'alphabet français ?",
+     "attendue": "LANGAGE",
+     "predite": "SCIENCE",
+     "confiance": 0.5007,
+     "correct": false
+    },
+    {
+     "texte": "Quel est le féminin du mot acteur ?",
+     "attendue": "LANGAGE",
+     "predite": "SCIENCE",
+     "confiance": 0.4301,
+     "correct": false
+    },
+    {
+     "texte": "Comment conjuguer le verbe être au présent avec je ?",
+     "attendue": "LANGAGE",
+     "predite": "SCIENCE",
+     "confiance": 0.5914,
+     "correct": false
+    },
+    {
+     "texte": "Que veut dire le mot maison en anglais ?",
+     "attendue": "LANGAGE",
+     "predite": "SCIENCE",
+     "confiance": 0.5034,
+     "correct": false
+    },
+    {
+     "texte": "Quel mot rime avec le mot cœur ?",
+     "attendue": "LANGAGE",
+     "predite": "ANIMAUX",
+     "confiance": 0.4122,
+     "correct": false
+    },
+    {
+     "texte": "Quel animal miaule et chasse les souris ?",
+     "attendue": "ANIMAUX",
+     "predite": "SCIENCE",
+     "confiance": 0.4997,
+     "correct": false
+    },
+    {
+     "texte": "Combien de pattes possède une araignée ?",
+     "attendue": "ANIMAUX",
+     "predite": "SCIENCE",
+     "confiance": 0.573,
+     "correct": false
+    },
+    {
+     "texte": "Quel est le plus grand animal terrestre ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.4572,
+     "correct": true
+    },
+    {
+     "texte": "Quel animal pond des œufs et vole ?",
+     "attendue": "ANIMAUX",
+     "predite": "SCIENCE",
+     "confiance": 0.5036,
+     "correct": false
+    },
+    {
+     "texte": "Que mange principalement le panda géant ?",
+     "attendue": "ANIMAUX",
+     "predite": "SCIENCE",
+     "confiance": 0.5363,
+     "correct": false
+    },
+    {
+     "texte": "Quel animal est surnommé le meilleur ami de l'homme ?",
+     "attendue": "ANIMAUX",
+     "predite": "SCIENCE",
+     "confiance": 0.5288,
+     "correct": false
+    },
+    {
+     "texte": "Combien de temps dort un chat par jour environ ?",
+     "attendue": "ANIMAUX",
+     "predite": "SCIENCE",
+     "confiance": 0.3958,
+     "correct": false
+    },
+    {
+     "texte": "Quel poisson vit dans l'océan et possède des dents pointues ?",
+     "attendue": "ANIMAUX",
+     "predite": "SCIENCE",
+     "confiance": 0.5804,
+     "correct": false
+    },
+    {
+     "texte": "Quel animal produit le miel ?",
+     "attendue": "ANIMAUX",
+     "predite": "SCIENCE",
+     "confiance": 0.4391,
+     "correct": false
+    },
+    {
+     "texte": "Quel est l'oiseau symbole de la sagesse ?",
+     "attendue": "ANIMAUX",
+     "predite": "SCIENCE",
+     "confiance": 0.5307,
+     "correct": false
+    },
+    {
+     "texte": "Quels ingrédients faut-il pour faire une omelette ?",
+     "attendue": "CUISINE",
+     "predite": "SCIENCE",
+     "confiance": 0.5937,
+     "correct": false
+    },
+    {
+     "texte": "À quelle température cuit-on un gâteau au four ?",
+     "attendue": "CUISINE",
+     "predite": "SCIENCE",
+     "confiance": 0.4861,
+     "correct": false
+    },
+    {
+     "texte": "Comment prépare-t-on du riz blanc simple ?",
+     "attendue": "CUISINE",
+     "predite": "LANGAGE",
+     "confiance": 0.4834,
+     "correct": false
+    },
+    {
+     "texte": "Quel ingrédient rend le pain gonflé et léger ?",
+     "attendue": "CUISINE",
+     "predite": "SCIENCE",
+     "confiance": 0.5784,
+     "correct": false
+    },
+    {
+     "texte": "Combien de temps faut-il pour cuire un œuf dur ?",
+     "attendue": "CUISINE",
+     "predite": "SCIENCE",
+     "confiance": 0.4811,
+     "correct": false
+    },
+    {
+     "texte": "Que met-on dans une salade de fruits ?",
+     "attendue": "CUISINE",
+     "predite": "SCIENCE",
+     "confiance": 0.4046,
+     "correct": false
+    },
+    {
+     "texte": "Quel ustensile utilise-t-on pour mélanger une soupe ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.4868,
+     "correct": true
+    },
+    {
+     "texte": "Comment fait-on fondre du chocolat sans le brûler ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.5091,
+     "correct": true
+    },
+    {
+     "texte": "Quelle épice donne sa couleur jaune au curry ?",
+     "attendue": "CUISINE",
+     "predite": "SCIENCE",
+     "confiance": 0.6119,
+     "correct": false
+    },
+    {
+     "texte": "Que faut-il pour préparer un café simple ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.4102,
+     "correct": true
+    }
+   ],
+   "details_amorces": [
+    {
+     "texte": "La capitale de la France est",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.5784,
+     "correct": true
+    },
+    {
+     "texte": "The capital of Spain is",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.5868,
+     "correct": true
+    },
+    {
+     "texte": "La ville de Tokyo se trouve",
+     "attendue": "GEOGRAPHIE",
+     "predite": "SCIENCE",
+     "confiance": 0.4305,
+     "correct": false
+    },
+    {
+     "texte": "The country where Madrid is located is",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.4809,
+     "correct": true
+    },
+    {
+     "texte": "Paris est la capitale",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.4864,
+     "correct": true
+    },
+    {
+     "texte": "The capital of Italy is",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.5865,
+     "correct": true
+    },
+    {
+     "texte": "Two plus two equals",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.5586,
+     "correct": true
+    },
+    {
+     "texte": "Trois plus quatre font",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.4839,
+     "correct": true
+    },
+    {
+     "texte": "Ten times five equals",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.5675,
+     "correct": true
+    },
+    {
+     "texte": "Le résultat de six fois sept est",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.5232,
+     "correct": true
+    },
+    {
+     "texte": "One hundred divided by four equals",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.6132,
+     "correct": true
+    },
+    {
+     "texte": "Cinq plus cinq font",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.457,
+     "correct": true
+    },
+    {
+     "texte": "L'eau est composée de",
+     "attendue": "SCIENCE",
+     "predite": "ANIMAUX",
+     "confiance": 0.4357,
+     "correct": false
+    },
+    {
+     "texte": "The chemical formula for water is",
+     "attendue": "SCIENCE",
+     "predite": "LANGAGE",
+     "confiance": 0.4966,
+     "correct": false
+    },
+    {
+     "texte": "La photosynthèse permet aux plantes de",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.4647,
+     "correct": true
+    },
+    {
+     "texte": "Plants make their food by",
+     "attendue": "SCIENCE",
+     "predite": "CUISINE",
+     "confiance": 0.2186,
+     "correct": false
+    },
+    {
+     "texte": "Le soleil est une",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.4443,
+     "correct": true
+    },
+    {
+     "texte": "Water is made of hydrogen and",
+     "attendue": "SCIENCE",
+     "predite": "LANGAGE",
+     "confiance": 0.4714,
+     "correct": false
+    },
+    {
+     "texte": "En anglais, chat se dit",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.7241,
+     "correct": true
+    },
+    {
+     "texte": "The word for dog in French is",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.6059,
+     "correct": true
+    },
+    {
+     "texte": "Pour dire bonjour en anglais, on dit",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.6539,
+     "correct": true
+    },
+    {
+     "texte": "In English, we say thank you",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.4643,
+     "correct": true
+    },
+    {
+     "texte": "Comment dit-on merci en",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.5678,
+     "correct": true
+    },
+    {
+     "texte": "The French word for cat is",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.5697,
+     "correct": true
+    },
+    {
+     "texte": "The animal that meows is",
+     "attendue": "ANIMAUX",
+     "predite": "LANGAGE",
+     "confiance": 0.408,
+     "correct": false
+    },
+    {
+     "texte": "L'animal qui aboie est",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.4685,
+     "correct": true
+    },
+    {
+     "texte": "A dog barks and a cat",
+     "attendue": "ANIMAUX",
+     "predite": "LANGAGE",
+     "confiance": 0.3603,
+     "correct": false
+    },
+    {
+     "texte": "Le chat chasse les",
+     "attendue": "ANIMAUX",
+     "predite": "SCIENCE",
+     "confiance": 0.4601,
+     "correct": false
+    },
+    {
+     "texte": "The animal that barks is",
+     "attendue": "ANIMAUX",
+     "predite": "LANGAGE",
+     "confiance": 0.4412,
+     "correct": false
+    },
+    {
+     "texte": "Un chien est un animal qui",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.3668,
+     "correct": true
+    },
+    {
+     "texte": "Pour faire une omelette, il faut",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.4813,
+     "correct": true
+    },
+    {
+     "texte": "To make a tomato sauce, you need",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.4226,
+     "correct": true
+    },
+    {
+     "texte": "La recette du gâteau demande",
+     "attendue": "CUISINE",
+     "predite": "SCIENCE",
+     "confiance": 0.4465,
+     "correct": false
+    },
+    {
+     "texte": "For breakfast, eggs can be cooked",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.4098,
+     "correct": true
+    },
+    {
+     "texte": "Dans une salade, on met",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.4392,
+     "correct": true
+    },
+    {
+     "texte": "To bake a cake, mix flour and",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.426,
+     "correct": true
+    }
+   ]
+  },
+  "C_questions_plus_amorces": {
+   "exactitude_questions_60": 0.8167,
+   "exactitude_amorces_figees_36": 0.4722,
+   "details_questions": [
+    {
+     "texte": "Quelle est la capitale de la France ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.8543,
+     "correct": true
+    },
+    {
+     "texte": "Quelle est la capitale du Cameroun ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.8119,
+     "correct": true
+    },
+    {
+     "texte": "Dans quel pays se trouve la ville de Tokyo ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.6621,
+     "correct": true
+    },
+    {
+     "texte": "Quel est le plus grand océan de la planète Terre ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "ANIMAUX",
+     "confiance": 0.7236,
+     "correct": false
+    },
+    {
+     "texte": "Quelle est la capitale de l'Espagne ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.8244,
+     "correct": true
+    },
+    {
+     "texte": "Sur quel continent se trouve le désert du Sahara ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.6254,
+     "correct": true
+    },
+    {
+     "texte": "Quelle est la capitale de l'Italie ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.8061,
+     "correct": true
+    },
+    {
+     "texte": "Quel fleuve traverse la ville de Paris ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.714,
+     "correct": true
+    },
+    {
+     "texte": "Quelle est la capitale du Canada ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.8552,
+     "correct": true
+    },
+    {
+     "texte": "Dans quel pays se trouve le mont Everest ?",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.6258,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 2 plus 2 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.8186,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 7 fois 6 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.8475,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 100 divisé par 4 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.8215,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 15 moins 9 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.8577,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 3 fois 3 fois 3 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.8077,
+     "correct": true
+    },
+    {
+     "texte": "Quelle est la moitié de 50 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.6791,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 12 plus 18 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.818,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 9 fois 9 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.8425,
+     "correct": true
+    },
+    {
+     "texte": "Combien font 1000 moins 1 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.8012,
+     "correct": true
+    },
+    {
+     "texte": "Quel est le double de 21 ?",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.6866,
+     "correct": true
+    },
+    {
+     "texte": "Le Soleil est-il une étoile ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.6467,
+     "correct": true
+    },
+    {
+     "texte": "Quelle est la formule chimique de l'eau ?",
+     "attendue": "SCIENCE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.7138,
+     "correct": false
+    },
+    {
+     "texte": "Pourquoi le ciel est-il bleu ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.6772,
+     "correct": true
+    },
+    {
+     "texte": "Qu'est-ce que la gravité ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.6803,
+     "correct": true
+    },
+    {
+     "texte": "À quelle température l'eau bout-elle ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.6923,
+     "correct": true
+    },
+    {
+     "texte": "Quelle planète est la plus proche du Soleil ?",
+     "attendue": "SCIENCE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.7132,
+     "correct": false
+    },
+    {
+     "texte": "De quoi les plantes ont-elles besoin pour grandir ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.6592,
+     "correct": true
+    },
+    {
+     "texte": "Qu'est-ce qu'un trou noir ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.5207,
+     "correct": true
+    },
+    {
+     "texte": "Pourquoi la Lune brille-t-elle la nuit ?",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.6389,
+     "correct": true
+    },
+    {
+     "texte": "Que se passe-t-il quand on chauffe de la glace ?",
+     "attendue": "SCIENCE",
+     "predite": "CUISINE",
+     "confiance": 0.5178,
+     "correct": false
+    },
+    {
+     "texte": "Comment dit-on bonjour en anglais ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.712,
+     "correct": true
+    },
+    {
+     "texte": "Quel est le pluriel du mot cheval ?",
+     "attendue": "LANGAGE",
+     "predite": "ANIMAUX",
+     "confiance": 0.6863,
+     "correct": false
+    },
+    {
+     "texte": "Que signifie le mot rapidement ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.6076,
+     "correct": true
+    },
+    {
+     "texte": "Comment dit-on merci en espagnol ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.6718,
+     "correct": true
+    },
+    {
+     "texte": "Quel est le contraire du mot grand ?",
+     "attendue": "LANGAGE",
+     "predite": "ANIMAUX",
+     "confiance": 0.6672,
+     "correct": false
+    },
+    {
+     "texte": "Combien de lettres contient l'alphabet français ?",
+     "attendue": "LANGAGE",
+     "predite": "ANIMAUX",
+     "confiance": 0.631,
+     "correct": false
+    },
+    {
+     "texte": "Quel est le féminin du mot acteur ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.6994,
+     "correct": true
+    },
+    {
+     "texte": "Comment conjuguer le verbe être au présent avec je ?",
+     "attendue": "LANGAGE",
+     "predite": "ANIMAUX",
+     "confiance": 0.6146,
+     "correct": false
+    },
+    {
+     "texte": "Que veut dire le mot maison en anglais ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.6949,
+     "correct": true
+    },
+    {
+     "texte": "Quel mot rime avec le mot cœur ?",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.6501,
+     "correct": true
+    },
+    {
+     "texte": "Quel animal miaule et chasse les souris ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.7365,
+     "correct": true
+    },
+    {
+     "texte": "Combien de pattes possède une araignée ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.6637,
+     "correct": true
+    },
+    {
+     "texte": "Quel est le plus grand animal terrestre ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.7173,
+     "correct": true
+    },
+    {
+     "texte": "Quel animal pond des œufs et vole ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.7392,
+     "correct": true
+    },
+    {
+     "texte": "Que mange principalement le panda géant ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.6878,
+     "correct": true
+    },
+    {
+     "texte": "Quel animal est surnommé le meilleur ami de l'homme ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.7603,
+     "correct": true
+    },
+    {
+     "texte": "Combien de temps dort un chat par jour environ ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.588,
+     "correct": true
+    },
+    {
+     "texte": "Quel poisson vit dans l'océan et possède des dents pointues ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.7625,
+     "correct": true
+    },
+    {
+     "texte": "Quel animal produit le miel ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.7078,
+     "correct": true
+    },
+    {
+     "texte": "Quel est l'oiseau symbole de la sagesse ?",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.7517,
+     "correct": true
+    },
+    {
+     "texte": "Quels ingrédients faut-il pour faire une omelette ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.7031,
+     "correct": true
+    },
+    {
+     "texte": "À quelle température cuit-on un gâteau au four ?",
+     "attendue": "CUISINE",
+     "predite": "SCIENCE",
+     "confiance": 0.6542,
+     "correct": false
+    },
+    {
+     "texte": "Comment prépare-t-on du riz blanc simple ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.6059,
+     "correct": true
+    },
+    {
+     "texte": "Quel ingrédient rend le pain gonflé et léger ?",
+     "attendue": "CUISINE",
+     "predite": "ANIMAUX",
+     "confiance": 0.7039,
+     "correct": false
+    },
+    {
+     "texte": "Combien de temps faut-il pour cuire un œuf dur ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.6974,
+     "correct": true
+    },
+    {
+     "texte": "Que met-on dans une salade de fruits ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.6131,
+     "correct": true
+    },
+    {
+     "texte": "Quel ustensile utilise-t-on pour mélanger une soupe ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.7476,
+     "correct": true
+    },
+    {
+     "texte": "Comment fait-on fondre du chocolat sans le brûler ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.734,
+     "correct": true
+    },
+    {
+     "texte": "Quelle épice donne sa couleur jaune au curry ?",
+     "attendue": "CUISINE",
+     "predite": "SCIENCE",
+     "confiance": 0.7013,
+     "correct": false
+    },
+    {
+     "texte": "Que faut-il pour préparer un café simple ?",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.7121,
+     "correct": true
+    }
+   ],
+   "details_amorces": [
+    {
+     "texte": "La capitale de la France est",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.7318,
+     "correct": true
+    },
+    {
+     "texte": "The capital of Spain is",
+     "attendue": "GEOGRAPHIE",
+     "predite": "CALCUL",
+     "confiance": 0.325,
+     "correct": false
+    },
+    {
+     "texte": "La ville de Tokyo se trouve",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.5164,
+     "correct": true
+    },
+    {
+     "texte": "The country where Madrid is located is",
+     "attendue": "GEOGRAPHIE",
+     "predite": "CALCUL",
+     "confiance": 0.3373,
+     "correct": false
+    },
+    {
+     "texte": "Paris est la capitale",
+     "attendue": "GEOGRAPHIE",
+     "predite": "GEOGRAPHIE",
+     "confiance": 0.6558,
+     "correct": true
+    },
+    {
+     "texte": "The capital of Italy is",
+     "attendue": "GEOGRAPHIE",
+     "predite": "CALCUL",
+     "confiance": 0.3235,
+     "correct": false
+    },
+    {
+     "texte": "Two plus two equals",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.2547,
+     "correct": true
+    },
+    {
+     "texte": "Trois plus quatre font",
+     "attendue": "CALCUL",
+     "predite": "SCIENCE",
+     "confiance": 0.4929,
+     "correct": false
+    },
+    {
+     "texte": "Ten times five equals",
+     "attendue": "CALCUL",
+     "predite": "ANIMAUX",
+     "confiance": 0.2636,
+     "correct": false
+    },
+    {
+     "texte": "Le résultat de six fois sept est",
+     "attendue": "CALCUL",
+     "predite": "ANIMAUX",
+     "confiance": 0.5898,
+     "correct": false
+    },
+    {
+     "texte": "One hundred divided by four equals",
+     "attendue": "CALCUL",
+     "predite": "CALCUL",
+     "confiance": 0.2847,
+     "correct": true
+    },
+    {
+     "texte": "Cinq plus cinq font",
+     "attendue": "CALCUL",
+     "predite": "CUISINE",
+     "confiance": 0.4188,
+     "correct": false
+    },
+    {
+     "texte": "L'eau est composée de",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.5424,
+     "correct": true
+    },
+    {
+     "texte": "The chemical formula for water is",
+     "attendue": "SCIENCE",
+     "predite": "CALCUL",
+     "confiance": 0.3511,
+     "correct": false
+    },
+    {
+     "texte": "La photosynthèse permet aux plantes de",
+     "attendue": "SCIENCE",
+     "predite": "ANIMAUX",
+     "confiance": 0.581,
+     "correct": false
+    },
+    {
+     "texte": "Plants make their food by",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.1396,
+     "correct": true
+    },
+    {
+     "texte": "Le soleil est une",
+     "attendue": "SCIENCE",
+     "predite": "SCIENCE",
+     "confiance": 0.5414,
+     "correct": true
+    },
+    {
+     "texte": "Water is made of hydrogen and",
+     "attendue": "SCIENCE",
+     "predite": "CALCUL",
+     "confiance": 0.3809,
+     "correct": false
+    },
+    {
+     "texte": "En anglais, chat se dit",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.5397,
+     "correct": true
+    },
+    {
+     "texte": "The word for dog in French is",
+     "attendue": "LANGAGE",
+     "predite": "CALCUL",
+     "confiance": 0.3579,
+     "correct": false
+    },
+    {
+     "texte": "Pour dire bonjour en anglais, on dit",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.5965,
+     "correct": true
+    },
+    {
+     "texte": "In English, we say thank you",
+     "attendue": "LANGAGE",
+     "predite": "CALCUL",
+     "confiance": 0.26,
+     "correct": false
+    },
+    {
+     "texte": "Comment dit-on merci en",
+     "attendue": "LANGAGE",
+     "predite": "LANGAGE",
+     "confiance": 0.54,
+     "correct": true
+    },
+    {
+     "texte": "The French word for cat is",
+     "attendue": "LANGAGE",
+     "predite": "CALCUL",
+     "confiance": 0.317,
+     "correct": false
+    },
+    {
+     "texte": "The animal that meows is",
+     "attendue": "ANIMAUX",
+     "predite": "CALCUL",
+     "confiance": 0.2754,
+     "correct": false
+    },
+    {
+     "texte": "L'animal qui aboie est",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.5223,
+     "correct": true
+    },
+    {
+     "texte": "A dog barks and a cat",
+     "attendue": "ANIMAUX",
+     "predite": "CALCUL",
+     "confiance": 0.3248,
+     "correct": false
+    },
+    {
+     "texte": "Le chat chasse les",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.4817,
+     "correct": true
+    },
+    {
+     "texte": "The animal that barks is",
+     "attendue": "ANIMAUX",
+     "predite": "CALCUL",
+     "confiance": 0.3164,
+     "correct": false
+    },
+    {
+     "texte": "Un chien est un animal qui",
+     "attendue": "ANIMAUX",
+     "predite": "ANIMAUX",
+     "confiance": 0.4861,
+     "correct": true
+    },
+    {
+     "texte": "Pour faire une omelette, il faut",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.5965,
+     "correct": true
+    },
+    {
+     "texte": "To make a tomato sauce, you need",
+     "attendue": "CUISINE",
+     "predite": "CALCUL",
+     "confiance": 0.2716,
+     "correct": false
+    },
+    {
+     "texte": "La recette du gâteau demande",
+     "attendue": "CUISINE",
+     "predite": "SCIENCE",
+     "confiance": 0.5375,
+     "correct": false
+    },
+    {
+     "texte": "For breakfast, eggs can be cooked",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.3303,
+     "correct": true
+    },
+    {
+     "texte": "Dans une salade, on met",
+     "attendue": "CUISINE",
+     "predite": "CUISINE",
+     "confiance": 0.3966,
+     "correct": true
+    },
+    {
+     "texte": "To bake a cake, mix flour and",
+     "attendue": "CUISINE",
+     "predite": "CALCUL",
+     "confiance": 0.253,
+     "correct": false
+    }
+   ]
+  }
+ },
+ "routeur_hybride_retenu": false,
+ "critere": "C retenu seulement si C bat A sur les amorces et perd au plus 5 points sur les questions"
+}

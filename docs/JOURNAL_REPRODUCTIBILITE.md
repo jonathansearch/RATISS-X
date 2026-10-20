@@ -131,11 +131,19 @@ mono-famille) ; stabilité des générations inchangée (celles d'E5, publiées)
 génération libre sur 6 amorces, 70 % et 75 % déraillent après des débuts souvent
 justes ; seul 100 % fait 6/6 — le seuil de génération est > 75 % (veille de la
 construction RATISS, dossier `docs/PRET_POUR_RATISS.md`).
+**Sprint final scientifique** (protocole figé `docs/PROTOCOLE_SPRINT_FINAL_SCIENTIFIQUE.md`) :
+aucun fond magnitude 80/85/90/95 % n'atteint 4/6 générations stables ;
+l'entraînement apparié magnitude 75 % fait 8,87 → 3,82 de perte mais seulement
+2/6 en génération ; **l'élite par contribution observée fait 5/6 à 75 %** ;
+le GPS hybride questions+amorces échoue au critère (47,2 % amorces, 81,7 %
+questions) ; le prototype V2 int4 atteint **286 Mo** mais à 3,6–4,0 s/token et
+qualité mixte. Rapport : `docs/RAPPORT_SPRINT_FINAL_SCIENTIFIQUE.md`.
 
 ## ⚠️ Ce qui n'est PAS encore fait (ne pas citer comme acquis)
-- La construction RATISS (décision du chef : demain) — voir le dossier de veille
-  `docs/PRET_POUR_RATISS.md` : régime de fond à décider, critères de naissance à
-  écrire avant tout entraînement ; seuil de génération à mesurer entre 75 et 100 %.
+- La construction RATISS (décision du chef) — voir le dossier de veille
+  `docs/PRET_POUR_RATISS.md` : régime de fond à décider, confirmation du régime
+  activation sur prompts nouveaux et routage non-oracle, critères de naissance
+  à écrire avant tout entraînement.
 - L'injection du vrai tissu `.ratiss` externe dans le Traducteur (Phase ultérieure).
 - **RATISS VEGA**, premier modèle augmenté : naîtra après validation, pas avant. 🌟
 

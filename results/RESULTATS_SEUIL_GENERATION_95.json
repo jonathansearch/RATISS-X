@@ -1,0 +1,55 @@
+{
+ "marche": "G1 seuil en generation libre",
+ "fond": 0.95,
+ "rss_pic_mo": 980.4,
+ "resultats": [
+  {
+   "famille": "GEOGRAPHIE",
+   "prompt": "The capital of Spain is",
+   "texte": " Madrid).| Madrid,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.777,
+   "construction_jeu_s": 2.66
+  },
+  {
+   "famille": "CALCUL",
+   "prompt": "Two plus two equals",
+   "texte": " 6. 432 equals 8. 456 equals 1",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.591,
+   "construction_jeu_s": 2.03
+  },
+  {
+   "famille": "SCIENCE",
+   "prompt": "Water is made of hydrogen and",
+   "texte": " and H2O.\"",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.488,
+   "construction_jeu_s": 1.94
+  },
+  {
+   "famille": "LANGAGE",
+   "prompt": "The French word for cat is",
+   "texte": " translates to to to to cat translator Cat translator Cat translator Cat translator Cat translator Cat translator Cat",
+   "boucle_detectee": true,
+   "secondes_par_token": 1.302,
+   "construction_jeu_s": 1.9
+  },
+  {
+   "famille": "ANIMAUX",
+   "prompt": "The animal that meows is",
+   "texte": " a cat",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.282,
+   "construction_jeu_s": 1.83
+  },
+  {
+   "famille": "CUISINE",
+   "prompt": "To bake a cake, mix flour and",
+   "texte": " sugar, and butter to butter, and a cake, and butter, and butter, and",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.501,
+   "construction_jeu_s": 1.9
+  }
+ ]
+}

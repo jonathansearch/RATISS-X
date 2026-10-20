@@ -15,12 +15,20 @@ from moteur_v1 import MoteurV1, rss, LOCAL, RACINE
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--fond", type=float, required=True)
+    ap.add_argument("--selection", default="magnitude")
+    ap.add_argument("--tranches", default="")
+    ap.add_argument("--classement", action="store_true")
+    ap.add_argument("--suffixe", default="")
     a = ap.parse_args()
     from tokenizers import Tokenizer
     from huggingface_hub import snapshot_download
     snap = snapshot_download("HuggingFaceTB/SmolLM2-360M-Instruct")
     tok = Tokenizer.from_file(str(Path(snap) / "tokenizer.json"))
-    moteur = MoteurV1(snap, LOCAL / "tranches_entrainees_e4.npz", fond=a.fond)
+    moteur = MoteurV1(snap, Path(a.tranches) if a.tranches else
+                      LOCAL / "tranches_entrainees_e4.npz", fond=a.fond,
+                      selection=a.selection,
+                      classements_npz=LOCAL / "classements_activation.npz"
+                      if a.classement else None)
     amorces = [("GEOGRAPHIE", "The capital of Spain is"),
                ("CALCUL", "Two plus two equals"),
                ("SCIENCE", "Water is made of hydrogen and"),
@@ -38,7 +46,7 @@ def main():
                       "construction_jeu_s": round(t_jeu, 2)})
         print(f"🎢 fond {a.fond:.0%} | {fam:11s} | {prompt} → {texte!r} "
               f"({s_tok:.2f}s/token, boucle={boucle})", flush=True)
-    nom = f"RESULTATS_SEUIL_GENERATION_{int(round(a.fond*100))}.json"
+    nom = f"RESULTATS_SEUIL_GENERATION_{int(round(a.fond*100))}{a.suffixe}.json"
     (RACINE / "results" / nom).write_text(json.dumps(
         {"marche": "G1 seuil en generation libre", "fond": a.fond,
          "rss_pic_mo": round(rss(), 1), "resultats": bilan}, ensure_ascii=False, indent=1))

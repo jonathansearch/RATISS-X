@@ -31,7 +31,8 @@ def depuis_bits(bits):
 
 
 class MoteurV1:
-    def __init__(self, snapshot, tranches_npz, fond):
+    def __init__(self, snapshot, tranches_npz, fond, selection="magnitude",
+                 classements_npz=None):
         cfg = json.loads((Path(snapshot) / "config.json").read_text())
         self.H = cfg["hidden_size"]; self.eps = cfg.get("rms_norm_eps", 1e-5)
         self.n_tetes = cfg["num_attention_heads"]; self.n_kv = cfg["num_key_value_heads"]
@@ -39,6 +40,8 @@ class MoteurV1:
         self.theta = cfg.get("rope_theta", 10000.0)
         self.n_couches = cfg["num_hidden_layers"]; self.inter = cfg["intermediate_size"]
         self.fond = fond
+        self.selection = selection
+        self.classements = np.load(classements_npz) if classements_npz else None
         self.coffre = Coffre(str(Path(snapshot) / "model.safetensors"))
         self.z = np.load(tranches_npz)
         gps = np.load(RACINE / "artifacts" / "gps_modele_360M.npz", allow_pickle=True)
@@ -79,9 +82,12 @@ class MoteurV1:
             else:
                 actifs = {int(v) for v in tranche_idx}
                 inactifs = np.array([i for i in range(self.inter) if i not in actifs])
-                mag = (np.linalg.norm(Wg, axis=1) + np.linalg.norm(Wu, axis=1)
-                       + np.linalg.norm(Wd, axis=0))
-                elite = inactifs[np.argsort(-mag[inactifs])][:int(round(self.fond * len(inactifs)))]
+                if self.classements is None:
+                    mag = (np.linalg.norm(Wg, axis=1) + np.linalg.norm(Wu, axis=1)
+                           + np.linalg.norm(Wd, axis=0))
+                    elite = inactifs[np.argsort(-mag[inactifs])][:int(round(self.fond * len(inactifs)))]
+                else:
+                    elite = self.classements[f"act_{li}_{fam}"][:int(round(self.fond * len(inactifs)))]
                 utiles = np.sort(np.concatenate([tranche_idx, elite]))
             Wg_u, Wu_u, Wd_u = Wg[utiles].copy(), Wu[utiles].copy(), Wd[:, utiles].copy()
             if self.fond < 1.0:   # la tranche entraînée remplace ses lignes/colonnes

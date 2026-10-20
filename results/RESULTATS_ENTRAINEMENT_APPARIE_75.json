@@ -1,0 +1,13 @@
+{
+ "marche": "entrainement apparie au regime d'inference",
+ "fond": 0.75,
+ "perte_eval_avant_regime": 8.8704,
+ "perte_eval_apres": 3.8156,
+ "amelioration_relative": 0.5698,
+ "pas": 144,
+ "tranches": "tranches_appariees_75.npz",
+ "classements_activation": "classements_activation.npz",
+ "reference_E4_non_apparie": {
+  "perte_eval_apres": 1.2449
+ }
+}

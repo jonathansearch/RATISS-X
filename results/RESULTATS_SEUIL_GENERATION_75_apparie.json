@@ -1,0 +1,55 @@
+{
+ "marche": "G1 seuil en generation libre",
+ "fond": 0.75,
+ "rss_pic_mo": 851.8,
+ "resultats": [
+  {
+   "famille": "GEOGRAPHIE",
+   "prompt": "The capital of Spain is",
+   "texte": " Madrid",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.777,
+   "construction_jeu_s": 3.4
+  },
+  {
+   "famille": "CALCUL",
+   "prompt": "Two plus two equals",
+   "texte": " 42",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.598,
+   "construction_jeu_s": 1.56
+  },
+  {
+   "famille": "SCIENCE",
+   "prompt": "Water is made of hydrogen and",
+   "texte": " into water vapor into photograpically light, into photograpical light, into photograpic light",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.573,
+   "construction_jeu_s": 1.52
+  },
+  {
+   "famille": "LANGAGE",
+   "prompt": "The French word for cat is",
+   "texte": " Cat Assistant",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.158,
+   "construction_jeu_s": 1.53
+  },
+  {
+   "famille": "ANIMAUX",
+   "prompt": "The animal that meows is",
+   "texte": " cat",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.222,
+   "construction_jeu_s": 1.44
+  },
+  {
+   "famille": "CUISINE",
+   "prompt": "To bake a cake, mix flour and",
+   "texte": "   Cup of of,    Cream, one, and",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.239,
+   "construction_jeu_s": 1.55
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "marche": "G1 seuil en generation libre",
+ "fond": 0.9,
+ "rss_pic_mo": 912.4,
+ "resultats": [
+  {
+   "famille": "GEOGRAPHIE",
+   "prompt": "The capital of Spain is",
+   "texte": " Madrid",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.236,
+   "construction_jeu_s": 2.57
+  },
+  {
+   "famille": "CALCUL",
+   "prompt": "Two plus two equals",
+   "texte": " 60 49 69 66 49 68",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.416,
+   "construction_jeu_s": 1.92
+  },
+  {
+   "famille": "SCIENCE",
+   "prompt": "Water is made of hydrogen and",
+   "texte": " atoms and into the air into the water into the air into the water into the air into",
+   "boucle_detectee": true,
+   "secondes_par_token": 1.3,
+   "construction_jeu_s": 1.82
+  },
+  {
+   "famille": "LANGAGE",
+   "prompt": "The French word for cat is",
+   "texte": " refers to cat.\",",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.232,
+   "construction_jeu_s": 1.74
+  },
+  {
+   "famille": "ANIMAUX",
+   "prompt": "The animal that meows is",
+   "texte": "!\" The cat",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.385,
+   "construction_jeu_s": 1.86
+  },
+  {
+   "famille": "CUISINE",
+   "prompt": "To bake a cake, mix flour and",
+   "texte": " water in a for for'', the phrase is a is is a is is a a",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.548,
+   "construction_jeu_s": 1.75
+  }
+ ]
+}

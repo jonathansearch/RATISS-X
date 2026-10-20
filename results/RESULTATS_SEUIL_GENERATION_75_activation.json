@@ -1,0 +1,55 @@
+{
+ "marche": "G1 seuil en generation libre",
+ "fond": 0.75,
+ "rss_pic_mo": 852.4,
+ "resultats": [
+  {
+   "famille": "GEOGRAPHIE",
+   "prompt": "The capital of Spain is",
+   "texte": " Madrid.\",",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.35,
+   "construction_jeu_s": 2.44
+  },
+  {
+   "famille": "CALCUL",
+   "prompt": "Two plus two equals",
+   "texte": " four. 4 minus 3 equals 1",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.315,
+   "construction_jeu_s": 1.4
+  },
+  {
+   "famille": "SCIENCE",
+   "prompt": "Water is made of hydrogen and",
+   "texte": " oxygen.\"",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.305,
+   "construction_jeu_s": 1.38
+  },
+  {
+   "famille": "LANGAGE",
+   "prompt": "The French word for cat is",
+   "texte": " Maison.\",",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.188,
+   "construction_jeu_s": 1.44
+  },
+  {
+   "famille": "ANIMAUX",
+   "prompt": "The animal that meows is",
+   "texte": " a cat",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.311,
+   "construction_jeu_s": 1.42
+  },
+  {
+   "famille": "CUISINE",
+   "prompt": "To bake a cake, mix flour and",
+   "texte": " sugar in a bowl, add eggs and butter in a pan, heat butter in a pan",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.306,
+   "construction_jeu_s": 1.43
+  }
+ ]
+}

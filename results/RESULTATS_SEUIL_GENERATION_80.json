@@ -1,0 +1,55 @@
+{
+ "marche": "G1 seuil en generation libre",
+ "fond": 0.8,
+ "rss_pic_mo": 991.1,
+ "resultats": [
+  {
+   "famille": "GEOGRAPHIE",
+   "prompt": "The capital of Spain is",
+   "texte": " Madrid",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.115,
+   "construction_jeu_s": 2.4
+  },
+  {
+   "famille": "CALCUL",
+   "prompt": "Two plus two equals",
+   "texte": " 60",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.236,
+   "construction_jeu_s": 1.69
+  },
+  {
+   "famille": "SCIENCE",
+   "prompt": "Water is made of hydrogen and",
+   "texte": " by python \". I I I # # ; ; | ; | | | | |",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.245,
+   "construction_jeu_s": 1.69
+  },
+  {
+   "famille": "LANGAGE",
+   "prompt": "The French word for cat is",
+   "texte": " Cat.\",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.143,
+   "construction_jeu_s": 2.25
+  },
+  {
+   "famille": "ANIMAUX",
+   "prompt": "The animal that meows is",
+   "texte": " meow is meows is it it is with is it is is with is is you",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.229,
+   "construction_jeu_s": 1.7
+  },
+  {
+   "famille": "CUISINE",
+   "prompt": "To bake a cake, mix flour and",
+   "texte": ".' is a, and, and, and, and, and, a, a,",
+   "boucle_detectee": false,
+   "secondes_par_token": 1.294,
+   "construction_jeu_s": 1.74
+  }
+ ]
+}
